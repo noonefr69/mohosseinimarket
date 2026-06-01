@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DirectionProvider } from "@/components/ui/direction";
 import { Noto_Sans_Arabic } from "next/font/google";
+import HeaderUi from "@/components/header/header-ui";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,8 +35,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <DirectionProvider dir="rtl" direction="rtl">
-            {children}
-          </DirectionProvider>{" "}
+            <HeaderUi />
+            <main className="p-4 max-w-7xl mx-auto mt-20">{children}</main>
+            <footer>d</footer>
+          </DirectionProvider>
         </ThemeProvider>
       </body>
     </html>
