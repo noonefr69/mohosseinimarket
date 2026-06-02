@@ -36,7 +36,7 @@ export default function RootLayout({
         >
           <DirectionProvider dir="rtl" direction="rtl">
             <HeaderUi />
-            <main className="p-4 max-w-7xl mx-auto mt-20">{children}</main>
+            <main className="p-4 max-w-7xl mx-auto mt-14 md:mt-24">{children}</main>
             <footer>d</footer>
           </DirectionProvider>
         </ThemeProvider>
