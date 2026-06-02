@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
 import { categories_links } from "@/consts/links";
+import { toPersianDigits } from "@/lib/to-persian-digits";
 
 export default function FootHeader() {
   return (
@@ -67,9 +68,7 @@ export default function FootHeader() {
             </div>
             <div>
               <h1 className="font-semibold text-sm">تلفن: </h1>
-              <span className="text-sm">
-                تبریز, چهاراه آبرسان, رو به روی مدرسه پناهی
-              </span>
+              <span dir="ltr" className="text-sm">{toPersianDigits("041 33343989")}</span>
             </div>
           </div>
         </div>

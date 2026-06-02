@@ -24,10 +24,10 @@ export default function RootLayout({
     <html
       lang="fa"
       dir="rtl"
-      className={fontSans.variable}
+      className={`${fontSans.variable} h-full`}
       suppressHydrationWarning
     >
-      <body className="">
+      <body className="h-full">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,9 +35,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <DirectionProvider dir="rtl" direction="rtl">
-            <HeaderUi />
-            <main className="p-4 max-w-7xl mx-auto">{children}</main>
-            <footer>d</footer>
+            <div className="min-h-screen">
+              <HeaderUi />
+              <main className="p-4 max-w-7xl mx-auto mt-16 md:mt-24 lg:mt-0">{children}</main>
+              {/* <footer className="bg-accent">d</footer> */}
+            </div>
           </DirectionProvider>
         </ThemeProvider>
       </body>
