@@ -66,7 +66,7 @@ export default function Home() {
             {datas.products.slice(0, 8).map((item) => (
               <li key={item.id}>
                 <Link href={`/market/${item.id}`}>
-                  <Card className="hover:bg-accent/1 duration-100">
+                  <Card className="">
                     <CardHeader className="bg-accent/70 mx-4 p-0">
                       <Image
                         src={"/"}
@@ -202,6 +202,65 @@ export default function Home() {
               </Button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-7 ">
+        <h1 className="md:text-2xl font-bold">پیشنهاد هفته</h1>
+
+        <div className="mt-4 relative">
+          <div className="flex items-center justify-end px-2 h-full w-20 md:w-24 bg-linear-to-r from-background to-transparent absolute left-0 z-20">
+            <Button asChild variant={"outline"} size={"icon-lg"}>
+              <Link href={`/market`}>&lArr;</Link>
+            </Button>
+          </div>
+          <ul className="flex items-center overflow-hidden gap-4">
+            {datas.products.slice(0, 8).map((item) => (
+              <li key={item.id}>
+                <Link href={`/market/${item.id}`}>
+                  <Card className=" w-52 md:w-60">
+                    <CardHeader className="bg-accent/70 mx-4 p-0">
+                      <Image
+                        src={"/"}
+                        alt={item.name}
+                        width={200}
+                        height={200}
+                      />
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <h1 className="text-lg sm:text-2xl mb-2 font-semibold tracking-tight truncate">
+                        {item.name}
+                      </h1>
+                      <p className="text-muted-foreground font-semibold">
+                        {item.category_title}
+                      </p>
+                    </CardContent>
+                    <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          alert("item " + item.id + " added");
+                        }}
+                        className="flex-1 w-10 h-14"
+                        variant={"ghost"}
+                      >
+                        خرید
+                      </Button>
+                      <Separator orientation="vertical" className="" />
+                      <Button
+                        disabled
+                        className="flex-1 disabled:opacity-100 font-semibold disabled:cursor-default hover:bg-transparent w-10 h-14 "
+                        variant={"ghost"}
+                      >
+                        {item.price} تومان
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
