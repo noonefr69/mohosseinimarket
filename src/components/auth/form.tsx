@@ -12,6 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
+import { signIn } from "next-auth/react";
 
 const formSchema = z.object({
   phone_number: z
@@ -28,9 +29,11 @@ export function AuthenticationForm() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    console.log(data);
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    await signIn("credentials", {
+      phone: data.phone_number,
+      redirectTo: "/profile",
+    });
   }
 
   return (
