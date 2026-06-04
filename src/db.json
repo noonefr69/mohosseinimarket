@@ -1,67 +1,117 @@
 {
   "categories": [
     {
-      "id": 1,
+      "_id": 1,
       "icon": "Milk",
       "title": "لبنیات",
-      "href": "/",
-      "slug": "dairy"
+      "slug": "dairy",
+      "href": "/market?category=dairy",
+      "sub_categories": [
+        { "title": "شیر", "slug": "milk" },
+        { "title": "ماست", "slug": "yogurt" },
+        { "title": "پنیر", "slug": "cheese" },
+        { "title": "خامه و کره", "slug": "cream-butter" }
+      ]
     },
     {
-      "id": 2,
+      "_id": 2,
       "icon": "Croissant",
       "title": "نان و شیرینی",
-      "href": "/market",
-      "slug": "bakery"
+      "slug": "bakery",
+      "href": "/market?category=bakery",
+      "sub_categories": [
+        { "title": "نان سنتی", "slug": "traditional-bread" },
+        { "title": "نان صنعتی", "slug": "industrial-bread" },
+        { "title": "کیک و شیرینی", "slug": "cake-pastry" },
+        { "title": "بیسکویت", "slug": "biscuit" }
+      ]
     },
     {
-      "id": 3,
+      "_id": 3,
       "icon": "Utensils",
-      "title": "بخش اغذیه و غذاهای آماده",
-      "href": "/market",
-      "slug": "ready-meals"
+      "title": "غذاهای آماده",
+      "slug": "ready-meals",
+      "href": "/market?category=ready-meals",
+      "sub_categories": [
+        { "title": "ساندویچ و پیتزا", "slug": "sandwich-pizza" },
+        { "title": "سالاد", "slug": "salad" },
+        { "title": "غذای گرم", "slug": "hot-food" }
+      ]
     },
     {
-      "id": 4,
+      "_id": 4,
       "icon": "Candy",
       "title": "تنقلات",
-      "href": "/market",
-      "slug": "snacks"
+      "slug": "snacks",
+      "href": "/market?category=snacks",
+      "sub_categories": [
+        { "title": "چیپس و پفک", "slug": "chips-puffs" },
+        { "title": "شکلات و آبنبات", "slug": "chocolate-candy" },
+        { "title": "آجیل و خشکبار", "slug": "nuts-dried-fruits" }
+      ]
     },
     {
-      "id": 5,
+      "_id": 5,
       "icon": "Droplet",
       "title": "نوشیدنی",
-      "href": "/market",
-      "slug": "beverages"
+      "slug": "beverages",
+      "href": "/market?category=beverages",
+      "sub_categories": [
+        { "title": "آب معدنی", "slug": "water" },
+        { "title": "نوشابه گازدار", "slug": "soda" },
+        { "title": "آبمیوه", "slug": "juice" },
+        { "title": "دوغ و لبنی", "slug": "doogh" }
+      ]
     },
     {
-      "id": 6,
+      "_id": 6,
       "icon": "Snowflake",
       "title": "مواد غذایی منجمد",
-      "href": "/market",
-      "slug": "frozen"
+      "slug": "frozen",
+      "href": "/market?category=frozen",
+      "sub_categories": [
+        { "title": "گوشت و مرغ منجمد", "slug": "frozen-meat" },
+        { "title": "سبزیجات منجمد", "slug": "frozen-veg" },
+        { "title": "غذای آماده منجمد", "slug": "frozen-meals" }
+      ]
     },
     {
-      "id": 7,
+      "_id": 7,
       "icon": "Package",
       "title": "کالاهای خشک و کنسروی",
-      "href": "/market",
-      "slug": "dry-canned"
+      "slug": "dry-canned",
+      "href": "/market?category=dry-canned",
+      "sub_categories": [
+        { "title": "برنج و حبوبات", "slug": "rice-legumes" },
+        { "title": "کنسرو", "slug": "canned" },
+        { "title": "روغن و سس", "slug": "oil-sauce" },
+        { "title": "ادویه و چاشنی", "slug": "spices" }
+      ]
     },
     {
-      "id": 8,
+      "_id": 8,
       "icon": "Heart",
       "title": "بهداشتی و آرایشی",
-      "href": "/market",
-      "slug": "personal-care"
+      "slug": "personal-care",
+      "href": "/market?category=personal-care",
+      "sub_categories": [
+        { "title": "مراقبت از مو", "slug": "hair-care" },
+        { "title": "مراقبت از پوست", "slug": "skin-care" },
+        { "title": "بهداشت دهان", "slug": "oral-care" },
+        { "title": "صابون و شامپو بدن", "slug": "body-wash" }
+      ]
     },
     {
-      "id": 9,
+      "_id": 9,
       "icon": "Home",
       "title": "کالای خانه",
-      "href": "/market",
-      "slug": "home-goods"
+      "slug": "home-goods",
+      "href": "/market?category=home-goods",
+      "sub_categories": [
+        { "title": "دستمال و پاک‌کننده", "slug": "tissue-cleaner" },
+        { "title": "ظرفشویی و لباسشویی", "slug": "dish-laundry" },
+        { "title": "کیسه و فویل", "slug": "bags-foil" }
+      ]
     }
   ],
 
