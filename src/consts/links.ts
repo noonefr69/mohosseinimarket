@@ -63,3 +63,40 @@ export const offers_banners = [
     offer: "10%",
   },
 ];
+
+export const footerLinks = {
+  shop: {
+    title: "فروشگاه",
+    links: [
+      { label: "لبنیات", href: "/market?category=dairy" },
+      { label: "نان و شیرینی", href: "/market?category=bakery" },
+      { label: "تنقلات", href: "/market?category=snacks" },
+      { label: "نوشیدنی", href: "/market?category=beverages" },
+      { label: "مواد غذایی منجمد", href: "/market?category=frozen" },
+    ],
+  },
+  company: {
+    title: "سوپرمارکت",
+    links: [
+      { label: "درباره ما", href: "/about-us" },
+      { label: "تماس با ما", href: "/contact-us" },
+      { label: "قوانین و مقررات", href: "/terms" },
+      { label: "حریم خصوصی", href: "/privacy" },
+    ],
+  },
+  account: {
+    title: "حساب کاربری",
+    links: [
+      { label: "ورود / ثبت نام", href: "/sign-in" },
+      { label: "سفارش‌های من", href: "/orders" },
+      { label: "سبد خرید", href: "/shopping-cart" },
+      { label: "علاقه‌مندی‌ها", href: "/wishlist" },
+    ],
+  },
+};
+
+export const footerLinkFoot = [
+  { label: "قوانین", href: "/terms" },
+  { label: " حریم خصوصی", href: "/privacy" },
+  { label: "پشتیبانی", href: "/contact-us" },
+];

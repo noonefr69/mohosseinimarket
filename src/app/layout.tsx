@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { DirectionProvider } from "@/components/ui/direction";
 import { Noto_Sans_Arabic } from "next/font/google";
 import HeaderUi from "@/components/header/header-ui";
+import FooterUi from "@/components/footer/footer-ui";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,8 +38,10 @@ export default function RootLayout({
           <DirectionProvider dir="rtl" direction="rtl">
             <div className="min-h-screen">
               <HeaderUi />
-              <main className="p-4 max-w-7xl mx-auto mt-16 md:mt-24 lg:mt-0">{children}</main>
-              {/* <footer className="bg-accent">d</footer> */}
+              <main className="p-4 max-w-7xl mx-auto mt-16 md:mt-24 lg:mt-0">
+                {children}
+              </main>
+              <FooterUi />
             </div>
           </DirectionProvider>
         </ThemeProvider>

@@ -302,11 +302,7 @@ export default function Home() {
               perspiciatis magni aliquam officia sapiente quo?
             </p>
             <div className="text-center md:text-right">
-              <Button
-                asChild
-                variant={"default"}
-                size={"lg"}
-              >
+              <Button asChild variant={"default"} size={"lg"}>
                 <Link href={`/about-us`}>اطلاعات بیشتر</Link>
               </Button>
             </div>
