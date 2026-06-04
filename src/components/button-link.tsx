@@ -8,11 +8,23 @@ export default function ButtonLink({
   linkClassName,
   buttonClassName,
   variant,
+  size,
 }: {
   text: string | number;
   href: string;
   linkClassName?: string;
   buttonClassName?: string;
+  size?:
+    | "default"
+    | "xs"
+    | "sm"
+    | "lg"
+    | "icon"
+    | "icon-xs"
+    | "icon-sm"
+    | "icon-lg"
+    | null
+    | undefined;
   variant:
     | "link"
     | "default"
@@ -24,7 +36,7 @@ export default function ButtonLink({
     | undefined;
 }) {
   return (
-    <Button asChild variant={variant} className={buttonClassName}>
+    <Button asChild size={size} variant={variant} className={buttonClassName}>
       <Link className={linkClassName} href={href}>
         {text}
       </Link>
