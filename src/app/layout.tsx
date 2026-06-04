@@ -36,7 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <DirectionProvider dir="rtl" direction="rtl">
-            <div className="min-h-screen">
+            <div className="">
               <HeaderUi />
               <main className="p-4 max-w-7xl mx-auto mt-16 md:mt-24 lg:mt-0">
                 {children}

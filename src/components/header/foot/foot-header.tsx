@@ -4,25 +4,23 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
-import { categories_links } from "@/consts/links";
 import { toPersianDigits } from "@/lib/to-persian-digits";
+import datas from "@/db.json";
 
 export default function FootHeader() {
   return (
     <div className="pt-28 bg-primary-foreground lg:block hidden">
       <div className="max-w-7xl mx-auto px-2 pb-2 flex items-center justify-between">
         <ul className="flex items-center">
-          {categories_links.slice(0, 4).map((link, i) => (
+          {datas.categories.slice(0, 4).map((link, i) => (
             <li key={i}>
               <Button asChild variant={"ghost"} className="px-2">
                 <Link className="text-[14px]" href={link.href}>
-                  {<link.icon />}
+                  {/* {<link.icon />} */}
                   {link.title}
                 </Link>
               </Button>
@@ -35,16 +33,13 @@ export default function FootHeader() {
                   بیشتر...
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="w-fit">
                 <DropdownMenuGroup>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuGroup>
-                  <DropdownMenuItem>Team</DropdownMenuItem>
-                  <DropdownMenuItem>Subscription</DropdownMenuItem>
+                  {datas.categories.slice(4).map((item, i) => (
+                    <DropdownMenuItem key={i}>
+                      <Link href={item.href}>{item.title}</Link>
+                    </DropdownMenuItem>
+                  ))}
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -68,7 +63,9 @@ export default function FootHeader() {
             </div>
             <div>
               <h1 className="font-semibold text-sm">تلفن: </h1>
-              <span dir="ltr" className="text-sm">{toPersianDigits("041 33343989")}</span>
+              <span dir="ltr" className="text-sm">
+                {toPersianDigits("041 33343989")}
+              </span>
             </div>
           </div>
         </div>
