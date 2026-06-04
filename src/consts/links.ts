@@ -45,3 +45,21 @@ export const categories_links = [
   { icon: Home, title: "کالای خانه", href: "/market" },
   { icon: Popcorn, title: "تنقلات", href: "/market" },
 ];
+
+export const offers_banners = [
+  {
+    title: "تخفیف ویژه",
+    description: "بهترین قیمت برای محصولات تازه",
+    offer: "10%",
+  },
+  {
+    title: "تخفیف ویژه",
+    description: "بهترین قیمت برای محصولات تازه",
+    offer: "10%",
+  },
+  {
+    title: "تخفیف ویژه",
+    description: "بهترین قیمت برای محصولات تازه",
+    offer: "10%",
+  },
+];
