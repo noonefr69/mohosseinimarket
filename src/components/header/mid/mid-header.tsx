@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { nastaliq_font } from "@/fonts/font";
 import HeaderInputs from "./header-inputs";

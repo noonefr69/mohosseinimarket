@@ -22,7 +22,7 @@ export default function FooterBrand() {
               target="_blank"
               //   rel="noopener noreferrer"
               aria-label={s.title}
-              className="w-9 h-9 rounded-lg bg-background border flex items-center justify-center hover:bg-accent transition-colors"
+              className="w-9 h-9 rounded-lg bg-background border flex items-center justify-center hover:bg-accent"
             >
               <Image src={s.icon} alt={s.title} width={18} height={18} />
             </Link>
@@ -41,7 +41,7 @@ export default function FooterBrand() {
                   href={link.href}
                   text={link.label}
                   buttonClassName="p-0 text-muted-foreground"
-                  linkClassName="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  linkClassName="text-sm text-muted-foreground hover:text-foreground"
                 />
               </li>
             ))}

@@ -1,17 +1,20 @@
+import { auth } from "@/auth";
 import { AuthenticationForm } from "@/components/auth/form";
 import ButtonLink from "@/components/button-link";
 import {
   Card,
   CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { nastaliq_font } from "@/fonts/font";
-import Link from "next/link";
-export default function SignIn() {
+import { redirect } from "next/navigation";
+export default async function SignIn() {
+  const session = await auth();
+
+  if (session?.user) redirect("/profile");
+
   return (
     <div className="pt-10 pb-0 sm:pt-14 sm:pb-0 lg:pt-32 lg:pb-22">
       <div className="max-w-lg mx-auto">

@@ -13,6 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
 import { signIn } from "next-auth/react";
+import { useTransition } from "react";
+import { Spinner } from "../ui/spinner";
 
 const formSchema = z.object({
   phone_number: z
@@ -22,6 +24,8 @@ const formSchema = z.object({
 });
 
 export function AuthenticationForm() {
+  const [isPending, startTransition] = useTransition();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,10 +33,16 @@ export function AuthenticationForm() {
     },
   });
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
-    await signIn("credentials", {
-      phone: data.phone_number,
-      redirectTo: "/profile",
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    startTransition(async () => {
+      try {
+        await signIn("credentials", {
+          phone: data.phone_number,
+          redirectTo: "/profile",
+        });
+      } catch (error) {
+        console.log(error);
+      }
     });
   }
 
@@ -61,12 +71,13 @@ export function AuthenticationForm() {
         />
       </FieldGroup>
       <Button
+        disabled={isPending}
         type="submit"
-        form="auth-form"
+        // form="auth-form"
         className="mt-4 w-full text-lg py-6"
         size={"lg"}
       >
-        ورود به فروشگاه
+        {isPending ? <Spinner /> : " ورود به فروشگاه"}
       </Button>
       <p className="mt-7 text-xs">
         ورود شما به معنای پذیرش{" "}
