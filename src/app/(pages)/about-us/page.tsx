@@ -61,7 +61,7 @@ export const faqs = [
 
 export default function AboutUs() {
   return (
-    <div>
+    <div className="mt-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <Button
@@ -87,7 +87,10 @@ export default function AboutUs() {
         </div>
       </div>
       <Separator className="my-7" />
-      <ul className="grid lg:grid-cols-3 gap-2 md:gap-6 sm:grid-cols-2 grid-cols-1">
+      <ul
+        id="faqs"
+        className="grid lg:grid-cols-3 gap-2 md:gap-6 sm:grid-cols-2 grid-cols-1"
+      >
         {about_us_const.map((item, i) => (
           <li key={i}>
             <Card className="">

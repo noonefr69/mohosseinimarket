@@ -23,7 +23,7 @@ export const social_media = [
 export const lil_links = [
   { title: "تخفیف‌های امروز", href: "/#offers" },
   { title: "پیگیری سفارش", href: "/orders" },
-  { title: "راهنمایی", href: "/about-us" },
+  { title: "راهنمایی", href: "/about-us#faqs" },
 ];
 
 export const pages_links = [
