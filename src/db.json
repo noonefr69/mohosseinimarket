@@ -5,7 +5,6 @@
       "icon": "Milk",
       "title": "لبنیات",
       "slug": "dairy",
-      "href": "/market?category=dairy",
       "sub_categories": [
         { "title": "شیر", "slug": "milk" },
         { "title": "ماست", "slug": "yogurt" },
@@ -18,7 +17,6 @@
       "icon": "Croissant",
       "title": "نان و شیرینی",
       "slug": "bakery",
-      "href": "/market?category=bakery",
       "sub_categories": [
         { "title": "نان سنتی", "slug": "traditional-bread" },
         { "title": "نان صنعتی", "slug": "industrial-bread" },
@@ -31,7 +29,6 @@
       "icon": "Utensils",
       "title": "غذاهای آماده",
       "slug": "ready-meals",
-      "href": "/market?category=ready-meals",
       "sub_categories": [
         { "title": "ساندویچ و پیتزا", "slug": "sandwich-pizza" },
         { "title": "سالاد", "slug": "salad" },
@@ -43,7 +40,6 @@
       "icon": "Candy",
       "title": "تنقلات",
       "slug": "snacks",
-      "href": "/market?category=snacks",
       "sub_categories": [
         { "title": "چیپس و پفک", "slug": "chips-puffs" },
         { "title": "شکلات و آبنبات", "slug": "chocolate-candy" },
@@ -55,7 +51,6 @@
       "icon": "Droplet",
       "title": "نوشیدنی",
       "slug": "beverages",
-      "href": "/market?category=beverages",
       "sub_categories": [
         { "title": "آب معدنی", "slug": "water" },
         { "title": "نوشابه گازدار", "slug": "soda" },
@@ -68,7 +63,6 @@
       "icon": "Snowflake",
       "title": "مواد غذایی منجمد",
       "slug": "frozen",
-      "href": "/market?category=frozen",
       "sub_categories": [
         { "title": "گوشت و مرغ منجمد", "slug": "frozen-meat" },
         { "title": "سبزیجات منجمد", "slug": "frozen-veg" },
@@ -80,7 +74,6 @@
       "icon": "Package",
       "title": "کالاهای خشک و کنسروی",
       "slug": "dry-canned",
-      "href": "/market?category=dry-canned",
       "sub_categories": [
         { "title": "برنج و حبوبات", "slug": "rice-legumes" },
         { "title": "کنسرو", "slug": "canned" },
@@ -93,7 +86,6 @@
       "icon": "Heart",
       "title": "بهداشتی و آرایشی",
       "slug": "personal-care",
-      "href": "/market?category=personal-care",
       "sub_categories": [
         { "title": "مراقبت از مو", "slug": "hair-care" },
         { "title": "مراقبت از پوست", "slug": "skin-care" },
@@ -106,7 +98,6 @@
       "icon": "Home",
       "title": "کالای خانه",
       "slug": "home-goods",
-      "href": "/market?category=home-goods",
       "sub_categories": [
         { "title": "دستمال و پاک‌کننده", "slug": "tissue-cleaner" },
         { "title": "ظرفشویی و لباسشویی", "slug": "dish-laundry" },

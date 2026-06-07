@@ -19,7 +19,10 @@ export default function FootHeader() {
           {datas.categories.slice(0, 4).map((link, i) => (
             <li key={i}>
               <Button asChild variant={"ghost"} className="px-2">
-                <Link className="text-[14px]" href={link.href}>
+                <Link
+                  className="text-[14px]"
+                  href={`/market?category=${link.slug}`}
+                >
                   {/* {<link.icon />} */}
                   {link.title}
                 </Link>
@@ -36,8 +39,13 @@ export default function FootHeader() {
               <DropdownMenuContent className="w-fit">
                 <DropdownMenuGroup>
                   {datas.categories.slice(4).map((item, i) => (
-                    <DropdownMenuItem key={i}>
-                      <Link href={item.href}>{item.title}</Link>
+                    <DropdownMenuItem key={i} className="p-0">
+                      <Link
+                        className="p-1 w-full"
+                        href={`/market?category=${item.slug}`}
+                      >
+                        {item.title}
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuGroup>

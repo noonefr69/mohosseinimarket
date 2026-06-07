@@ -1,10 +1,11 @@
 import { auth, signOut } from "@/auth";
+import { redirect } from "next/navigation";
 
 export default async function ProfileUi() {
   const session = await auth();
   console.log(session); // check terminal
 
-  if (!session) return <div>لاگین نیستی</div>;
+  if (!session) redirect("/sign-in");
 
   return (
     <div>

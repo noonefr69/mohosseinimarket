@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/card";
 import datas from "../db.json";
 import Image from "next/image";
-import { link } from "fs";
 import { Separator } from "@/components/ui/separator";
 import { toPersianDigits } from "@/lib/to-persian-digits";
 
