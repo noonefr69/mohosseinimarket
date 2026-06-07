@@ -13,6 +13,7 @@ import {
   Home,
   Popcorn,
 } from "lucide-react";
+import { toPersianDigits } from "@/lib/to-persian-digits";
 
 export const social_media = [
   { title: "bale", icon: bale_icon, href: "/" },
@@ -99,4 +100,56 @@ export const footerLinkFoot = [
   { label: "قوانین", href: "/terms" },
   { label: " حریم خصوصی", href: "/privacy" },
   { label: "پشتیبانی", href: "/contact-us" },
+];
+
+export const contact_us_details = [
+  {
+    label: "آدرس",
+    values: ["تبریز, چهاراه آبرسان, رو به روی مدرسه پناهی"],
+  },
+  {
+    label: "شماره تلفن",
+    values: [toPersianDigits("041 33343989"), toPersianDigits("0914 407 4099")],
+  },
+  {
+    label: "ایمیل",
+    values: ["info@company.com", "sales@company.com"],
+  },
+];
+
+export const about_us_const = [
+  { title: " سال سابقه کاری", number: `+${toPersianDigits(25)}` },
+  {
+    title: " محصولات موجود در فروشگاه",
+    number: `+${toPersianDigits(500)}`,
+  },
+  { title: "مشتری راضی", number: `+${toPersianDigits("10,000")}` },
+];
+
+export const faqs = [
+  {
+    question:
+      "برای ثبت سفارش از سوپرمارکت آنلاین شما چه مراحلی را باید طی کنم؟",
+    answer:
+      "کافیست وارد سایت ما شوید، محصولات مورد نیاز را به سبد خرید اضافه کنید، آدرس را انتخاب کرده و سپس پرداخت را انجام دهید.",
+  },
+  {
+    question: "روش‌های پرداخت چیست؟",
+    answer: "بصوزت انلاین و امن از طریق زرین پال انجام میشود.",
+  },
+  {
+    question: "محدوده ارسال شما کدام مناطق است؟",
+    answer: " در حال حاضر تمام مناطق شهر تبریز تحت پوشش هستند. ",
+  },
+  {
+    question: "نحوه ارتباط با پشتیبانی چگونه است؟",
+    answer: `
+      از طریق چت آنلاین داخل اپلیکیشن های بله و تلگرام و ایتا (ساعت ۰۸:۰۰ صبح تا ۱۰:۰۰ شب)، شماره تلفن ${toPersianDigits("04133343989")}  یا ایمیل support@example.com.
+    `,
+  },
+  {
+    question: "آیا اطلاعات کارت بانکی من نزد شما ذخیره می‌شود؟ ",
+    answer:
+      "خیر، پرداخت از طریق درگاه بانکی معتبر انجام می‌شود و ما هیچ دسترسی به اطلاعات محرمانه کارت شما نداریم.",
+  },
 ];

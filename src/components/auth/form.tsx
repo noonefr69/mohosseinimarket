@@ -15,10 +15,12 @@ import ButtonLink from "../button-link";
 import { signIn } from "next-auth/react";
 import { useTransition } from "react";
 import { Spinner } from "../ui/spinner";
+import { toPersianDigits } from "@/lib/to-persian-digits";
 
 const formSchema = z.object({
   phone_number: z
     .string("لطفا شماره موبایل خود را وارد کنید.")
+    .startsWith("09", "شماره موبایل اشتباه است.")
     .min(11, "شماره موبایل اشتباه است.")
     .max(11, "شماره موبایل اشتباه است."),
 });
@@ -61,7 +63,7 @@ export function AuthenticationForm() {
                 {...field}
                 id="form-rhf-demo-title"
                 aria-invalid={fieldState.invalid}
-                placeholder="09xx xxx xxxx"
+                placeholder={toPersianDigits("09xx xxx xxxx")}
                 autoComplete="off"
                 className="py-6 text-lg font-semibold"
               />

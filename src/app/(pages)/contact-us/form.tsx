@@ -1,22 +1,12 @@
 "use client";
 
-import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -30,6 +20,8 @@ import {
 } from "@/components/ui/input-group";
 import { toPersianDigits } from "@/lib/to-persian-digits";
 
+// ─── Schema ────────────────────────────────────────────────────────────────
+
 const formSchema = z.object({
   userName: z
     .string()
@@ -40,9 +32,8 @@ const formSchema = z.object({
     ),
   userPhoneNumber: z
     .string()
-    .startsWith("09", `شماره تلفن نامعتبر است.`)
-    .min(11, `شماره تلفن نامعتبر است.`)
-    .max(11, `شماره تلفن نامعتبر است.`),
+    .startsWith("09", "شماره تلفن نامعتبر است.")
+    .length(11, "شماره تلفن نامعتبر است."),
   userSubject: z
     .string()
     .min(
@@ -65,8 +56,24 @@ const formSchema = z.object({
     ),
 });
 
+type FormValues = z.infer<typeof formSchema>;
+
+// ─── Field config ──────────────────────────────────────────────────────────
+
+const TEXT_FIELDS: {
+  name: keyof Omit<FormValues, "userDescription">;
+  label: string;
+  placeholder: string;
+}[] = [
+  { name: "userName", label: "اسم", placeholder: "علی رضایی" },
+  { name: "userPhoneNumber", label: "شماره تلفن", placeholder: "09123456789" },
+  { name: "userSubject", label: "موضوع", placeholder: "مشکل در ثبت سفارش" },
+];
+
+// ─── Component ─────────────────────────────────────────────────────────────
+
 export function ContactUsForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       userName: "",
@@ -76,105 +83,62 @@ export function ContactUsForm() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
-    // Do something with the form values.
+  function onSubmit(data: FormValues) {
     console.log(data);
   }
 
   return (
     <form id="contact-us-form" onSubmit={form.handleSubmit(onSubmit)}>
       <FieldGroup className="gap-0">
-        <Controller
-          name="userName"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field className="relative pb-7" data-invalid={fieldState.invalid}>
-              <FieldLabel className="text-xl font-semibold" htmlFor="userName">
-                اسم
-              </FieldLabel>
-              <Input
-                {...field}
-                id="userName"
-                aria-invalid={fieldState.invalid}
-                placeholder="کمک"
-                autoComplete="off"
-              />
-              {fieldState.invalid && (
-                <FieldError
-                  className="absolute left-0 bottom-0 text-left"
-                  errors={[fieldState.error]}
-                />
-              )}
-            </Field>
-          )}
-        />
-        <Controller
-          name="userPhoneNumber"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field className="relative pb-7" data-invalid={fieldState.invalid}>
-              <FieldLabel
-                className="text-xl font-semibold"
-                htmlFor="userPhoneNumber"
+        {/* Text fields */}
+        {TEXT_FIELDS.map(({ name, label, placeholder }) => (
+          <Controller
+            key={name}
+            name={name}
+            control={form.control}
+            render={({ field, fieldState }) => (
+              <Field
+                className="relative pb-7"
+                data-invalid={fieldState.invalid}
               >
-                شماره تلفن
-              </FieldLabel>
-              <Input
-                {...field}
-                id="userPhoneNumber"
-                aria-invalid={fieldState.invalid}
-                placeholder="کمک"
-                autoComplete="off"
-              />
-              {fieldState.invalid && (
-                <FieldError
-                  className="absolute left-0 bottom-0 text-left"
-                  errors={[fieldState.error]}
+                <FieldLabel className="text-xl font-semibold" htmlFor={name}>
+                  {label}
+                </FieldLabel>
+                <Input
+                  {...field}
+                  id={name}
+                  placeholder={placeholder}
+                  aria-invalid={fieldState.invalid}
+                  autoComplete="off"
                 />
-              )}
-            </Field>
-          )}
-        />
-        <Controller
-          name="userSubject"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field className="relative pb-7" data-invalid={fieldState.invalid}>
-              <FieldLabel
-                className="text-xl font-semibold"
-                htmlFor="userSubject"
-              >
-                موضوع
-              </FieldLabel>
-              <Input
-                {...field}
-                id="userSubject"
-                aria-invalid={fieldState.invalid}
-                placeholder="کمک"
-                autoComplete="off"
-              />
-              {fieldState.invalid && (
-                <FieldError
-                  className="absolute left-0 bottom-0 text-left"
-                  errors={[fieldState.error]}
-                />
-              )}
-            </Field>
-          )}
-        />
+                {fieldState.invalid && (
+                  <FieldError
+                    className="absolute left-0 bottom-0 text-left"
+                    errors={[fieldState.error]}
+                  />
+                )}
+              </Field>
+            )}
+          />
+        ))}
+
+        {/* Description (textarea — separate because it has a character counter) */}
         <Controller
           name="userDescription"
           control={form.control}
           render={({ field, fieldState }) => (
             <Field className="relative pb-7" data-invalid={fieldState.invalid}>
-              <FieldLabel className="text-xl font-semibold" htmlFor="form-rhf-demo-description">
-                Description
+              <FieldLabel
+                className="text-xl font-semibold"
+                htmlFor="userDescription"
+              >
+                توضیحات
               </FieldLabel>
               <InputGroup>
                 <InputGroupTextarea
                   {...field}
-                  id="form-rhf-demo-description"
-                  placeholder="کمک"
+                  id="userDescription"
+                  placeholder="سوال، پیشنهاد یا انتقاد خود را اینجا بنویسید…"
                   rows={6}
                   className="min-h-24 resize-none"
                   aria-invalid={fieldState.invalid}
@@ -182,7 +146,7 @@ export function ContactUsForm() {
                 <InputGroupAddon align="block-end">
                   <InputGroupText className="tabular-nums">
                     {toPersianDigits(field.value.length)}/{toPersianDigits(200)}{" "}
-                    حروف{" "}
+                    حروف
                   </InputGroupText>
                 </InputGroupAddon>
               </InputGroup>
@@ -196,12 +160,13 @@ export function ContactUsForm() {
           )}
         />
       </FieldGroup>
+
       <Field orientation="horizontal" className="mt-2.5">
         <Button type="button" variant="outline" onClick={() => form.reset()}>
-          پاک کردم همه
+          پاک کردن همه
         </Button>
         <Button type="submit" form="contact-us-form">
-          تایید
+          ارسال
         </Button>
       </Field>
     </form>

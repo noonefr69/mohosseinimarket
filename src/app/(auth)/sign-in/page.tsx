@@ -40,7 +40,7 @@ export default async function SignIn() {
             </CardAction>
           </CardHeader>
           <CardContent>
-            <h1 className="font-semibold mt-14">ورود یا ثبت نام در فروشگاه</h1>
+            <h1 className="font-semibold mt-14 text-2xl">ورود یا ثبت نام در فروشگاه</h1>
             <p className="text-muted-foreground my-4">
               {" "}
               لطفا شماره موبایل خود را وارد کنید{" "}
