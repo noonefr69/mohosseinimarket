@@ -8,9 +8,13 @@ import {
 import { Button } from "../../ui/button";
 import { SearchIcon } from "lucide-react";
 
-export default function HeaderInputs() {
+export default function HeaderInputs({
+  groupClassName,
+}: {
+  groupClassName?: string;
+}) {
   return (
-    <InputGroup dir="ltr" className="w-64 md:flex hidden">
+    <InputGroup dir="ltr" className={`${groupClassName}`}>
       <InputGroupInput className="" dir="rtl" placeholder="جست و جو..." />
       <InputGroupAddon align={"inline-end"}>
         <Button size={"icon-sm"} variant={"ghost"}>

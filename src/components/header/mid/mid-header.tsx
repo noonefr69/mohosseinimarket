@@ -15,7 +15,7 @@ export default function MidHeader() {
           مبلغ حسینی
         </Link>
 
-        <HeaderInputs />
+        <HeaderInputs groupClassName="md:flex hidden w-64"/>
 
         <HeaderNavDesktop />
         <HeaderNavMobile />

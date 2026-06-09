@@ -25,6 +25,7 @@ import { Separator } from "@/components/ui/separator";
 import { usePathname } from "next/navigation";
 import datas from "@/db.json";
 import Image from "next/image";
+import HeaderInputs from "./header-inputs";
 
 export default function HeaderNavMobile() {
   const pathName = usePathname();
@@ -99,6 +100,10 @@ export default function HeaderNavMobile() {
                 </li>
               ))}
             </ul>
+
+            <Separator className="my-7" />
+
+            <HeaderInputs groupClassName="md:hidden flex w-full"/>
           </div>
           <SheetFooter>
             <div className="flex items-center gap-2 brightness-50">
