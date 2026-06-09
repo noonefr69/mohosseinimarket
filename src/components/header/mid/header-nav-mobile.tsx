@@ -7,22 +7,28 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { MenuIcon, ShoppingCartIcon } from "lucide-react";
+import { MenuIcon, ShoppingCartIcon, XIcon } from "lucide-react";
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { pages_links, social_media } from "@/consts/links";
+import ButtonLink from "@/components/button-link";
+import { Separator } from "@/components/ui/separator";
+import { usePathname } from "next/navigation";
+import datas from "@/db.json";
+import Image from "next/image";
 
 export default function HeaderNavMobile() {
+  const pathName = usePathname();
+
   return (
     <div className="md:hidden flex items-center">
       <DropdownMenu dir="ltr">
@@ -47,11 +53,73 @@ export default function HeaderNavMobile() {
             <MenuIcon className="size-5" />
           </Button>
         </SheetTrigger>
-        <SheetContent showCloseButton={false} side="left">
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>This action cannot be undone.</SheetDescription>
+        <SheetContent
+          className="overflow-y-scroll md:overflow-y-auto"
+          showCloseButton={false}
+          side="left"
+        >
+          <SheetHeader className="p-4 m-0">
+            <SheetTitle className="flex items-center justify-between">
+              <span className="text-2xl font-semibold">منو</span>
+              <SheetClose asChild>
+                <Button variant={"ghost"} size={"icon"}>
+                  <XIcon />
+                </Button>
+              </SheetClose>
+            </SheetTitle>
           </SheetHeader>
+          <div className="p-4">
+            <div className="flex flex-col items-start">
+              {pages_links.map((item, i) => (
+                <ButtonLink
+                  key={i}
+                  text={item.title}
+                  href={item.href}
+                  variant={"link"}
+                  linkClassName={pathName === item.href ? "text-primary" : ""}
+                  buttonClassName="px-0 text-right w-full justify-start text-lg text-muted-foreground active:text-primary hover:text-primary hover:no-underline"
+                />
+              ))}
+            </div>
+
+            <Separator className="my-7" />
+
+            <ul className="flex flex-col items-start">
+              {datas.categories.map((item) => (
+                <li key={item._id}>
+                  <ButtonLink
+                    text={item.title}
+                    href={`/market/${item.slug}`}
+                    variant={"link"}
+                    linkClassName={
+                      pathName === `/market/${item.slug}` ? "text-primary" : ""
+                    }
+                    buttonClassName="px-0 text-right w-full justify-start text-lg text-muted-foreground active:text-primary hover:text-primary hover:no-underline"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <SheetFooter>
+            <div className="flex items-center gap-2 brightness-50">
+              {social_media.map((item, i) => (
+                <ButtonLink
+                  href={item.href}
+                  buttonClassName="invert opacity-80 hover:opacity-100" // makes it white
+                  text={
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={20}
+                      height={20}
+                    />
+                  }
+                  key={i}
+                  variant={"link"}
+                />
+              ))}
+            </div>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </div>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { lil_links, social_media } from "@/consts/links";
+import ButtonLink from "@/components/button-link";
 
 export default function HeadHeader() {
   return (
@@ -25,21 +26,20 @@ export default function HeadHeader() {
           <ul className="flex items-center">
             {social_media.map((link, i) => (
               <li key={i}>
-                <Button
-                  className="brightness-0 invert opacity-80 hover:opacity-100" // makes it white
-                  asChild
-                  variant={"link"}
-                  size={"sm"}
-                >
-                  <Link href={link.href}>
+                <ButtonLink
+                  href={link.href}
+                  text={
                     <Image
                       src={link.icon}
                       alt={link.title}
                       width={14}
                       height={14}
                     />
-                  </Link>
-                </Button>
+                  }
+                  size={"sm"}
+                  variant={"link"}
+                  buttonClassName="brightness-0 invert opacity-80 hover:opacity-100"
+                />
               </li>
             ))}
           </ul>

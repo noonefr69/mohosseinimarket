@@ -21,7 +21,7 @@ export default function FootHeader() {
               <Button asChild variant={"ghost"} className="px-2">
                 <Link
                   className="text-[14px]"
-                  href={`/market?category=${link.slug}`}
+                  href={`/market/${link.slug}`}
                 >
                   {/* {<link.icon />} */}
                   {link.title}

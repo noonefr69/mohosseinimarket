@@ -34,19 +34,6 @@ export const pages_links = [
   { title: "ارتباط با ما", href: "/contact-us" },
 ];
 
-export const categories_links = [
-  { icon: Milk, title: "لبنیات", href: "/" },
-  { icon: Croissant, title: "نان و شیرینی", href: "/market" },
-  { icon: Utensils, title: "بخش اغذیه و غذاهای آماده", href: "/market" },
-  { icon: Candy, title: "تنقلات", href: "/market" },
-  { icon: Droplet, title: "نوشیدنی", href: "/market" },
-  { icon: Snowflake, title: "مواد غذایی منجمد", href: "/market" },
-  { icon: Package, title: "کالاهای خشک و کنسروی", href: "/market" },
-  { icon: Heart, title: "بهداشتی و آرایشی", href: "/market" },
-  { icon: Home, title: "کالای خانه", href: "/market" },
-  { icon: Popcorn, title: "تنقلات", href: "/market" },
-];
-
 export const offers_banners = [
   {
     title: "تخفیف ویژه",

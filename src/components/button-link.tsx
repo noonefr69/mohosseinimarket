@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default function ButtonLink({
   variant,
   size,
 }: {
-  text: string | number;
+  text: ReactNode;
   href: string;
   linkClassName?: string;
   buttonClassName?: string;
