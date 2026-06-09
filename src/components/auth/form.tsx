@@ -15,7 +15,7 @@ import ButtonLink from "../button-link";
 import { signIn } from "next-auth/react";
 import { useTransition } from "react";
 import { Spinner } from "../ui/spinner";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 
 const formSchema = z.object({
   phone_number: z

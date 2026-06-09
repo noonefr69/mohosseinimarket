@@ -1,4 +1,4 @@
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 
 export default function OurStory() {
   return (

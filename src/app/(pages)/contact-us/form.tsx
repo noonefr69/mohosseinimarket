@@ -18,7 +18,7 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@/components/ui/input-group";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 
 // ─── Schema ────────────────────────────────────────────────────────────────
 

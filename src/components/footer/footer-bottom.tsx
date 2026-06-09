@@ -4,7 +4,7 @@ import { footerLinkFoot } from "@/consts/links";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 
 export default function FooterBottom() {
   return (

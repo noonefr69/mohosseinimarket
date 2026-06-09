@@ -13,7 +13,7 @@ import {
   Home,
   Popcorn,
 } from "lucide-react";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 
 export const social_media = [
   { title: "bale", icon: bale_icon, href: "/" },

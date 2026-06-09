@@ -1,7 +1,7 @@
 import { SparkleIcon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 
 export default function AboutHeader() {
   return (

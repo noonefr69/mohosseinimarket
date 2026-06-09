@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { MapPinIcon, PhoneCallIcon } from "lucide-react";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 import datas from "@/db.json";
 
 export default function FootHeader() {
@@ -19,10 +19,7 @@ export default function FootHeader() {
           {datas.categories.slice(0, 4).map((link, i) => (
             <li key={i}>
               <Button asChild variant={"ghost"} className="px-2">
-                <Link
-                  className="text-[14px]"
-                  href={`/market/${link.slug}`}
-                >
+                <Link className="text-[14px]" href={`/market/${link.slug}`}>
                   {/* {<link.icon />} */}
                   {link.title}
                 </Link>

@@ -15,7 +15,8 @@ import {
 import datas from "../db.json";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { toPersianDigits } from "@/lib/to-persian-digits";
+import { toPersianDigits } from "@/utils/to-persian-digits";
+import { commaThree } from "@/utils/comma-three";
 
 export default function Home() {
   return (
@@ -100,7 +101,7 @@ export default function Home() {
                         className="flex-1 disabled:opacity-100 font-semibold disabled:cursor-default hover:bg-transparent w-10 h-14 "
                         variant={"ghost"}
                       >
-                        {item.price} تومان
+                        {commaThree(item.price)} تومان
                       </Button>
                     </CardFooter>
                   </Card>
@@ -252,7 +253,7 @@ export default function Home() {
                         className="flex-1 disabled:opacity-100 font-semibold disabled:cursor-default hover:bg-transparent w-10 h-14 "
                         variant={"ghost"}
                       >
-                        {item.price} تومان
+                        {commaThree(item.price)} تومان
                       </Button>
                     </CardFooter>
                   </Card>
