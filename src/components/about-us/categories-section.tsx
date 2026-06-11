@@ -10,7 +10,7 @@ export default function CategoriesSection() {
       <ul className="relative flex mt-4 items-center justify-between gap-4 overflow-x-hidden p-1">
         {datas.categories.map((item) => (
           <li key={item._id}>
-            <Link href={`/market?category=${item.slug}`}>
+            <Link href={`/market/${item.slug}`}>
               <Card className="w-44 h-auto hover:ring-2 hover:ring-primary duration-150">
                 <CardContent className="text-center">
                   <span>{item.icon}</span>

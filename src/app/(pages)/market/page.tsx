@@ -1,7 +1,5 @@
-import React from 'react'
-
+import datas from "@/db.json";
 export default function Market() {
-  return (
-    <div>Market</div>
-  )
+  console.log(datas);
+  return <div>Market</div>;
 }

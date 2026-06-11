@@ -8,7 +8,7 @@ export default function FooterBrand() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       <div className="flex flex-col gap-4">
         <Link href="/" className="font-bold text-xl">
-          سوپرمارکت حسینی
+          سوپرمارکت مبلغ حسینی
         </Link>
         <p className="text-muted-foreground text-sm leading-7">
           بیش از ۲۵ سال تجربه در ارائه بهترین مواد غذایی و کالاهای روزمره با

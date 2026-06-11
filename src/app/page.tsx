@@ -64,8 +64,8 @@ export default function Home() {
         <div className="mt-4">
           <ul className="lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 grid gap-6">
             {datas.products.slice(0, 8).map((item) => (
-              <li key={item.id}>
-                <Link href={`/market/${item.id}`}>
+              <li key={item._id}>
+                <Link href={`/market/${item._id}`}>
                   <Card className="">
                     <CardHeader className="bg-accent/70 mx-4 p-0">
                       <Image
@@ -80,7 +80,7 @@ export default function Home() {
                         {item.name}
                       </h1>
                       <p className="text-muted-foreground font-semibold">
-                        {item.category_title}
+                        {item.category_title_fa}
                       </p>
                     </CardContent>
                     <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
@@ -88,7 +88,7 @@ export default function Home() {
                         onClick={(e) => {
                           e.stopPropagation();
                           e.preventDefault();
-                          alert("item " + item.id + " added");
+                          alert("item " + item._id + " added");
                         }}
                         className="flex-1 w-10 h-14"
                         variant={"ghost"}
@@ -216,8 +216,8 @@ export default function Home() {
           </div>
           <ul className="flex items-center overflow-x-hidden p-1 gap-4">
             {datas.products.slice(0, 8).map((item) => (
-              <li key={item.id}>
-                <Link href={`/market/${item.id}`}>
+              <li key={item._id}>
+                <Link href={`/market/${item._id}`}>
                   <Card className=" w-52 md:w-60">
                     <CardHeader className="bg-accent/70 mx-4 p-0">
                       <Image
@@ -232,7 +232,7 @@ export default function Home() {
                         {item.name}
                       </h1>
                       <p className="text-muted-foreground font-semibold">
-                        {item.category_title}
+                        {item.category_title_fa}
                       </p>
                     </CardContent>
                     <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
@@ -240,7 +240,7 @@ export default function Home() {
                         onClick={(e) => {
                           e.stopPropagation();
                           e.preventDefault();
-                          alert("item " + item.id + " added");
+                          alert("item " + item._id + " added");
                         }}
                         className="flex-1 w-10 h-14"
                         variant={"ghost"}
