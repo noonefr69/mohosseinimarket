@@ -9,6 +9,7 @@ export async function getCategories() {
     const categories = await Category.find({}).lean();
     return { success: true, data: categories };
   } catch (error) {
-    return { success: false, error: "بارگیری فهرست ها ناموفق بود." };
+    console.log(error);
+    return { success: false, error: `بارگیری دسته‌ها ناموفق بود` };
   }
 }

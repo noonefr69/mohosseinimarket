@@ -5,7 +5,7 @@ import { getCategories } from "@/actions/category";
 export default async function Categories() {
   const result = await getCategories();
 
-  if (!result.success) return <div>fucked</div>;
+  if (!result.success) return <div>مشکلی پیش آمده: {result.error} </div>;
 
   return (
     <ul className="flex items-center flex-wrap">
