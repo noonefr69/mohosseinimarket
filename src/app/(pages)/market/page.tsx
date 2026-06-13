@@ -1,5 +1,4 @@
-import datas from "@/db.json";
-export default function Market() {
-  console.log(datas);
+
+export default async function Market() {
   return <div>Market</div>;
 }
