@@ -26,6 +26,7 @@ import { usePathname } from "next/navigation";
 import datas from "@/db.json";
 import Image from "next/image";
 import HeaderInputs from "./header-inputs";
+import { categories } from "@/consts/categories";
 
 export default function HeaderNavMobile() {
   const pathName = usePathname();
@@ -86,10 +87,10 @@ export default function HeaderNavMobile() {
             <Separator className="my-7" />
 
             <ul className="flex flex-col items-start">
-              {datas.categories.map((item) => (
-                <li key={item._id}>
+              {categories.map((item) => (
+                <li key={item._id.$oid}>
                   <ButtonLink
-                    text={item.title}
+                    text={item.name_fa}
                     href={`/market/${item.slug}`}
                     variant={"link"}
                     linkClassName={
@@ -103,7 +104,7 @@ export default function HeaderNavMobile() {
 
             <Separator className="my-7" />
 
-            <HeaderInputs groupClassName="md:hidden flex w-full"/>
+            <HeaderInputs groupClassName="md:hidden flex w-full" />
           </div>
           <SheetFooter>
             <div className="flex items-center gap-2 brightness-50">
