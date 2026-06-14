@@ -1,3 +1,16 @@
+import diaryIcon from "../../public/category-svgs/diary.svg";
+import breakfastIcon from "../../public/category-svgs/breakfast.svg";
+import canIcon from "../../public/category-svgs/can.svg";
+import drinkIcon from "../../public/category-svgs/drink.svg";
+import eggsIcon from "../../public/category-svgs/eggs.svg";
+import groceryIcon from "../../public/category-svgs/grocery.svg";
+import healthIcon from "../../public/category-svgs/health.svg";
+import pickelsIcon from "../../public/category-svgs/pickels.svg";
+import snackIcon from "../../public/category-svgs/snack.svg";
+import sweetIcon from "../../public/category-svgs/sweet.svg";
+import warmDrinkIcon from "../../public/category-svgs/warm-drink.svg";
+import candleIcon from "../../public/category-svgs/candle.svg";
+
 export const categories = [
   {
     _id: {
@@ -6,7 +19,7 @@ export const categories = [
     slug: "dairy",
     name_fa: "لبنیات",
     name_en: "Dairy",
-    icon: "",
+    icon: diaryIcon,
     subcategories: [
       {
         slug: "milk",
@@ -27,7 +40,7 @@ export const categories = [
     slug: "grocery-essentials",
     name_fa: "کالا های اساسی و خواربار",
     name_en: "Grocery Essentials",
-    icon: "",
+    icon: groceryIcon,
     subcategories: [],
   },
   {
@@ -37,7 +50,7 @@ export const categories = [
     slug: "protein-eggs",
     name_fa: "مواد پروتئینی و تخم مرغ",
     name_en: "Protein & Eggs",
-    icon: "",
+    icon: eggsIcon,
     subcategories: [],
   },
   {
@@ -47,7 +60,7 @@ export const categories = [
     slug: "breakfast",
     name_fa: "صبحانه",
     name_en: "breakfast",
-    icon: "",
+    icon: breakfastIcon,
     subcategories: [],
   },
   {
@@ -57,7 +70,7 @@ export const categories = [
     slug: "beverages",
     name_fa: "نوشیدنی های سرد",
     name_en: "Beverages",
-    icon: "",
+    icon: drinkIcon,
     subcategories: [],
   },
   {
@@ -67,7 +80,7 @@ export const categories = [
     slug: "ready-made-canned-food",
     name_fa: "کنسرو و غذای آماده",
     name_en: "Ready Made Canned Food",
-    icon: "",
+    icon: canIcon,
     subcategories: [],
   },
   {
@@ -77,7 +90,7 @@ export const categories = [
     slug: "dried-fruit-nuts",
     name_fa: "خشکبار و شیرینی",
     name_en: "Dried Fruit Nuts",
-    icon: "",
+    icon: sweetIcon,
     subcategories: [],
   },
   {
@@ -87,7 +100,7 @@ export const categories = [
     slug: "snacks",
     name_fa: "تنقلات",
     name_en: "Snacks",
-    icon: "",
+    icon: snackIcon,
     subcategories: [],
   },
   {
@@ -97,7 +110,7 @@ export const categories = [
     slug: "baking-tools",
     name_fa: "ابزار قنادی",
     name_en: "Baking Tools",
-    icon: "",
+    icon: candleIcon,
     subcategories: [],
   },
   {
@@ -107,7 +120,7 @@ export const categories = [
     slug: "health-beauty",
     name_fa: "بهداشتی و آرایشی",
     name_en: "Health Beauty",
-    icon: "",
+    icon: healthIcon,
     subcategories: [],
   },
   {
@@ -117,7 +130,7 @@ export const categories = [
     slug: "warm-drinks",
     name_fa: "نوشیدنی های گرم",
     name_en: "Warm Drinks",
-    icon: "",
+    icon: warmDrinkIcon,
     subcategories: [],
   },
   {
@@ -127,7 +140,7 @@ export const categories = [
     slug: "salts-and-pickles",
     name_fa: "شور و ترشیجات",
     name_en: "Salts And Pickles",
-    icon: "",
+    icon: pickelsIcon,
     subcategories: [],
   },
 ];
