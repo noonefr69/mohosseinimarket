@@ -30,7 +30,7 @@ export default function Hero() {
             variant={"ghost"}
             className="md:text-lg md:h-11 hover:bg-accent/70"
           >
-            <Link href={`/market`}>اطلاعات بیشتر &#8592;</Link>
+            <Link href={`/about-us`}>اطلاعات بیشتر &#8592;</Link>
           </Button>
         </div>
       </div>
