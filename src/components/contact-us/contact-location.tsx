@@ -6,7 +6,7 @@ export default function ContactLocation() {
     <>
       <h1 className="text-2xl font-semibold">موقعیت مکانی سوپرمارکت</h1>
       <MapIframe />
-      <ul className="mt-7 justify-center text-center sm:text-right sm:justify-start grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <ul className="mt-7  text-right justify-start grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {contact_us_details.map((item, i) => (
           <li key={i}>
             <h1 className="font-semibold">{item.label}</h1>

@@ -113,7 +113,7 @@ export function ContactUsForm() {
                 />
                 {fieldState.invalid && (
                   <FieldError
-                    className="absolute left-0 bottom-0 text-left"
+                    className="absolute left-0 bottom-0 text-left text-[12px] sm:text-sm"
                     errors={[fieldState.error]}
                   />
                 )}
