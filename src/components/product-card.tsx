@@ -1,22 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { commaThree } from "@/utils/comma-three";
+import { ProductProps } from "@/types/products-t";
 
-export default function ProductCart(
-  cardClassName: { cardClassName?: string },
-  item: {
-    _id: string | number;
-    name: string;
-    category_title_fa: string;
-    price: number | string;
-  },
-) {
+export default function ProductCart({
+  item,
+  cardClassName,
+}: {
+  item: ProductProps;
+  cardClassName?: string;
+}) {
   return (
     <li key={item._id}>
-      <Link href={`/market/${item.name}`}>
+      <Link href={`/market/each/${item.slug}`}>
         <Card
           className={`hover:ring-2 hover:ring-primary duration-75 ${cardClassName}`}
         >
@@ -27,8 +28,8 @@ export default function ProductCart(
             <h1 className="text-lg sm:text-2xl mb-2 font-semibold tracking-tight truncate">
               {item.name}
             </h1>
-            <p className="text-muted-foreground font-semibold">
-              {item.category_title_fa}
+            <p className="text-muted-foreground font-semibold truncate">
+              {item.description}
             </p>
           </CardContent>
           <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
@@ -41,7 +42,7 @@ export default function ProductCart(
               className="flex-1 w-10 h-14"
               variant={"ghost"}
             >
-              خرید
+              اضافه به سبد
             </Button>
             <Separator orientation="vertical" className="" />
             <Button

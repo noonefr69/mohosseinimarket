@@ -1,16 +1,12 @@
 import Hero from "@/components/landing/hero";
-import DailyProducts from "@/components/landing/daily-products";
-import MoreCategories from "@/components/landing/more-products";
-import FamousProducts from "@/components/landing/famous-products";
 import Info from "@/components/landing/info";
+import Container from "@/components/landing/asyncing/container";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <DailyProducts />
-      <MoreCategories />
-      <FamousProducts />
+      <Container />
       <Info />
     </div>
   );

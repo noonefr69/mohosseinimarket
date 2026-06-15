@@ -1,11 +1,19 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import datas from "../../db.json";
 import ProductCart from "../product-card";
+import { ProductProps } from "@/types/products-t";
 
-export default function FamousProducts() {
+export default function FamousProducts({
+  result,
+}: {
+  result:
+    | { success: true; data: ProductProps[] }
+    | { success: false; error: string };
+}) {
+  if (!result.success) return <div>{result.error}</div>;
+
+  const items: ProductProps[] | undefined = result.data;
+
   return (
     <div className="mt-7 ">
       <h1 className="md:text-2xl font-bold">محبوب ترین هفته</h1>
@@ -16,18 +24,11 @@ export default function FamousProducts() {
             <Link href={`/market`}>&lArr;</Link>
           </Button>
         </div>
-        {/* <ul className="flex items-center overflow-x-hidden p-1 gap-4">
-          {datas.products.slice(0, 8).map((item) => (
-            <ProductCart
-              //   cardClassName="w-40"
-              _id={item._id}
-              category_title_fa={item.category_title_fa}
-              name={item.name}
-              price={item.price}
-              key={item._id}
-            />
+        <ul className="flex items-center overflow-x-hidden p-1 gap-4">
+          {items.reverse().map((item) => (
+            <ProductCart item={item} key={item._id} cardClassName="w-64" />
           ))}
-        </ul> */}
+        </ul>
       </div>
     </div>
   );

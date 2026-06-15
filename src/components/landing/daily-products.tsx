@@ -1,11 +1,19 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import datas from "../../db.json";
 import ProductCart from "../product-card";
+import { ProductProps } from "@/types/products-t";
 
-export default function DailyProducts() {
+export default async function DailyProducts({
+  result,
+}: {
+  result:
+    | { success: true; data: ProductProps[] }
+    | { success: false; error: string };
+}) {
+  if (!result.success) return <div>{result.error}</div>;
+
+  const items: ProductProps[] | undefined = result.data;
+
   return (
     <div className="mt-7 ">
       <div className="flex items-center justify-between">
@@ -15,17 +23,11 @@ export default function DailyProducts() {
         </Button>
       </div>
       <div className="mt-4">
-        {/* <ul className="lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 grid gap-6">
-          {datas.products.slice(0, 8).map((item) => (
-            <ProductCart
-              _id={Number(item._id)}
-              category_title_fa={item.category_title_fa}
-              name={item.name}
-              price={item.price}
-              key={item._id}
-            />
+        <ul className="lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 grid gap-6">
+          {items?.slice(0, 8).map((item) => (
+            <ProductCart key={item._id} item={item} />
           ))}
-        </ul> */}
+        </ul>
       </div>
     </div>
   );

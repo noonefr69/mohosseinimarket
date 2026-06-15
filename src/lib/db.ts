@@ -1,4 +1,3 @@
-// lib/db.ts
 import mongoose from "mongoose";
 
 const cached = global as typeof global & {

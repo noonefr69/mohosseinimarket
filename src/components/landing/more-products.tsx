@@ -3,6 +3,7 @@ import Link from "next/link";
 import datas from "../../db.json";
 import Image from "next/image";
 import { toPersianDigits } from "@/utils/to-persian-digits";
+import { categories } from "@/consts/categories";
 export default function MoreCategories() {
   return (
     <div className="mt-7">
@@ -21,7 +22,7 @@ export default function MoreCategories() {
                 <span className="font-semibold block">لبنیات</span>
                 {toPersianDigits(
                   String(
-                    datas.categories.filter((item) => item.slug === "bakery")
+                    categories.filter((item) => item.slug === "bakery")
                       .length,
                   ),
                 )}{" "}
@@ -44,7 +45,7 @@ export default function MoreCategories() {
                 <span className="font-semibold block">لبنیات</span>
                 {toPersianDigits(
                   String(
-                    datas.categories.filter((item) => item.slug === "bakery")
+                    categories.filter((item) => item.slug === "bakery")
                       .length,
                   ),
                 )}{" "}
@@ -65,7 +66,7 @@ export default function MoreCategories() {
                 <span className="font-semibold block">لبنیات</span>
                 {toPersianDigits(
                   String(
-                    datas.categories.filter((item) => item.slug === "bakery")
+                    categories.filter((item) => item.slug === "bakery")
                       .length,
                   ),
                 )}{" "}
@@ -86,7 +87,7 @@ export default function MoreCategories() {
                 <span className="font-semibold block">لبنیات</span>
                 {toPersianDigits(
                   String(
-                    datas.categories.filter((item) => item.slug === "bakery")
+                    categories.filter((item) => item.slug === "bakery")
                       .length,
                   ),
                 )}{" "}
