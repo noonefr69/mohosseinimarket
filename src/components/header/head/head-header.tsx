@@ -6,7 +6,7 @@ import ButtonLink from "@/components/button-link";
 
 export default function HeadHeader() {
   return (
-    <div className="bg-chart-1 md:block hidden">
+    <div className="bg-chart-5 md:block hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between ">
           <ul className="flex items-center gap-4 px-4 py-1">

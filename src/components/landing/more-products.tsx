@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import datas from "../../db.json";
 import Image from "next/image";
 import { toPersianDigits } from "@/utils/to-persian-digits";
 import { categories } from "@/consts/categories";
 export default function MoreCategories() {
   return (
     <div className="mt-7">
-      <div className="bg-chart-1 rounded-xl p-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-chart-5 rounded-xl p-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl font-bold text-white">محصولات بیشتر ما</h1>
           <div className="relative w-full h-100 bg-accent rounded-xl">
