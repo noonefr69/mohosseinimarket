@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,55 +22,26 @@ import { useTransition } from "react";
 import { contactUsAction } from "@/actions/contact-us";
 import { toast } from "sonner";
 import { Spinner } from "@/components/ui/spinner";
-
-// ─── Schema ────────────────────────────────────────────────────────────────
-
-const formSchema = z.object({
-  userName: z
-    .string()
-    .min(2, `اسم شما حداقل باید از ${toPersianDigits(2)} حروف تشکیل شده باشد.`)
-    .max(
-      32,
-      `اسم شما حداکثر باید از ${toPersianDigits(32)} حروف تشکیل شده باشد.`,
-    ),
-  userPhoneNumber: z
-    .string()
-    .startsWith("09", "شماره تلفن نامعتبر است.")
-    .length(11, "شماره تلفن نامعتبر است."),
-  userSubject: z
-    .string()
-    .min(
-      2,
-      `موضوع شما حداقل باید از ${toPersianDigits(2)} حروف تشکیل شده باشد.`,
-    )
-    .max(
-      32,
-      `موضوع شما حداکثر باید از ${toPersianDigits(32)} حروف تشکیل شده باشد.`,
-    ),
-  userDescription: z
-    .string()
-    .min(
-      10,
-      `توضیحات شما حداقل باید از ${toPersianDigits(10)} حروف تشکیل شده باشد.`,
-    )
-    .max(
-      200,
-      `توضیحات شما نمیتواند بیشتر از ${toPersianDigits(200)} حروف باشد.`,
-    ),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+import { contactUsSchema, type ContactUsFormValues } from "@/types/contact-us";
 
 // ─── Field config ──────────────────────────────────────────────────────────
 
 const TEXT_FIELDS: {
-  name: keyof Omit<FormValues, "userDescription">;
+  name: keyof Omit<ContactUsFormValues, "userDescription">;
   label: string;
   placeholder: string;
 }[] = [
   { name: "userName", label: "اسم", placeholder: "ممد حسینی" },
-  { name: "userPhoneNumber", label: "شماره تلفن", placeholder: "0912-345-6789" },
-  { name: "userSubject", label: "موضوع", placeholder: "مثال: مشکل در ثبت سفارش" },
+  {
+    name: "userPhoneNumber",
+    label: "شماره تلفن",
+    placeholder: "0912-345-6789",
+  },
+  {
+    name: "userSubject",
+    label: "موضوع",
+    placeholder: "مثال: مشکل در ثبت سفارش",
+  },
 ];
 
 // ─── Component ─────────────────────────────────────────────────────────────
@@ -79,8 +49,8 @@ const TEXT_FIELDS: {
 export function ContactUsForm() {
   const [isPending, startTransition] = useTransition();
 
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ContactUsFormValues>({
+    resolver: zodResolver(contactUsSchema),
     defaultValues: {
       userName: "",
       userPhoneNumber: "",
@@ -89,7 +59,7 @@ export function ContactUsForm() {
     },
   });
 
-  function onSubmit(data: FormValues) {
+  function onSubmit(data: ContactUsFormValues) {
     startTransition(async () => {
       try {
         const result = await contactUsAction(data);
@@ -109,7 +79,6 @@ export function ContactUsForm() {
   return (
     <form id="contact-us-form" onSubmit={form.handleSubmit(onSubmit)}>
       <FieldGroup className="gap-0">
-        {/* Text fields */}
         {TEXT_FIELDS.map(({ name, label, placeholder }) => (
           <Controller
             key={name}
@@ -141,7 +110,6 @@ export function ContactUsForm() {
           />
         ))}
 
-        {/* Description (textarea — separate because it has a character counter) */}
         <Controller
           name="userDescription"
           control={form.control}
@@ -184,7 +152,7 @@ export function ContactUsForm() {
         <Button type="button" variant="outline" onClick={() => form.reset()}>
           پاک کردن همه
         </Button>
-        <Button type="submit" form="contact-us-form">
+        <Button type="submit" form="contact-us-form" disabled={isPending}>
           {isPending ? <Spinner /> : "ارسال"}
         </Button>
       </Field>

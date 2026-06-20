@@ -2,8 +2,9 @@
 
 import dbConnect from "@/lib/db";
 import { ContactUs } from "@/models/contact-us";
+import { ContactUsFormValues } from "@/types/contact-us";
 
-export async function contactUsAction(data: FormValues) {
+export async function contactUsAction(data: ContactUsFormValues) {
   try {
     await dbConnect();
     await ContactUs.create(data);

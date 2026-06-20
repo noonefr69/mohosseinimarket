@@ -13,7 +13,6 @@ const contactUsSchema = new Schema(
     },
     userPhoneNumber: {
       type: String,
-      unique: true,
       required: true,
     },
     userSubject: {
