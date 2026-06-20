@@ -10,7 +10,13 @@ export default async function Categories() {
         <li key={link._id.$oid}>
           <Button asChild variant={"ghost"} className="px-2">
             <Link className="text-[14px]" href={`/market/${link.slug}`}>
-              <Image src={link.icon} alt="" width={26} height={26} />
+              <Image
+                src={link.icon}
+                alt=""
+                width={26}
+                height={26}
+                className="dark:invert"
+              />
               {link.name_fa}
             </Link>
           </Button>

@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { nastaliq_font } from "@/fonts/font";
+import { HomeIcon } from "lucide-react";
 import { redirect } from "next/navigation";
 export default async function SignIn() {
   const session = await auth();
@@ -19,14 +19,14 @@ export default async function SignIn() {
     <div className="pt-10 pb-0 sm:pt-14 sm:pb-0 lg:pt-32 lg:pb-22">
       <div className="max-w-lg mx-auto">
         <Card>
-          <CardHeader className="flex items-center justify-between">
+          <CardHeader className="flex items-center justify-between ">
             <CardTitle>
               <ButtonLink
                 href="/"
-                text={"مبلغ حسینی"}
-                variant={"link"}
-                buttonClassName="text-black p-0 text-xl font-semibold hover:no-underline"
-                linkClassName={nastaliq_font.className}
+                text={<HomeIcon />}
+                size="icon-lg"
+                variant={"outline"}
+                buttonClassName="font-semibold scale-125 hover:no-underline flex items-center justify-center"
               />
             </CardTitle>
             <CardAction className="flex items-center justify-center">
@@ -35,12 +35,14 @@ export default async function SignIn() {
                 text={"←"}
                 size="icon-lg"
                 variant={"ghost"}
-                buttonClassName="font-semibold text-lg text-black hover:no-underline flex items-center justify-center"
+                buttonClassName="font-semibold text-lg hover:no-underline flex items-center justify-center scale-125"
               />
             </CardAction>
           </CardHeader>
           <CardContent>
-            <h1 className="font-semibold mt-14 text-2xl">ورود یا ثبت نام در فروشگاه</h1>
+            <h1 className="font-semibold mt-14 text-2xl">
+              ورود یا ثبت نام در فروشگاه
+            </h1>
             <p className="text-muted-foreground my-4">
               {" "}
               لطفا شماره موبایل خود را وارد کنید{" "}

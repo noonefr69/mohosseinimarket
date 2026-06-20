@@ -22,9 +22,15 @@ export default function FooterBrand() {
               target="_blank"
               //   rel="noopener noreferrer"
               aria-label={s.title}
-              className="w-9 h-9 rounded-lg bg-background border flex items-center justify-center hover:bg-accent"
+              className="group w-9 h-9 rounded-lg bg-background border flex items-center justify-center hover:bg-accent"
             >
-              <Image src={s.icon} alt={s.title} width={18} height={18} />
+              <Image
+                src={s.icon}
+                alt={s.title}
+                width={18}
+                height={18}
+                className="dark:invert opacity-75 group-hover:opacity-100 duration-150"
+              />
             </Link>
           ))}
         </div>

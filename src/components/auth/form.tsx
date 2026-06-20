@@ -16,6 +16,12 @@ import { signIn } from "next-auth/react";
 import { useTransition } from "react";
 import { Spinner } from "../ui/spinner";
 import { toPersianDigits } from "@/utils/to-persian-digits";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import { InfoIcon } from "lucide-react";
 
 const formSchema = z.object({
   phone_number: z
@@ -56,17 +62,26 @@ export function AuthenticationForm() {
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="form-rhf-demo-title">
-                شماره موبایل
-              </FieldLabel>
-              <Input
+              <FieldLabel htmlFor="sign-in-form">شماره موبایل</FieldLabel>
+              <InputGroup
                 {...field}
-                id="form-rhf-demo-title"
-                aria-invalid={fieldState.invalid}
-                placeholder={toPersianDigits("09xx xxx xxxx")}
-                autoComplete="off"
+                id="sign-in-form"
+                dir="ltr"
                 className="py-6 text-lg font-semibold"
-              />
+              >
+                <InputGroupInput
+                  aria-invalid={fieldState.invalid}
+                  autoComplete="off"
+                  dir="rtl"
+                  placeholder={toPersianDigits("09xx xxx xxxx")}
+                  className=""
+                />
+                {fieldState.invalid && (
+                  <InputGroupAddon className="pl-2">
+                    <InfoIcon className="text-destructive" />
+                  </InputGroupAddon>
+                )}
+              </InputGroup>
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}

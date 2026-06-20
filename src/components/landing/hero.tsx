@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="py-52 rounded-2xl mask-b-from-95% mask-l-from-95% mask-r-from-95% mask-t-from-95% bg-card">
+    <div className="py-40 rounded-2xl ">
       <div className="max-w-xl flex p-4 flex-col items-center mx-auto">
         <Button
           asChild
