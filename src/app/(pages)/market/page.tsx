@@ -1,4 +1,3 @@
-
-export default async function Market() {
+export default function Market() {
   return <div>Market</div>;
 }
