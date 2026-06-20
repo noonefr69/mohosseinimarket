@@ -27,6 +27,7 @@ import datas from "@/db.json";
 import Image from "next/image";
 import HeaderInputs from "./header-inputs";
 import { categories } from "@/consts/categories";
+import { ModeToggle } from "@/components/toggle-mode";
 
 export default function HeaderNavMobile() {
   const pathName = usePathname();
@@ -106,7 +107,7 @@ export default function HeaderNavMobile() {
 
             <HeaderInputs groupClassName="md:hidden flex w-full" />
           </div>
-          <SheetFooter>
+          <SheetFooter className="flex-row justify-between">
             <div className="flex items-center gap-2 brightness-50">
               {social_media.map((item, i) => (
                 <ButtonLink
@@ -125,6 +126,7 @@ export default function HeaderNavMobile() {
                 />
               ))}
             </div>
+              <ModeToggle />
           </SheetFooter>
         </SheetContent>
       </Sheet>

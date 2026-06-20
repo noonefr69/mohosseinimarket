@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { ShoppingCartIcon } from "lucide-react";
+import { ModeToggle } from "./toggle-mode";
 
 export default function ShoppingCartSheet() {
   return (
@@ -29,6 +30,9 @@ export default function ShoppingCartSheet() {
           <SheetTitle>Are you absolutely sure?</SheetTitle>
           <SheetDescription>This action cannot be undone.</SheetDescription>
         </SheetHeader>
+        <SheetFooter>
+          <ModeToggle />
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
