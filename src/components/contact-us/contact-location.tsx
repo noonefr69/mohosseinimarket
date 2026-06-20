@@ -12,7 +12,7 @@ export default function ContactLocation() {
             <h1 className="font-semibold">{item.label}</h1>
             <div>
               {item.values.map((value, i) => (
-                <div className=" text-muted-foreground" dir="ltr" key={i}>
+                <div className="text-muted-foreground" dir="ltr" key={i}>
                   {value}
                 </div>
               ))}
