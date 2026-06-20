@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
+
+import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DirectionProvider } from "@/components/ui/direction";
 import { Noto_Sans_Arabic } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
+
 import HeaderUi from "@/components/header/header-ui";
 import FooterUi from "@/components/footer/footer-ui";
 
@@ -37,6 +40,7 @@ export default function RootLayout({
         >
           <DirectionProvider dir="rtl" direction="rtl">
             <div className="">
+              <Toaster />
               <HeaderUi />
               <main className="p-4 max-w-7xl mx-auto mt-16 md:mt-24 lg:mt-0">
                 {children}

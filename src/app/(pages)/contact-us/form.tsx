@@ -19,6 +19,10 @@ import {
   InputGroupTextarea,
 } from "@/components/ui/input-group";
 import { toPersianDigits } from "@/utils/to-persian-digits";
+import { useTransition } from "react";
+import { contactUsAction } from "@/actions/contact-us";
+import { toast } from "sonner";
+import { Spinner } from "@/components/ui/spinner";
 
 // ─── Schema ────────────────────────────────────────────────────────────────
 
@@ -65,14 +69,16 @@ const TEXT_FIELDS: {
   label: string;
   placeholder: string;
 }[] = [
-  { name: "userName", label: "اسم", placeholder: "علی رضایی" },
-  { name: "userPhoneNumber", label: "شماره تلفن", placeholder: "09123456789" },
-  { name: "userSubject", label: "موضوع", placeholder: "مشکل در ثبت سفارش" },
+  { name: "userName", label: "اسم", placeholder: "ممد حسینی" },
+  { name: "userPhoneNumber", label: "شماره تلفن", placeholder: "0912-345-6789" },
+  { name: "userSubject", label: "موضوع", placeholder: "مثال: مشکل در ثبت سفارش" },
 ];
 
 // ─── Component ─────────────────────────────────────────────────────────────
 
 export function ContactUsForm() {
+  const [isPending, startTransition] = useTransition();
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -84,7 +90,20 @@ export function ContactUsForm() {
   });
 
   function onSubmit(data: FormValues) {
-    console.log(data);
+    startTransition(async () => {
+      try {
+        const result = await contactUsAction(data);
+        if (result.success) {
+          form.reset();
+          toast.success(result.message);
+        } else {
+          toast.error(result.message);
+        }
+      } catch (err) {
+        console.log(err);
+        toast.error("اتصال اینترنت را بررسی کنید.");
+      }
+    });
   }
 
   return (
@@ -166,7 +185,7 @@ export function ContactUsForm() {
           پاک کردن همه
         </Button>
         <Button type="submit" form="contact-us-form">
-          ارسال
+          {isPending ? <Spinner /> : "ارسال"}
         </Button>
       </Field>
     </form>
