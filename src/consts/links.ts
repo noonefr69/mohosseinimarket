@@ -100,7 +100,7 @@ export const contact_us_details = [
   },
   {
     label: "شماره تلفن",
-    values: [toPersianDigits("041 33343989"), toPersianDigits("0914 407 4099")],
+    values: [toPersianDigits("041 33343989"), toPersianDigits("0933 855 0469")],
   },
   {
     label: "ایمیل",

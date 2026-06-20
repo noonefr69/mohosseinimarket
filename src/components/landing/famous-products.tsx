@@ -12,7 +12,7 @@ export default function FamousProducts({
 }) {
   if (!result.success) return <div>{result.error}</div>;
 
-  const items: ProductProps[] | undefined = result.data;
+  const items: ProductProps[] = result.data;
 
   return (
     <div className="mt-7 ">
