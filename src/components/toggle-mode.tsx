@@ -24,15 +24,15 @@ export function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="start" className="">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          روشن
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          سیاه
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          سیستم
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

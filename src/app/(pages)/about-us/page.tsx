@@ -1,5 +1,4 @@
 import { Separator } from "@/components/ui/separator";
-import ButtonLink from "@/components/button-link";
 import AboutHeader from "@/components/about-us/about-header";
 import CardStats from "@/components/about-us/card-stats";
 import OurStory from "@/components/about-us/our-story";

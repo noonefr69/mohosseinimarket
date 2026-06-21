@@ -1,8 +1,5 @@
-import Link from "next/link";
-import { Card, CardContent } from "../ui/card";
 import ButtonLink from "../button-link";
 import { categories } from "@/consts/categories";
-import { Button } from "../ui/button";
 import Image from "next/image";
 
 export default function CategoriesSection() {

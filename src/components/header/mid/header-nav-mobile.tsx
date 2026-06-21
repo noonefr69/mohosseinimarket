@@ -23,7 +23,6 @@ import { pages_links, social_media } from "@/consts/links";
 import ButtonLink from "@/components/button-link";
 import { Separator } from "@/components/ui/separator";
 import { usePathname } from "next/navigation";
-import datas from "@/db.json";
 import Image from "next/image";
 import HeaderInputs from "./header-inputs";
 import { categories } from "@/consts/categories";
@@ -108,6 +107,7 @@ export default function HeaderNavMobile() {
             <HeaderInputs groupClassName="md:hidden flex w-full" />
           </div>
           <SheetFooter className="flex-row justify-between">
+            <ModeToggle />
             <div className="flex items-center gap-2 brightness-50">
               {social_media.map((item, i) => (
                 <ButtonLink
@@ -126,7 +126,6 @@ export default function HeaderNavMobile() {
                 />
               ))}
             </div>
-              <ModeToggle />
           </SheetFooter>
         </SheetContent>
       </Sheet>
