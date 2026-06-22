@@ -29,7 +29,7 @@ export default function ProductCart({
               {item.name}
             </h1>
             <p className="text-muted-foreground font-semibold truncate">
-              {item.description}
+              {item.category_slug}
             </p>
           </CardContent>
           <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
