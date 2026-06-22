@@ -1,0 +1,427 @@
+[
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37284"
+    },
+    "name": "ماست پرچرب 500 گرمی رامک",
+    "slug": "ramak-full-fat-yogurt-500g",
+    "brand": "رامک",
+    "category_slug": "dairy",
+    "subcategory_slug": "yogurt",
+    "unit": "گرم",
+    "weight_or_volume": 500,
+    "price": 380000,
+    "discount_percent": 10,
+    "stock": 12,
+    "is_active": true,
+    "images": [],
+    "tags": ["ماست", "پرچرب", "رامک", "لبنیات"],
+    "description": "ماست پرچرب رامک با بافت غلیظ و طعم طبیعی، تهیه شده از شیر تازه گاو",
+    "created_at": {
+      "$date": "2025-01-02T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-02T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37286"
+    },
+    "name": "روغن آفتابگردان 1.5 لیتری لادن",
+    "slug": "ladan-sunflower-oil-1500ml",
+    "brand": "لادن",
+    "category_slug": "grocery-essentials",
+    "subcategory_slug": null,
+    "unit": "میلی‌لیتر",
+    "weight_or_volume": 1500,
+    "price": 1850000,
+    "discount_percent": 0,
+    "stock": 30,
+    "is_active": true,
+    "images": [],
+    "tags": ["روغن", "آفتابگردان", "لادن", "خواربار"],
+    "description": "روغن آفتابگردان لادن، مناسب برای پخت‌وپز روزانه، بدون کلسترول",
+    "created_at": {
+      "$date": "2025-01-04T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-04T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37287"
+    },
+    "name": "برنج طارم هاشمی 5 کیلوگرمی گلستان",
+    "slug": "golestan-tarom-hashemi-rice-5kg",
+    "brand": "گلستان",
+    "category_slug": "grocery-essentials",
+    "subcategory_slug": null,
+    "unit": "کیلوگرم",
+    "weight_or_volume": 5,
+    "price": 4200000,
+    "discount_percent": 0,
+    "stock": 25,
+    "is_active": true,
+    "images": [],
+    "tags": ["برنج", "طارم", "هاشمی", "گلستان", "خواربار"],
+    "description": "برنج طارم هاشمی گلستان، معطر و دانه بلند، محصول مازندران",
+    "created_at": {
+      "$date": "2025-01-05T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-05T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37288"
+    },
+    "name": "تخم مرغ 12 عددی ممتاز",
+    "slug": "momtaz-eggs-12pcs",
+    "brand": "ممتاز",
+    "category_slug": "protein-eggs",
+    "subcategory_slug": null,
+    "unit": "عدد",
+    "weight_or_volume": 12,
+    "price": 720000,
+    "discount_percent": 0,
+    "stock": 40,
+    "is_active": true,
+    "images": [],
+    "tags": ["تخم مرغ", "ممتاز", "پروتئین"],
+    "description": "تخم مرغ تازه و ممتاز درجه یک، بسته‌بندی 12 عددی",
+    "created_at": {
+      "$date": "2025-01-06T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-06T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f3728e"
+    },
+    "name": "لوبیا قرمز کنسرو 400 گرمی چین چین",
+    "slug": "chinchin-red-kidney-beans-can-400g",
+    "brand": "چین چین",
+    "category_slug": "ready-made-canned-food",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 400,
+    "price": 310000,
+    "discount_percent": 0,
+    "stock": 45,
+    "is_active": true,
+    "images": [],
+    "tags": ["لوبیا", "کنسرو", "چین چین", "غذای آماده"],
+    "description": "لوبیا قرمز کنسرو چین چین، پخته شده و آماده مصرف، مناسب برای خوراک و سالاد",
+    "created_at": {
+      "$date": "2025-01-12T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-12T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37293"
+    },
+    "name": "قهوه فوری 200 گرمی نسکافه",
+    "slug": "nescafe-instant-coffee-200g",
+    "brand": "نسکافه",
+    "category_slug": "warm-drinks",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 200,
+    "price": 1450000,
+    "discount_percent": 0,
+    "stock": 20,
+    "is_active": true,
+    "images": [],
+    "tags": ["قهوه", "فوری", "نسکافه", "نوشیدنی گرم"],
+    "description": "قهوه فوری کلاسیک نسکافه، با طعم اصیل و آماده در چند ثانیه",
+    "created_at": {
+      "$date": "2025-01-17T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-17T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f3728c"
+    },
+    "name": "آب معدنی 1.5 لیتری دماوند",
+    "slug": "damavand-mineral-water-1500ml",
+    "brand": "دماوند",
+    "category_slug": "beverages",
+    "subcategory_slug": null,
+    "unit": "میلی‌لیتر",
+    "weight_or_volume": 1500,
+    "price": 85000,
+    "discount_percent": 0,
+    "stock": 60,
+    "is_active": true,
+    "images": [],
+    "tags": ["آب معدنی", "دماوند", "نوشیدنی"],
+    "description": "آب معدنی طبیعی دماوند، سرشار از مواد معدنی طبیعی",
+    "created_at": {
+      "$date": "2025-01-10T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-10T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37283"
+    },
+    "name": "شیر پاستوریزه کم چرب 250 میلی‌لیتری کاله",
+    "slug": "kale-low-fat-pasteurized-milk-250ml",
+    "brand": "کاله",
+    "category_slug": "dairy",
+    "subcategory_slug": "milk",
+    "unit": "میلی‌لیتر",
+    "weight_or_volume": 250,
+    "price": 450000,
+    "discount_percent": 0,
+    "stock": 20,
+    "is_active": true,
+    "images": [],
+    "tags": ["کم چرب", "کاله", "شیر", "لبنیات"],
+    "description": "شیر پاستوریزه کم چرب کاله، غنی از کلسیم و ویتامین D، مناسب برای رژیم غذایی روزانه",
+    "created_at": {
+      "$date": "2025-01-01T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-01T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f3728a"
+    },
+    "name": "عسل طبیعی 500 گرمی گلبانگ",
+    "slug": "golbang-natural-honey-500g",
+    "brand": "گلبانگ",
+    "category_slug": "breakfast",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 500,
+    "price": 2300000,
+    "discount_percent": 0,
+    "stock": 10,
+    "is_active": true,
+    "images": [],
+    "tags": ["عسل", "طبیعی", "گلبانگ", "صبحانه"],
+    "description": "عسل طبیعی گلبانگ، تهیه شده از کوهستان‌های ایران، خالص و بدون افزودنی",
+    "created_at": {
+      "$date": "2025-01-08T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-08T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37285"
+    },
+    "name": "پنیر لیقوان 400 گرمی",
+    "slug": "lighvan-cheese-400g",
+    "brand": "لیقوان",
+    "category_slug": "dairy",
+    "subcategory_slug": "milk",
+    "unit": "گرم",
+    "weight_or_volume": 400,
+    "price": 920000,
+    "discount_percent": 5,
+    "stock": 8,
+    "is_active": true,
+    "images": [],
+    "tags": ["پنیر", "لیقوان", "لبنیات", "سنتی"],
+    "description": "پنیر سنتی لیقوان با طعم اصیل و بافت نرم، تهیه شده از شیر گوسفند",
+    "created_at": {
+      "$date": "2025-01-03T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-03T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f3728d"
+    },
+    "name": "آبمیوه پرتقال 1 لیتری سن ایچ",
+    "slug": "sunich-orange-juice-1000ml",
+    "brand": "سن ایچ",
+    "category_slug": "beverages",
+    "subcategory_slug": null,
+    "unit": "میلی‌لیتر",
+    "weight_or_volume": 1000,
+    "price": 580000,
+    "discount_percent": 10,
+    "stock": 35,
+    "is_active": true,
+    "images": [],
+    "tags": ["آبمیوه", "پرتقال", "سن ایچ", "نوشیدنی"],
+    "description": "آبمیوه پرتقال طبیعی سن ایچ، بدون رنگ و نگهدارنده مصنوعی",
+    "created_at": {
+      "$date": "2025-01-11T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-11T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f3728f"
+    },
+    "name": "تن ماهی 180 گرمی شیلانه",
+    "slug": "shilaneh-tuna-can-180g",
+    "brand": "شیلانه",
+    "category_slug": "ready-made-canned-food",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 180,
+    "price": 480000,
+    "discount_percent": 5,
+    "stock": 50,
+    "is_active": true,
+    "images": [],
+    "tags": ["تن ماهی", "کنسرو", "شیلانه", "پروتئین"],
+    "description": "تن ماهی شیلانه در روغن آفتابگردان، سرشار از امگا ۳ و پروتئین",
+    "created_at": {
+      "$date": "2025-01-13T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-13T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37289"
+    },
+    "name": "سینه مرغ منجمد 1 کیلوگرمی مهیا پروتئین",
+    "slug": "mahya-frozen-chicken-breast-1kg",
+    "brand": "مهیا پروتئین",
+    "category_slug": "protein-eggs",
+    "subcategory_slug": null,
+    "unit": "کیلوگرم",
+    "weight_or_volume": 1,
+    "price": 1650000,
+    "discount_percent": 15,
+    "stock": 18,
+    "is_active": true,
+    "images": [],
+    "tags": ["مرغ", "سینه مرغ", "منجمد", "پروتئین"],
+    "description": "سینه مرغ منجمد مهیا پروتئین، بدون پوست و استخوان، مناسب برای رژیم‌های پروتئین بالا",
+    "created_at": {
+      "$date": "2025-01-07T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-07T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37292"
+    },
+    "name": "شامپو تخم مرغ 400 میلی‌لیتری پرستیژ",
+    "slug": "prestige-egg-shampoo-400ml",
+    "brand": "پرستیژ",
+    "category_slug": "health-beauty",
+    "subcategory_slug": null,
+    "unit": "میلی‌لیتر",
+    "weight_or_volume": 400,
+    "price": 620000,
+    "discount_percent": 20,
+    "stock": 28,
+    "is_active": true,
+    "images": [],
+    "tags": ["شامپو", "تخم مرغ", "پرستیژ", "بهداشتی"],
+    "description": "شامپو تخم مرغ پرستیژ، مناسب برای موهای آسیب‌دیده و خشک، تقویت‌کننده فولیکول مو",
+    "created_at": {
+      "$date": "2025-01-16T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-16T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f3728b"
+    },
+    "name": "کره 100 گرمی سحر",
+    "slug": "sahar-butter-100g",
+    "brand": "سحر",
+    "category_slug": "breakfast",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 100,
+    "price": 420000,
+    "discount_percent": 0,
+    "stock": 22,
+    "is_active": true,
+    "images": [],
+    "tags": ["کره", "سحر", "صبحانه", "لبنیات"],
+    "description": "کره پاستوریزه سحر، تهیه شده از خامه تازه، مناسب برای صبحانه و شیرینی‌پزی",
+    "created_at": {
+      "$date": "2025-01-09T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-09T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37290"
+    },
+    "name": "پسته اکبری 250 گرمی تره بار",
+    "slug": "tarabar-akbari-pistachio-250g",
+    "brand": "تره بار",
+    "category_slug": "dried-fruit-nuts",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 250,
+    "price": 1950000,
+    "discount_percent": 0,
+    "stock": 15,
+    "is_active": true,
+    "images": [],
+    "tags": ["پسته", "اکبری", "خشکبار", "تره بار"],
+    "description": "پسته اکبری درجه یک تره بار، خندان و تازه، محصول رفسنجان",
+    "created_at": {
+      "$date": "2025-01-14T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-14T00:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a2f003957715faf21f37291"
+    },
+    "name": "چیپس پاپریکا 65 گرمی شین دیپ",
+    "slug": "shindip-paprika-chips-65g",
+    "brand": "شین دیپ",
+    "category_slug": "snacks",
+    "subcategory_slug": null,
+    "unit": "گرم",
+    "weight_or_volume": 65,
+    "price": 145000,
+    "discount_percent": 0,
+    "stock": 70,
+    "is_active": true,
+    "images": [],
+    "tags": ["چیپس", "پاپریکا", "شین دیپ", "تنقلات"],
+    "description": "چیپس پاپریکا شین دیپ، با طعم فلفل دلمه‌ای دودی، ترد و خوشمزه",
+    "created_at": {
+      "$date": "2025-01-15T00:00:00.000Z"
+    },
+    "updated_at": {
+      "$date": "2025-01-15T00:00:00.000Z"
+    }
+  }
+]

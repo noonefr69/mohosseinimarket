@@ -12,10 +12,6 @@ const categorySchema = new Schema(
       type: String,
       required: true,
     },
-    name_en: {
-      type: String,
-      required: true,
-    },
     icon: {
       type: String,
     },
@@ -23,8 +19,6 @@ const categorySchema = new Schema(
       {
         slug: String,
         name_fa: String,
-        name_en: String,
-        icon: String,
       },
     ],
   },

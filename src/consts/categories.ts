@@ -24,12 +24,27 @@ export const categories = [
       {
         slug: "milk",
         name_fa: "شیر",
-        name_en: "Milk",
       },
       {
         slug: "yogurt",
         name_fa: "ماست",
-        name_en: "Yogurt",
+      },
+      {
+        slug: "cheese",
+        name_fa: "پنیر",
+      },
+      {
+        slug: "cream",
+        name_fa: "خامه",
+        name_en: "Cream",
+      },
+      {
+        slug: "butter",
+        name_fa: "کره",
+      },
+      {
+        slug: "doogh",
+        name_fa: "دوغ",
       },
     ],
   },
@@ -61,7 +76,32 @@ export const categories = [
     name_fa: "صبحانه",
     name_en: "breakfast",
     icon: breakfastIcon,
-    subcategories: [],
+    subcategories: [
+      {
+        slug: "jams-butter",
+        name_fa: "مربا",
+      },
+      {
+        slug: "honey",
+        name_fa: "عسل",
+      },
+      {
+        slug: "peanut-butter",
+        name_fa: "کره بادام زمینی",
+      },
+      {
+        slug: "breakfast-chocolates",
+        name_fa: "شکلات صبحانه و کرم بیسکویت",
+      },
+      {
+        slug: "breakfast-cereal",
+        name_fa: "غلات صبحانه",
+      },
+      {
+        slug: "halva-arde-sesame",
+        name_fa: "حلوا, ارده و کنجد",
+      },
+    ],
   },
   {
     _id: {
@@ -71,7 +111,32 @@ export const categories = [
     name_fa: "نوشیدنی های سرد",
     name_en: "Beverages",
     icon: drinkIcon,
-    subcategories: [],
+    subcategories: [
+      {
+        slug: "water",
+        name_fa: "آب معدنی و آب",
+      },
+      {
+        slug: "soft-drink",
+        name_fa: "نوشابه",
+      },
+      {
+        slug: "energy-drink",
+        name_fa: "انرژی‌زا",
+      },
+      {
+        slug: "juice-syrup",
+        name_fa: "آبمیوه و شربت",
+      },
+      {
+        slug: "non-alcoholic-beer",
+        name_fa: "ماءالشعیر",
+      },
+      {
+        slug: "distillates-rosewater",
+        name_fa: "عرقیات و گلاب",
+      },
+    ],
   },
   {
     _id: {
@@ -81,7 +146,28 @@ export const categories = [
     name_fa: "کنسرو و غذای آماده",
     name_en: "Ready Made Canned Food",
     icon: canIcon,
-    subcategories: [],
+    subcategories: [
+      {
+        slug: "tuna-fish",
+        name_fa: "کنسرو ماهی",
+      },
+      {
+        slug: "ready-made-food",
+        name_fa: "غذای نیمه آماده",
+      },
+      {
+        slug: "pre-cooked-meals",
+        name_fa: "غذای آماده",
+      },
+      {
+        slug: "canned-food",
+        name_fa: "کمپوت",
+      },
+      {
+        slug: "canned-beans-and-vegetables",
+        name_fa: "کنسرو حبوبات و سبزیجات",
+      },
+    ],
   },
   {
     _id: {
@@ -91,7 +177,28 @@ export const categories = [
     name_fa: "خشکبار و شیرینی",
     name_en: "Dried Fruit Nuts",
     icon: sweetIcon,
-    subcategories: [],
+    subcategories: [
+      {
+        slug: "khorma",
+        name_fa: "خرما",
+      },
+      {
+        slug: "dessert",
+        name_fa: "دسر",
+      },
+      {
+        slug: "sweets",
+        name_fa: "شیرینی",
+      },
+      {
+        slug: "wool",
+        name_fa: "پشمک",
+      },
+      {
+        slug: "sohan",
+        name_fa: "سوهان",
+      },
+    ],
   },
   {
     _id: {
@@ -101,7 +208,56 @@ export const categories = [
     name_fa: "تنقلات",
     name_en: "Snacks",
     icon: snackIcon,
-    subcategories: [],
+    subcategories: [
+      {
+        slug: "cheese-puffs",
+        name_fa: "پفک",
+      },
+      {
+        slug: "chips-popcorn",
+        name_fa: "چیپس و چسفیل",
+      },
+      {
+        slug: "biscuits-wafers",
+        name_fa: "بیسکویت و ویفر",
+      },
+      {
+        slug: "nuts-trail-mix",
+        name_fa: "تخمه و مغزدار طعم‌دار",
+      },
+      {
+        slug: "chewing-gum",
+        name_fa: "آدامس",
+      },
+      {
+        slug: "lavashak",
+        name_fa: "لواشک",
+      },
+      {
+        slug: "random-food",
+        name_fa: "خوراکی و تخم مرغ شانسی",
+      },
+      {
+        slug: "cookies",
+        name_fa: "کیک و کلوچه",
+      },
+      {
+        slug: "gummi-bear",
+        name_fa: "پاستیل",
+      },
+      {
+        slug: "chocolate-and-cocoa-products",
+        name_fa: "شکلات و فرآورده‌های کاکائویی",
+      },
+      {
+        slug: "candy",
+        name_fa: "آبنبات",
+      },
+      {
+        slug: "a-variety-of-loads-and-nutritious-snacks",
+        name_fa: "انواع بار و تنقلات مغذی",
+      },
+    ],
   },
   {
     _id: {
@@ -141,6 +297,23 @@ export const categories = [
     name_fa: "شور و ترشیجات",
     name_en: "Salts And Pickles",
     icon: pickelsIcon,
-    subcategories: [],
+    subcategories: [
+      {
+        slug: "pickle",
+        name_fa: "خیارشور",
+      },
+      {
+        slug: "olives",
+        name_fa: "زیتون",
+      },
+      {
+        slug: "salties",
+        name_fa: "شور",
+      },
+      {
+        slug: "salted-marzipan",
+        name_fa: "ترشی",
+      },
+    ],
   },
 ];
