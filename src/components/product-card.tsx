@@ -17,7 +17,7 @@ export default function ProductCart({
 }) {
   return (
     <li key={item._id}>
-      <Link href={`/market/each/${item.slug}`}>
+      <Link href={`/market/${item.category_slug}/${item.slug}`}>
         <Card
           className={`hover:ring-2 hover:ring-primary duration-75 ${cardClassName}`}
         >
