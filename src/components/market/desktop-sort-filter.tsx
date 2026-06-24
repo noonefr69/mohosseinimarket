@@ -16,7 +16,7 @@ export default function DesktopSortFilter({
   products_length: number;
 }) {
   return (
-    <div className="mb-2 hidden lg:flex items-center justify-between ">
+    <div className="mb-2 hidden lg:flex items-center justify-between">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
