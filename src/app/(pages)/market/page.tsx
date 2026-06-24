@@ -20,7 +20,10 @@ export default async function Market() {
 
   return (
     <div>
-      <CategoriesBar categories={result_of_categories.data} />
+      <CategoriesBar
+        products={result_of_products.data}
+        categories={result_of_categories.data}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-7">
         {/* filters for desktop */}
