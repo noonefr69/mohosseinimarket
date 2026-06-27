@@ -14,17 +14,7 @@ const productSchema = new Schema(
       lowercase: true,
       trim: true,
     },
-    brand: {
-      type: String,
-      trim: true,
-    },
     category_slug: {
-      type: String,
-      required: true,
-      lowercase: true,
-      index: true,
-    },
-    category_slug_fa: {
       type: String,
       required: true,
       lowercase: true,
@@ -36,7 +26,7 @@ const productSchema = new Schema(
       index: true,
     },
     unit: {
-      type: String, // "میلی‌لیتر" | "گرم" | "عدد" etc.
+      type: String,
     },
     weight_or_volume: {
       type: Number,
@@ -51,6 +41,10 @@ const productSchema = new Schema(
       default: 0,
       min: 0,
       max: 100,
+    },
+    final_price: {
+      type: Number,
+      required: true,
     },
     stock: {
       type: Number,
@@ -72,6 +66,14 @@ const productSchema = new Schema(
       default: [],
     },
     description: {
+      type: String,
+      trim: true,
+    },
+    brand_en: {
+      type: String,
+      trim: true,
+    },
+    brand_fa: {
       type: String,
       trim: true,
     },
