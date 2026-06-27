@@ -4,6 +4,7 @@ export interface ProductProps {
   slug: string;
   brand?: string;
   category_slug: string;
+  category_slug_fa: string;
   subcategory_slug?: string;
   unit?: string;
   weight_or_volume?: number;

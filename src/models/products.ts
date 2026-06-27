@@ -24,6 +24,12 @@ const productSchema = new Schema(
       lowercase: true,
       index: true,
     },
+    category_slug_fa: {
+      type: String,
+      required: true,
+      lowercase: true,
+      index: true,
+    },
     subcategory_slug: {
       type: String,
       lowercase: true,

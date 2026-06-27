@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { commaThree } from "@/utils/comma-three";
 import { ProductProps } from "@/types/products-t";
+import { toSlug } from "@/utils/toSlug";
 
 export default function ProductCart({
   item,
@@ -17,7 +18,7 @@ export default function ProductCart({
 }) {
   return (
     <li key={item._id}>
-      <Link href={`/market/${item.category_slug}/${item.slug}`}>
+      <Link href={`/market/product/${item._id}/${toSlug(item.name)}`}>
         <Card
           className={`hover:ring-2 hover:ring-primary duration-75 ${cardClassName}`}
         >
@@ -29,7 +30,7 @@ export default function ProductCart({
               {item.name}
             </h1>
             <p className="text-muted-foreground font-semibold truncate">
-              {item.category_slug}
+              {item.category_slug_fa}
             </p>
           </CardContent>
           <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
