@@ -10,7 +10,7 @@ export async function contactUsAction(data: ContactUsFormValues) {
     await ContactUs.create(data);
     return { success: true, message: "پیام شما ارسال شد." };
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return {
       success: false,
       message: `خطایی رخ داده است. لطفا بعدا دوباره تلاش کنید.`,
