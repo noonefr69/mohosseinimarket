@@ -10,10 +10,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="">
-      <div className="w-full h-80 bg-accent rounded-2xl"></div>
-      {children}
-    </div>
-  );
+  return <div className="">{children}</div>;
 }

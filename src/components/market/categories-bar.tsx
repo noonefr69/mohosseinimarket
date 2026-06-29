@@ -19,7 +19,7 @@ export default function CategoriesBar({
         });
         return (
           <Link
-            href={`/market/${category.slug}`}
+            href={`/market/filter/${category.slug}`}
             key={category._id}
             className="flex items-center gap-2 hover:shadow-sm shadow-xs p-2 duration-150 ring-primary/10 rounded-2xl ring hover:ring-primary overflow-hidden"
           >

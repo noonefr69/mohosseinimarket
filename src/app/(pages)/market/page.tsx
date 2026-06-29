@@ -1,11 +1,11 @@
 import { getCategories } from "@/actions/categories";
-import { getProducts } from "@/actions/products";
 
 import ProductsGrid from "@/components/market/products-grid";
 import CategoriesBar from "@/components/market/categories-bar";
 import DesktopFilterGrid from "@/components/market/desktop-filter-grid";
 import DesktopSortFilter from "@/components/market/desktop-sort-filter";
 import MobileFilterGrid from "@/components/market/mobile-filter-grid";
+import { getProducts } from "@/actions/products/get/all-products";
 
 export default async function Market() {
   const result_of_products = await getProducts();
@@ -20,6 +20,8 @@ export default async function Market() {
 
   return (
     <div>
+      <div className="w-full h-80 bg-accent rounded-2xl"></div>
+
       <CategoriesBar
         products={result_of_products.data}
         categories={result_of_categories.data}

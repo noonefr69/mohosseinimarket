@@ -3,7 +3,7 @@ export interface ProductProps {
   name: string;
   slug: string;
   category_slug: string;
-  subcategory_slug?: string;
+  subcategory_slug: string;
   unit?: string;
   weight_or_volume?: number;
   price: number;
@@ -13,9 +13,9 @@ export interface ProductProps {
   is_active: boolean;
   images: string[];
   tags: string[];
-  description?: string;
-  brand_en?: string;
-  brand_fa?: string;
+  description: string;
+  brand_en: string;
+  brand_fa: string;
 }
 
 export type GetProductsResult =

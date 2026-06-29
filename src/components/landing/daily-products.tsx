@@ -2,18 +2,15 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ProductCart from "../product-card";
 import { ProductProps } from "@/types/products-t";
+import { CategoryProps } from "@/types/category-t";
 
-export default async function DailyProducts({
-  result,
+export default function DailyProducts({
+  items,
+  categories,
 }: {
-  result:
-    | { success: true; data: ProductProps[] }
-    | { success: false; error: string };
+  categories: CategoryProps[];
+  items: ProductProps[];
 }) {
-  if (!result.success) return <div>{result.error}</div>;
-
-  const items: ProductProps[] = result.data;
-
   return (
     <div className="mt-7 ">
       <div className="flex items-center justify-between">

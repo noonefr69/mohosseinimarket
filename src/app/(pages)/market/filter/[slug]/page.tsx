@@ -1,4 +1,4 @@
-import { getProducts } from "@/actions/products";
+import { getProducts } from "@/actions/products/get/all-products";
 import DesktopFilterGrid from "@/components/market/desktop-filter-grid";
 import DesktopSortFilter from "@/components/market/desktop-sort-filter";
 import MobileFilterGrid from "@/components/market/mobile-filter-grid";
@@ -20,7 +20,6 @@ export default async function CategoryFiltered({
   });
   return (
     <div>
-      My Post: {slug}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-7">
         {/* filters for desktop */}
         <DesktopFilterGrid />

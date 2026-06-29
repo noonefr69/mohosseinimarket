@@ -8,6 +8,7 @@ import { Separator } from "./ui/separator";
 import { commaThree } from "@/utils/comma-three";
 import { ProductProps } from "@/types/products-t";
 import { toSlug } from "@/utils/toSlug";
+import { categories } from "@/consts/categories";
 
 export default function ProductCart({
   item,
@@ -16,8 +17,11 @@ export default function ProductCart({
   item: ProductProps;
   cardClassName?: string;
 }) {
+  const category = categories.find((c) => c.slug === item.category_slug);
+  const category_name_fa = category?.name_fa;
+
   return (
-    <li key={item._id}>
+    <div key={item._id}>
       <Link href={`/market/product/${item._id}/${toSlug(item.name)}`}>
         <Card
           className={`hover:ring-2 hover:ring-primary duration-75 ${cardClassName}`}
@@ -30,7 +34,7 @@ export default function ProductCart({
               {item.name}
             </h1>
             <p className="text-muted-foreground font-semibold truncate">
-              {item.category_slug_fa}
+              {category_name_fa}
             </p>
           </CardContent>
           <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
@@ -38,7 +42,7 @@ export default function ProductCart({
               onClick={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
-                alert("item " + item._id + " added");
+                alert("item " + item.name + " added");
               }}
               className="flex-1 w-10 h-14"
               variant={"ghost"}
@@ -56,6 +60,6 @@ export default function ProductCart({
           </CardFooter>
         </Card>
       </Link>
-    </li>
+    </div>
   );
 }

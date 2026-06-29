@@ -56,16 +56,17 @@ export const footerLinks = {
   shop: {
     title: "فروشگاه",
     links: [
-      { label: "لبنیات", href: "/market/dairy" },
+      { label: "لبنیات", href: "/market/filter/dairy" },
       {
         label: "کالا های اساسی و خواربار",
-        href: "/market/grocery-essentials",
+        href: "/market/filter/grocery-essentials",
       },
       {
         label: "مواد پروتئینی و تخم مرغ",
-        href: "/market/protein-eggs",
+        href: "/market/filter/protein-eggs",
       },
-      { label: "مشاهده همه", href: "/market" },    ],
+      { label: "مشاهده همه", href: "/market" },
+    ],
   },
   company: {
     title: "سوپرمارکت",
