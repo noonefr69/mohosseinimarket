@@ -44,14 +44,14 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </span>
         <p className="mt-4 text-muted-foreground">{product.description}</p>
         <Separator className="my-6" />
-        <Button size={"lg"} className="lg:text-lg font-semibold ">
+        <Button size={"default"} className="font-semibold ">
           اضافه به سبد خرید
         </Button>
         <Separator className="my-6" />
         <div className="flex items-center gap-2">
           <h5>تگ ها:</h5>
           <ul className="flex items-center gap-1">
-            {product.tags.map((tag, i) => (
+            {product?.tags?.map((tag, i) => (
               <ButtonLink
                 href={`/market/filter/?tag=${toSlug(tag)}`}
                 key={i}
@@ -66,7 +66,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <h5>برند:</h5>
           <span className="flex items-center gap-1">
             <ButtonLink
-              href={`/market/filter/?brand=${toSlug(product.brand)}`}
+              href={`/market/filter/?brand=${toSlug(product?.brand)}`}
               text={product.brand}
               variant={"link"}
               buttonClassName="p-0"

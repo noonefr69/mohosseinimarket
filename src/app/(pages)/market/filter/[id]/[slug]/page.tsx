@@ -6,10 +6,21 @@ import ProductsGrid from "@/components/market/products-grid";
 
 export default async function CategoryFiltered({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string; slug: string }>;
+  searchParams: Promise<{
+    brand?: string;
+    tag?: string;
+    min?: string;
+    max?: string;
+    sorted?: string;
+  }>;
 }) {
+  const { brand, tag, min, max, sorted } = await searchParams;
   const { id, slug } = await params;
+
+  console.log(sorted);
   const products = await getProductsByCategory(id);
   if (!products.success) return <div>{products.error}</div>;
 

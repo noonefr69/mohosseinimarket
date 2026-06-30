@@ -16,6 +16,7 @@ export default async function SimilarProduct({ product }: SimilarProductProps) {
   );
 
   if (!similarPro.success) return <div>{similarPro.error}</div>;
+  if (similarPro.data.length === 0) return null;
 
   return (
     <Card className="mt-7">

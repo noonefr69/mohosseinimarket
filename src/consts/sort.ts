@@ -11,11 +11,16 @@ export const sorted_values = [
   },
   {
     _id: 3,
+    name_fa: "قدیمی ترین",
+    name_en: "oldest",
+  },
+  {
+    _id: 4,
     name_fa: "ارزان ترین",
     name_en: "cheapest",
   },
   {
-    _id: 4,
+    _id: 5,
     name_fa: "گران ترین",
     name_en: "expensive",
   },
