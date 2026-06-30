@@ -66,8 +66,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <h5>برند:</h5>
           <span className="flex items-center gap-1">
             <ButtonLink
-              href={`/market/filter/?brand=${toSlug(product.brand_en)}`}
-              text={product.brand_fa}
+              href={`/market/filter/?brand=${toSlug(product.brand)}`}
+              text={product.brand}
               variant={"link"}
               buttonClassName="p-0"
             />

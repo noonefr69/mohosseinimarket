@@ -3,7 +3,7 @@
 import dbConnect from "@/lib/db";
 import { Product } from "@/models/products";
 import { GetProductsResult } from "@/types/products-t";
-import { serializeDoc } from "../serializeDoc";
+import { serializeDoc } from "./serializeDoc";
 
 export async function getProducts(): Promise<GetProductsResult> {
   try {

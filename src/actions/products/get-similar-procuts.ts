@@ -2,16 +2,17 @@
 
 import dbConnect from "@/lib/db";
 import { Product } from "@/models/products";
-import { serializeDoc } from "../serializeDoc";
+import { serializeDoc } from "./serializeDoc";
+import { GetProductsResult } from "@/types/products-t";
 
-export async function similarProducts(
-  subcategory_slug_val: string,
+export async function getSimilarProducts(
+  category_id: string,
   excludeId: string,
-) {
+): Promise<GetProductsResult> {
   try {
     await dbConnect();
     const result = await Product.find({
-      subcategory_slug: subcategory_slug_val,
+      category: category_id,
       _id: { $ne: excludeId },
       is_active: true,
     })

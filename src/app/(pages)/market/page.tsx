@@ -1,11 +1,10 @@
-import { getCategories } from "@/actions/categories";
-
 import ProductsGrid from "@/components/market/products-grid";
 import CategoriesBar from "@/components/market/categories-bar";
 import DesktopFilterGrid from "@/components/market/desktop-filter-grid";
 import DesktopSortFilter from "@/components/market/desktop-sort-filter";
 import MobileFilterGrid from "@/components/market/mobile-filter-grid";
-import { getProducts } from "@/actions/products/get/all-products";
+import { getProducts } from "@/actions/products/get-products";
+import { getCategories } from "@/actions/category/categories";
 
 export default async function Market() {
   const result_of_products = await getProducts();

@@ -9,6 +9,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ProductProps } from "@/types/products-t";
+import { toPersianDigits } from "@/utils/to-persian-digits";
+import { commaThree } from "@/utils/comma-three";
 
 export default function MoreInfo({ product }: { product: ProductProps }) {
   return (
@@ -29,26 +31,29 @@ export default function MoreInfo({ product }: { product: ProductProps }) {
               <TableHead className="text-right font-semibold w-40">
                 نام کالا
               </TableHead>
-              <TableCell>{product.name}</TableCell>
+              <TableCell>
+                {product.name} {product.weight_or_volume} {product.unit}{" "}
+                {product.brand}
+              </TableCell>
             </TableRow>
             <TableRow className="bg-accent">
               <TableHead className="text-right font-semibold w-40">
                 برند
               </TableHead>
-              <TableCell>{product.brand_fa}</TableCell>
+              <TableCell>{product.brand}</TableCell>
             </TableRow>
             <TableRow>
               <TableHead className="text-right font-semibold w-40">
                 دسته بندی
               </TableHead>
-              <TableCell>{product.category_slug}</TableCell>
+              <TableCell>{product.category.name}</TableCell>
             </TableRow>
             <TableRow className="bg-accent">
               <TableHead className="text-right font-semibold w-40">
                 وزن / حجم
               </TableHead>
               <TableCell>
-                {product.weight_or_volume} {product.unit}
+                {commaThree(product.weight_or_volume)} {product.unit}
               </TableCell>
             </TableRow>
             <TableRow>

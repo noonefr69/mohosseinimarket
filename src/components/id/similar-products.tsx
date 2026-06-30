@@ -1,22 +1,21 @@
 import { ProductProps } from "@/types/products-t";
 import { Card, CardAction, CardHeader, CardTitle } from "@/components/ui/card";
-import { similarProducts } from "@/actions/products/get/similar-products";
 import ButtonLink from "../button-link";
 import { Separator } from "../ui/separator";
 import SimProCarousel from "./similar-products-carousel";
+import { getSimilarProducts } from "@/actions/products/get-similar-procuts";
 
 interface SimilarProductProps {
   product: ProductProps;
 }
 
 export default async function SimilarProduct({ product }: SimilarProductProps) {
-  const similarPro = await similarProducts(
-    product.subcategory_slug,
+  const similarPro = await getSimilarProducts(
+    product.category._id,
     product._id,
   );
-  if (!similarPro.success) return <div>{similarPro.error}</div>;
 
-  if (!similarPro.success || !similarPro.data?.length) return null;
+  if (!similarPro.success) return <div>{similarPro.error}</div>;
 
   return (
     <Card className="mt-7">
@@ -27,7 +26,7 @@ export default async function SimilarProduct({ product }: SimilarProductProps) {
         </CardTitle>
         <CardAction>
           <ButtonLink
-            href={`/market/filter/${product.category_slug}`}
+            href={`/market/filter/${product.category._id}/${product.category.name}`}
             text={`مشاهده همه کالاها`}
             variant={"link"}
             buttonClassName="lg:text-base text-sm"

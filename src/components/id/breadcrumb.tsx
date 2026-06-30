@@ -8,17 +8,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { categories } from "@/consts/categories";
+import { CategoryProps } from "@/types/products-t";
 
 export default function BreadcrumbComponent({
-  category_slug,
-  name,
+  product_name,
+  product_category,
 }: {
-  category_slug: string;
-  name: string;
+  product_name: string;
+  product_category: CategoryProps;
 }) {
-  const category = categories.find((c) => c.slug === category_slug);
-  const category_name_fa = category?.name_fa;
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -31,13 +29,17 @@ export default function BreadcrumbComponent({
         </BreadcrumbItem>
         <BreadcrumbSeparator className="rotate-180" />
         <BreadcrumbItem>
-          <BreadcrumbLink href={`/market/filter/${category_slug}`}>
-            {category_name_fa}
+          <BreadcrumbLink
+            href={`/market/filter/${product_category._id}/${product_category.name}`}
+          >
+            {product_category.name}
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator className="rotate-180" />
         <BreadcrumbItem>
-          <BreadcrumbPage className="font-semibold">{name}</BreadcrumbPage>
+          <BreadcrumbPage className="font-semibold">
+            {product_name}
+          </BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
