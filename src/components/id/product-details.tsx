@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
-import { toSlug } from "@/utils/toSlug";
+import { toSlug } from "@/utils/to-slug";
 import { commaThree } from "@/utils/comma-three";
 import { Fullscreen, HeartIcon } from "lucide-react";
 
@@ -53,7 +53,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <ul className="flex items-center gap-1">
             {product?.tags?.map((tag, i) => (
               <ButtonLink
-                href={`/market/filter/?tag=${toSlug(tag)}`}
+                href={`/market/?tag=${toSlug(tag)}`}
                 key={i}
                 text={tag}
                 variant={"link"}
@@ -66,7 +66,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <h5>برند:</h5>
           <span className="flex items-center gap-1">
             <ButtonLink
-              href={`/market/filter/?brand=${toSlug(product?.brand)}`}
+              href={`/market/filter/?brand=${toSlug(product.brand ?? "")}`}
               text={product.brand}
               variant={"link"}
               buttonClassName="p-0"

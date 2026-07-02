@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { commaThree } from "@/utils/comma-three";
 import { ProductProps } from "@/types/products-t";
-import { toSlug } from "@/utils/toSlug";
+import { toSlug } from "@/utils/to-slug";
 import { categories } from "@/consts/categories";
 
 export default function ProductCart({

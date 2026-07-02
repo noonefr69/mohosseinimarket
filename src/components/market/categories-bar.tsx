@@ -1,21 +1,22 @@
+import { getProductsForCategory } from "@/actions/products/get-products-for-category";
 import { CategoryProps } from "@/types/category-t";
-import { ProductProps } from "@/types/products-t";
 import { toPersianDigits } from "@/utils/to-persian-digits";
-import { toSlug } from "@/utils/toSlug";
+import { toSlug } from "@/utils/to-slug";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CategoriesBar({
+export default async function CategoriesBar({
   categories,
-  products,
 }: {
   categories: CategoryProps[];
-  products: ProductProps[];
 }) {
+  const products = await getProductsForCategory();
+  if (!products.success) return <div>{products.error}</div>;
+
   return (
     <div className="md:flex md:items-center md:justify-evenly md:flex-wrap mt-7 gap-6 hidden">
       {categories.map((category) => {
-        const filtered = products.filter((p) => {
+        const filtered = products.data.filter((p) => {
           const categoryId =
             typeof p.category === "string" ? p.category : p.category._id;
           return categoryId === category._id;

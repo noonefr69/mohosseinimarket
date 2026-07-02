@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { nastaliq_font } from "@/fonts/font";
-import HeaderInputs from "./header-inputs";
+import HeaderInputs from "./search/header-inputs";
 import HeaderNavDesktop from "./header-nav-desktop";
 import HeaderNavMobile from "./header-nav-mobile";
+import { CategoryProps } from "@/types/category-t";
 
-export default function MidHeader() {
+export default function MidHeader({
+  categories,
+}: {
+  categories: CategoryProps[];
+}) {
   return (
     <div className="border-b-2 border-dashed bg-background shadow-lg">
       <div className="max-w-7xl mx-auto gap-1 pl-2 pr-4 py-3 flex items-center justify-between">
@@ -18,7 +23,7 @@ export default function MidHeader() {
         <HeaderInputs groupClassName="md:flex hidden w-64" />
 
         <HeaderNavDesktop />
-        <HeaderNavMobile />
+        <HeaderNavMobile categories={categories} />
       </div>
     </div>
   );

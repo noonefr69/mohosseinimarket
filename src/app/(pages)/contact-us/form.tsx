@@ -70,7 +70,7 @@ export function ContactUsForm() {
           toast.error(result.message);
         }
       } catch (err) {
-        console.log(err);
+        console.error(err);
         toast.error("اتصال اینترنت را بررسی کنید.");
       }
     });

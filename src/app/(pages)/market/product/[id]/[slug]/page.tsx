@@ -10,7 +10,7 @@ export default async function Product({
 }: {
   params: Promise<{ id: string; slug: string }>;
 }) {
-  const { id, slug } = await params;
+  const { id } = await params;
 
   const product = await getProduct(id);
   if (!product.success) return <div>{product.error}</div>;
