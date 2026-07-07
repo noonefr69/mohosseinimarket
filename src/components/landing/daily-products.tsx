@@ -20,7 +20,7 @@ export default function DailyProducts({
         </Button>
       </div>
       <div className="mt-4">
-        <ul className="lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 grid gap-6">
+        <ul className="lg:grid-cols-4 md:grid-cols-2 grid-cols-1 grid gap-6">
           {items?.slice(0, 8).map((item) => (
             <ProductCart key={item._id} item={item} />
           ))}

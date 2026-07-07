@@ -70,6 +70,7 @@ export default function HeaderNavMobile({
                       alt={item.title}
                       width={20}
                       height={20}
+                      className="dark:invert"
                     />
                   }
                   key={i}
