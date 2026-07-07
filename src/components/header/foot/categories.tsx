@@ -9,7 +9,10 @@ export default async function Categories() {
       {categories.map((link) => (
         <li key={link._id.$oid}>
           <Button asChild variant={"ghost"} className="px-2">
-            <Link className="text-[14px]" href={`/market/${link.slug}`}>
+            <Link
+              className="text-[14px]"
+              href={`/market/filter/${link._id.$oid}/${link.slug}`}
+            >
               <Image
                 src={link.icon}
                 alt=""
