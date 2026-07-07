@@ -9,6 +9,7 @@ import { commaThree } from "@/utils/comma-three";
 import { ProductProps } from "@/types/products-t";
 import { toSlug } from "@/utils/to-slug";
 import { categories } from "@/consts/categories";
+import { useCartStore } from "@/store/cart-srote";
 
 export default function ProductCart({
   item,
@@ -17,8 +18,21 @@ export default function ProductCart({
   item: ProductProps;
   cardClassName?: string;
 }) {
-  const category = categories.find((c) => c.slug === item.category_slug);
+  const add_item = useCartStore((state) => state.addItem);
+
+  const category = categories.find((c) => c.name_fa === item.category.name);
   const category_name_fa = category?.name_fa;
+
+  function handleAddItem(e: any) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    add_item({
+      _id: item._id,
+      name: item.name,
+      price: item.price,
+    });
+  }
 
   return (
     <div key={item._id}>
@@ -39,16 +53,13 @@ export default function ProductCart({
           </CardContent>
           <CardFooter className="flex items-center gap-2 p-0 py-2 px-1 relative">
             <Button
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                alert("item " + item.name + " added");
-              }}
+              onClick={handleAddItem}
               className="flex-1 w-10 h-14"
               variant={"ghost"}
             >
-              اضافه به سبد
+              اضافه به سبد خرید
             </Button>
+
             <Separator orientation="vertical" className="" />
             <Button
               disabled

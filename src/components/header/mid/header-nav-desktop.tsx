@@ -4,7 +4,7 @@ import { Separator } from "../../ui/separator";
 import { pages_links } from "@/consts/links";
 import { auth } from "@/auth";
 import { User2 } from "lucide-react";
-import ShoppingCartSheet from "@/components/shopping-cart-sheet";
+import ShoppingCartSheet from "@/components/header/mid/shopping-cart-sheet";
 
 export default async function HeaderNavDesktop() {
   const session = await auth();

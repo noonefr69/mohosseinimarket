@@ -17,9 +17,9 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { ModeToggle } from "@/components/toggle-mode";
 import { CategoryProps } from "@/types/products-t";
-import ShoppingCartDropdown from "./shopping-cart-dropdown";
 import PagesLinks from "./sheet/pages-links";
 import Categories from "./sheet/categories";
+import ShoppingCartDropdown from "./shopping-cart-dropdown";
 
 export default function HeaderNavMobile({
   categories,
