@@ -36,7 +36,7 @@ export default function ShoppingCartDropdown() {
           <DropdownMenuLabel className="flex items-center justify-between">
             سبد خرید
             <ButtonLink
-              href="/shoppin-cart"
+              href="/shopping-cart"
               text={"مشاهده تمام اطلاعات و ادامه خرید"}
               variant={"link"}
               buttonClassName="p-0"

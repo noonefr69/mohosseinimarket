@@ -60,7 +60,7 @@ export default function ShoppingCartSheet() {
         <SheetFooter className="flex-row justify-between">
           <ModeToggle />
           <ButtonLink
-            href="/shoppin-cart"
+            href="/shopping-cart"
             text={"مشاهده تمامی اطاعات سبد خرید و ادامه خرید"}
             variant={"outline"}
             buttonClassName="flex-1"
