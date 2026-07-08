@@ -6,10 +6,23 @@ interface CartState {
     name: string;
     price: number;
     quantity: number;
+    description?: string;
+    brand?: string;
+    unit?: string;
+    weight_or_volume?: number;
   }[];
-  addItem: (item: { _id: string; name: string; price: number }) => void;
+  addItem: (item: {
+    _id: string;
+    name: string;
+    price: number;
+    description?: string;
+    brand?: string;
+    unit?: string;
+    weight_or_volume?: number;
+  }) => void;
   removeItem: (_id: string) => void;
   removeWholeItem: (_id: string) => void;
+  clearCart: () => void;
 }
 
 export const useCartStore = create<CartState>((set) => ({
@@ -52,5 +65,8 @@ export const useCartStore = create<CartState>((set) => ({
     set((state) => ({
       items: state.items.filter((i) => i._id !== _id),
     }));
+  },
+  clearCart: () => {
+    set({ items: [] });
   },
 }));

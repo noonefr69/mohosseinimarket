@@ -31,6 +31,10 @@ export default function ProductCart({
       _id: item._id,
       name: item.name,
       price: item.price,
+      brand: item.brand,
+      description: item.description,
+      unit: item.unit,
+      weight_or_volume: item.weight_or_volume,
     });
   }
 
