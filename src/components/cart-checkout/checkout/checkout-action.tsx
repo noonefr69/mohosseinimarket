@@ -36,7 +36,7 @@ export default function CheckOutAction() {
           className="w-full text-lg font-bold py-6"
           size={"lg"}
         >
-          ادامه خرید
+          خرید
         </Button>
       </CardContent>
     </Card>
