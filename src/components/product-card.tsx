@@ -9,7 +9,7 @@ import { commaThree } from "@/utils/comma-three";
 import { ProductProps } from "@/types/products-t";
 import { toSlug } from "@/utils/to-slug";
 import { categories } from "@/consts/categories";
-import { useCartStore } from "@/store/cart-srote";
+import { useCartStore } from "@/store/cart-store";
 
 export default function ProductCart({
   item,

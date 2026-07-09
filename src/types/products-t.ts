@@ -20,9 +20,21 @@ export interface CategoryProps {
 }
 
 export type GetProductsResult =
-  | { success: true; data: ProductProps[] }
-  | { success: false; error: string };
+  { success: true; data: ProductProps[] } | { success: false; error: string };
 
 export type GetProductResult =
-  | { success: true; data: ProductProps }
-  | { success: false; error: string };
+  { success: true; data: ProductProps } | { success: false; error: string };
+
+export interface CartItemRowProps {
+  item: {
+    _id: string;
+    name: string;
+    price: number;
+    quantity: number;
+    description?: string;
+    brand?: string;
+    weight_or_volume?: number;
+    unit?: string;
+    image?: string;
+  };
+}

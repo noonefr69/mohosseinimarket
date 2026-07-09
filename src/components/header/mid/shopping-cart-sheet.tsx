@@ -14,11 +14,11 @@ import { ShoppingCartIcon, XIcon } from "lucide-react";
 import { ModeToggle } from "../../toggle-mode";
 import ButtonLink from "../../button-link";
 import ShoppingCartContent from "./shopping-cart-content";
-import { useCartStore } from "@/store/cart-srote";
 import { commaThree } from "@/utils/comma-three";
+import { useCartTotal } from "@/hooks/use-cart-total";
 
 export default function ShoppingCartSheet() {
-  const items = useCartStore((state) => state.items);
+  const { totalQuantity } = useCartTotal();
 
   return (
     <Sheet>
@@ -26,11 +26,7 @@ export default function ShoppingCartSheet() {
         <Button className="relative" variant={"ghost"} size={"icon-lg"}>
           <ShoppingCartIcon />
           <div className="absolute right-0 top-0 bg-red-500 text-white rounded-full aspect-square w-4 text-xs flex items-center justify-center">
-            {commaThree(
-              items.reduce((prev, next) => {
-                return prev + next.quantity;
-              }, 0),
-            )}
+            {commaThree(totalQuantity)}
           </div>
         </Button>
       </SheetTrigger>
@@ -43,15 +39,9 @@ export default function ShoppingCartSheet() {
           </SheetClose>
           <SheetTitle className="text-xl font-bold flex items-center gap-2">
             سبد خرید
-            {items.reduce((prev, next) => {
-              return prev + next.quantity;
-            }, 0) > 0 ? (
+            {totalQuantity > 0 ? (
               <span className="bg-red-500 text-white rounded-full aspect-square w-6 text-sm flex items-center justify-center">
-                {commaThree(
-                  items.reduce((prev, next) => {
-                    return prev + next.quantity;
-                  }, 0),
-                )}
+                {commaThree(totalQuantity)}
               </span>
             ) : null}
           </SheetTitle>

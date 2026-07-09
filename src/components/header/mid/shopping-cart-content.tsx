@@ -1,6 +1,6 @@
 "use client";
 
-import { useCartStore } from "@/store/cart-srote";
+import { useCartStore } from "@/store/cart-store";
 import Image from "next/image";
 import { commaThree } from "@/utils/comma-three";
 import { Button } from "../../ui/button";

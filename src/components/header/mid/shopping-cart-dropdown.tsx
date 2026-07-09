@@ -11,23 +11,20 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useCartStore } from "@/store/cart-srote";
+import { useCartTotal } from "@/hooks/use-cart-total";
 import { commaThree } from "@/utils/comma-three";
 import { ShoppingCartIcon } from "lucide-react";
 
 export default function ShoppingCartDropdown() {
-  const items = useCartStore((state) => state.items);
+  const { totalQuantity } = useCartTotal();
+
   return (
     <DropdownMenu dir="ltr">
       <DropdownMenuTrigger asChild>
         <Button className="relative" variant="ghost" size={"icon-lg"}>
           <ShoppingCartIcon className="size-5" />
           <div className="absolute right-0 top-0 bg-red-500 text-white rounded-full aspect-square w-4 text-xs flex items-center justify-center">
-            {commaThree(
-              items.reduce((prev, next) => {
-                return prev + next.quantity;
-              }, 0),
-            )}{" "}
+            {commaThree(totalQuantity)}{" "}
           </div>
         </Button>
       </DropdownMenuTrigger>
