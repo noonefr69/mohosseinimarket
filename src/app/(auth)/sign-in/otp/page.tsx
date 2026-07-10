@@ -1,5 +1,6 @@
-import { auth } from "@/auth";
-import { AuthenticationForm } from "@/components/auth/form";
+"use client";
+
+import { OtpForm } from "@/components/auth/otp-form";
 import ButtonLink from "@/components/button-link";
 import {
   Card,
@@ -8,13 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { toPersianDigits } from "@/utils/to-persian-digits";
 import { HomeIcon } from "lucide-react";
-import { redirect } from "next/navigation";
-export default async function SignIn() {
-  const session = await auth();
+import { redirect, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-  if (session?.user) redirect("/profile");
-
+export default function OtpPage() {
   return (
     <div className="pt-10 pb-0 sm:pt-14 sm:pb-0 lg:pt-32 lg:pb-22">
       <div className="max-w-lg mx-auto">
@@ -40,16 +40,32 @@ export default async function SignIn() {
             </CardAction>
           </CardHeader>
           <CardContent>
-            <h1 className="font-semibold mt-14 text-2xl">
-              ورود یا ثبت نام در فروشگاه
-            </h1>
-            <p className="text-muted-foreground my-4">
-              لطفا شماره موبایل خود را وارد کنید{" "}
-            </p>
-            <AuthenticationForm />
+            <Suspense fallback={<div>loading...</div>}>
+              <OtpContent />
+            </Suspense>
           </CardContent>
         </Card>
       </div>
     </div>
+  );
+}
+
+export function OtpContent() {
+  const phone = useSearchParams().get("phone") || "";
+
+  return (
+    <>
+      <h1 className="font-semibold mt-14 text-2xl">
+        کد فرستاده شده را وارد نمایید.
+      </h1>
+      <p className="text-muted-foreground my-4">
+        کد تایید به شماره
+        <span className="font-semibold mx-2 text-base text-primary">
+          {toPersianDigits(Number(phone))}
+        </span>
+        ارسال شد.
+      </p>
+      <OtpForm phone={phone} />
+    </>
   );
 }

@@ -46,7 +46,7 @@ export default function ProductCart({
 
             <Button
               disabled
-              className="py-6 whitespace-normal wrap-break-word hover:ring duration-100"
+              className="py-6 whitespace-normal wrap-break-word hover:ring duration-100 disabled:opacity-100 disabled:text-accent-foreground font-semibold"
               variant={"ghost"}
             >
               {commaThree(item.price)} تومان

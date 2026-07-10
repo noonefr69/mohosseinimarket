@@ -21,6 +21,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import { InfoIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   phone_number: z
@@ -32,6 +33,7 @@ const formSchema = z.object({
 
 export function AuthenticationForm() {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,12 +45,22 @@ export function AuthenticationForm() {
   function onSubmit(data: z.infer<typeof formSchema>) {
     startTransition(async () => {
       try {
-        await signIn("credentials", {
-          phone: data.phone_number,
-          redirectTo: "/profile",
+        const res = await fetch("api/auth/send-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone: data.phone_number }),
         });
+
+        const result = await res.json();
+
+        if (res.ok && result.success) {
+          router.push(`/sign-in/otp?phone=${data.phone_number}`);
+        } else {
+          alert(result.error || "kir");
+        }
       } catch (error) {
         console.log(error);
+        alert("kir sam te server");
       }
     });
   }
