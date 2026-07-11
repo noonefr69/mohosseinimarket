@@ -6,6 +6,7 @@ import FilterPanel from "@/components/market/panel/filter-panel";
 import { Card, CardContent } from "@/components/ui/card";
 import SortingFiltering from "@/components/market/sorting-filtering";
 import CardHeaderMarket from "@/components/market/card/card-header";
+import Image from "next/image";
 
 export default async function Market({
   searchParams,
@@ -38,7 +39,14 @@ export default async function Market({
 
   return (
     <div>
-      <div className="w-full h-80 bg-accent rounded-2xl"></div>
+      <div className="w-full h-80 bg-accent rounded-2xl relative">
+        <Image
+          src={`/banner.png`}
+          alt="banner"
+          fill
+          className="object-cover rounded object-[center_60%] dark:opacity-80"
+        />
+      </div>
 
       <CategoriesBar categories={categories.data} />
 
