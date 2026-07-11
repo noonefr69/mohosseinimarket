@@ -7,12 +7,12 @@ import {
 } from "@/components/ui/input-otp";
 import { Button } from "../ui/button";
 import { useState, useTransition } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Spinner } from "../ui/spinner";
 import { signIn } from "next-auth/react";
 
 export function OtpForm({ phone }: { phone: string }) {
-  const router = useRouter();
+  // const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
@@ -49,7 +49,7 @@ export function OtpForm({ phone }: { phone: string }) {
           if (signInResult?.error) {
             setError("ورود با خطا مواجه شد");
           } else {
-            router.push("/");
+            window.location.href = "/";
           }
         } else {
           setError(data.error || "کد تایید اشتباه است");
