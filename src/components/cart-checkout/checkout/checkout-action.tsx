@@ -1,17 +1,9 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartTotal } from "@/hooks/use-cart-total";
-import { useCartStore } from "@/store/cart-store";
 import { commaThree } from "@/utils/comma-three";
 
 export default function CheckOutAction() {
-  const items = useCartStore((state) => state.items);
   const { totalPrice, totalQuantity } = useCartTotal();
 
   return (
