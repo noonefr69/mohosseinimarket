@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckoutAction } from "@/actions/payment/checkout_action";
+import { CheckoutAction } from "@/actions/order/checkout_action";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
