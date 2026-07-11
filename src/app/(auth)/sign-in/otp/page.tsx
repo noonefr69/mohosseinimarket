@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { toPersianDigits } from "@/utils/to-persian-digits";
 import { HomeIcon } from "lucide-react";
-import { redirect, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 export default function OtpPage() {

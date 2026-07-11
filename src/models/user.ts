@@ -1,4 +1,4 @@
-import { Schema, model, models, Types } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema(
   {
@@ -10,12 +10,15 @@ const UserSchema = new Schema(
     },
     first_name: {
       type: String,
+      default: "",
     },
     last_name: {
       type: String,
+      default: "",
     },
     address: {
       type: String,
+      default: "",
     },
   },
   { timestamps: true },

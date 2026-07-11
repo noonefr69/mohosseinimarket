@@ -9,7 +9,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     Credentials({
       credentials: {
         phone: {},
-        otp: {}, // <-- add this
+        otp: {},
       },
       async authorize(credentials) {
         if (!credentials?.phone || !credentials?.otp) return null;

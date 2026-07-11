@@ -76,14 +76,14 @@ export function AuthenticationForm() {
               <FieldLabel htmlFor="sign-in-form">شماره موبایل</FieldLabel>
               <InputGroup
                 {...field}
-                id="sign-in-form"
                 dir="ltr"
                 className="py-6 text-lg font-semibold"
               >
                 <InputGroupInput
+                  id="sign-in-form"
                   aria-invalid={fieldState.invalid}
                   autoComplete="off"
-                  dir="rtl"
+                  dir="ltr"
                   placeholder={toPersianDigits("09xx xxx xxxx")}
                   className=""
                 />
