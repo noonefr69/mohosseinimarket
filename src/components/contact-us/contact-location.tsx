@@ -6,13 +6,17 @@ export default function ContactLocation() {
     <>
       <h1 className="text-2xl font-semibold">موقعیت مکانی سوپرمارکت</h1>
       <MapIframe />
-      <ul className="mt-7  text-right justify-start grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <ul className="mt-7  text-right flex sm:flex-row flex-col justify-around gap-6">
         {contact_us_details.map((item, i) => (
           <li key={i}>
             <h1 className="font-semibold">{item.label}</h1>
-            <div>
+            <div className="">
               {item.values.map((value, i) => (
-                <div className="text-muted-foreground" dir="ltr" key={i}>
+                <div
+                  className={`text-muted-foreground  ${item.label === "شماره تلفن" ? "text-nowrap" : ""}`}
+                  dir="ltr"
+                  key={i}
+                >
                   {value}
                 </div>
               ))}

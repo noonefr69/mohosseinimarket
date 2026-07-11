@@ -103,10 +103,10 @@ export const contact_us_details = [
     label: "شماره تلفن",
     values: [toPersianDigits("041 33343989"), toPersianDigits("0933 855 0469")],
   },
-  {
-    label: "ایمیل",
-    values: ["info@company.com", "sales@company.com"],
-  },
+  // {
+  //   label: "ایمیل",
+  //   values: ["info@company.com", "sales@company.com"],
+  // },
 ];
 
 export const about_us_const = [
