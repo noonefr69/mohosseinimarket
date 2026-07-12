@@ -2,15 +2,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ProductCart from "../product-card";
 import { ProductProps } from "@/types/products-t";
-import { CategoryProps } from "@/types/category-t";
 
-export default function FamousProducts({
-  items,
-  categories,
-}: {
-  categories: CategoryProps[];
-  items: ProductProps[];
-}) {
+export default function FamousProducts({ items }: { items: ProductProps[] }) {
   return (
     <div className="mt-7 ">
       <h1 className="md:text-2xl font-bold">محبوب ترین هفته</h1>

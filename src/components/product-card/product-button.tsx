@@ -9,7 +9,7 @@ import { commaThree } from "@/utils/comma-three";
 export default function ProductButton({ item }: { item: ProductProps }) {
   const { addItem, items, removeItem } = useCartStore();
 
-  function handleAddItem(e: any) {
+  function handleAddItem(e: React.MouseEvent<HTMLButtonElement>) {
     e.stopPropagation();
     e.preventDefault();
 
@@ -24,7 +24,7 @@ export default function ProductButton({ item }: { item: ProductProps }) {
     });
   }
 
-  function handleRemove(e: any) {
+  function handleRemove(e: React.MouseEvent<HTMLButtonElement>) {
     e.stopPropagation();
     e.preventDefault();
 

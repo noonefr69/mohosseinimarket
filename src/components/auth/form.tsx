@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/field";
 import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
-import { signIn } from "next-auth/react";
 import { useTransition } from "react";
 import { Spinner } from "../ui/spinner";
 import { toPersianDigits } from "@/utils/to-persian-digits";

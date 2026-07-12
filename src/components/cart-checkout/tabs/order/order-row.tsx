@@ -7,7 +7,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -32,8 +31,8 @@ import { commaThree } from "@/utils/comma-three";
 import { Separator } from "@/components/ui/separator";
 
 const statusMap = {
-  pending: { label: "در انتظار پرداخت", variant: "warning" },
-  paid: { label: "پرداخت شده", variant: "success" },
+  pending: { label: "در انتظار پرداخت", variant: "secondary" },
+  paid: { label: "پرداخت شده", variant: "default" },
   shipped: { label: "ارسال شده", variant: "default" },
   delivered: { label: "تحویل داده شده", variant: "default" },
   cancelled: { label: "لغو شده", variant: "destructive" },
@@ -81,7 +80,7 @@ export default function OrderRow({ orders }: { orders: OrderProps[] }) {
                     وضعیت:{" "}
                     <Badge
                       className={`mx-1 ${order.status === "pending" ? "animate-pulse" : ""}`}
-                      variant={statusInfo.variant as any}
+                      variant={statusInfo.variant}
                     >
                       {statusInfo.label}
                     </Badge>
@@ -92,7 +91,6 @@ export default function OrderRow({ orders }: { orders: OrderProps[] }) {
                   </CardDescription>
                 </div>
 
-                {/* Delete Button - Only for pending orders */}
                 {order.status === "pending" && (
                   <AlertDialog>
                     <AlertDialogTrigger asChild>

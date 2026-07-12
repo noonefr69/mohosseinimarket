@@ -2,14 +2,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { ProductProps } from "@/types/products-t";
-import { toPersianDigits } from "@/utils/to-persian-digits";
 import { commaThree } from "@/utils/comma-three";
 
 export default function MoreInfo({ product }: { product: ProductProps }) {
@@ -22,7 +19,6 @@ export default function MoreInfo({ product }: { product: ProductProps }) {
         >
           مشخصات بیشتر
         </TabsTrigger>
-        {/*<TabsTrigger value="password">Password</TabsTrigger>*/}
       </TabsList>
       <TabsContent value="info" className="h-auto ">
         <Table className="border rounded-2xl">

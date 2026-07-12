@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import { Otp } from "@/models/otp";
-import { User } from "@/models/user";
+import "@/models/user";
 
 export async function POST(req: Request) {
   try {

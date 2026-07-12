@@ -1,18 +1,6 @@
 import bale_icon from "../../public/bale.svg";
 import telegram_icon from "../../public/telegram.svg";
 import instagram_icon from "../../public/Instagram.svg";
-import {
-  Milk,
-  Croissant,
-  Utensils,
-  Candy,
-  Droplet,
-  Snowflake,
-  Package,
-  Heart,
-  Home,
-  Popcorn,
-} from "lucide-react";
 import { toPersianDigits } from "@/utils/to-persian-digits";
 
 export const social_media = [
