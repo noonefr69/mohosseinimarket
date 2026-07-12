@@ -1,5 +1,4 @@
-"use client";
-
+import { auth } from "@/auth";
 import { OtpForm } from "@/components/auth/otp-form";
 import ButtonLink from "@/components/button-link";
 import {
@@ -11,10 +10,18 @@ import {
 } from "@/components/ui/card";
 import { toPersianDigits } from "@/utils/to-persian-digits";
 import { HomeIcon } from "lucide-react";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { redirect } from "next/navigation";
 
-export default function OtpPage() {
+export default async function OtpPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ phone?: string }>;
+}) {
+  const { phone = "" } = await searchParams;
+  const session = await auth();
+  if (session?.user) {
+    redirect("/sign-in");
+  }
   return (
     <div className="pt-10 pb-0 sm:pt-14 sm:pb-0 lg:pt-32 lg:pb-22">
       <div className="max-w-lg mx-auto">
@@ -40,32 +47,20 @@ export default function OtpPage() {
             </CardAction>
           </CardHeader>
           <CardContent>
-            <Suspense fallback={<div>loading...</div>}>
-              <OtpContent />
-            </Suspense>
+            <h1 className="font-semibold mt-14 text-2xl">
+              کد فرستاده شده را وارد نمایید.
+            </h1>
+            <p className="text-muted-foreground my-4">
+              کد تایید به شماره
+              <span className="font-semibold mx-2 text-base text-primary">
+                {phone && toPersianDigits(phone)}
+              </span>
+              ارسال شد.
+            </p>
+            <OtpForm phone={phone} />
           </CardContent>
         </Card>
       </div>
     </div>
-  );
-}
-
-export function OtpContent() {
-  const phone = useSearchParams().get("phone") || "";
-
-  return (
-    <>
-      <h1 className="font-semibold mt-14 text-2xl">
-        کد فرستاده شده را وارد نمایید.
-      </h1>
-      <p className="text-muted-foreground my-4">
-        کد تایید به شماره
-        <span className="font-semibold mx-2 text-base text-primary">
-          {toPersianDigits(Number(phone))}
-        </span>
-        ارسال شد.
-      </p>
-      <OtpForm phone={phone} />
-    </>
   );
 }
