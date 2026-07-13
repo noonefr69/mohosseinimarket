@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { ChevronLeftIcon, LogInIcon } from "lucide-react";
 
-export default function EmptyCheckout() {
+export default function EmptyWithoutSession() {
   return (
     <Link className="contents" href={`/sign-in`}>
       <Card className="col-span-9 sticky lg:top-28 bottom-4 lg:col-span-3 h-fit">
