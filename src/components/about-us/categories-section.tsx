@@ -13,11 +13,11 @@ export default function CategoriesSection() {
               text={
                 <div className="flex flex-col items-center gap-2">
                   <Image
-                    src={`/`}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="bg-accent"
+                    src={link.icon}
+                    alt={link.name_fa}
+                    width={26}
+                    height={26}
+                    className="dark:invert"
                   />
                   <span>{link.name_fa}</span>
                 </div>

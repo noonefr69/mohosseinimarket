@@ -21,6 +21,7 @@ export default function ProductButton({ item }: { item: ProductProps }) {
       description: item.description,
       unit: item.unit,
       weight_or_volume: item.weight_or_volume,
+      image: item.image,
     });
   }
 

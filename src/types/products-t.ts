@@ -1,6 +1,7 @@
 export interface ProductProps {
   _id: string;
   name: string;
+  image?: string;
   description: string;
   price: number;
   discount_percent?: number;

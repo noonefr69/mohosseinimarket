@@ -10,6 +10,7 @@ interface CartState {
     brand?: string;
     unit?: string;
     weight_or_volume?: number;
+    image?: string;
   }[];
   addItem: (item: {
     _id: string;
@@ -19,6 +20,7 @@ interface CartState {
     brand?: string;
     unit?: string;
     weight_or_volume?: number;
+    image?: string;
   }) => void;
   removeItem: (_id: string) => void;
   removeWholeItem: (_id: string) => void;

@@ -12,10 +12,11 @@ export default function ShoppingCartContent() {
   const items = useCartStore((state) => state.items);
   const removeWholeItem = useCartStore((state) => state.removeWholeItem);
 
+  console.log(items);
   if (items.length === 0)
     return (
       <div className="p-4 h-full flex flex-col gap-6 opacity-70 items-center justify-center">
-        <h1 className="font-bold text-lg">سبد خرید شما خالی است</h1>
+        <h1 className="font-bold text-lg">سبد خریدr شما خالی است</h1>
         <PackageOpenIcon className="size-24" />
       </div>
     );
@@ -27,7 +28,16 @@ export default function ShoppingCartContent() {
           <li className="flex justify-between rounded h-20 gap-2 hover:bg-accent/70 duration-150 p-2">
             <div className="flex items-center gap-2 min-w-0 flex-1">
               <div className="relative rounded bg-accent h-16 w-16 shrink-0">
-                <Image src={`/`} alt={item.name} fill />
+                <Image
+                  className={`${!item.image || item.image.trim() === "" ? "scale-75" : ""} rounded`}
+                  src={
+                    !item.image || item.image.trim() === ""
+                      ? "/placeholder.svg"
+                      : item.image
+                  }
+                  alt={item.name}
+                  fill
+                />
               </div>
               <div className="flex flex-col h-full justify-between min-w-0 flex-1">
                 <h1 className="font-semibold text-lg truncate">{item.name}</h1>

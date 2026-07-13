@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator";
 import { toPersianDigits } from "@/utils/to-persian-digits";
 import { commaThree } from "@/utils/comma-three";
 import { OrderProps } from "../container";

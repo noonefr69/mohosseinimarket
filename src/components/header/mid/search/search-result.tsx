@@ -42,7 +42,11 @@ export default function SearchResult({
                 text={
                   <div className="w-full flex items-center gap-2">
                     <Image
-                      src={"/"}
+                      src={
+                        !sp.image || sp.image?.trim() === ""
+                          ? "/placeholder.svg"
+                          : sp.image
+                      }
                       alt={sp.name}
                       className="bg-accent rounded"
                       width={40}
