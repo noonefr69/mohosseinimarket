@@ -1,5 +1,6 @@
 "use client";
 
+import GetBackButton from "@/components/auth/get-back-button";
 import { OtpForm } from "@/components/auth/otp-form";
 import ButtonLink from "@/components/button-link";
 import {
@@ -29,15 +30,9 @@ export default function OtpPage() {
                 buttonClassName="font-semibold scale-125 hover:no-underline flex items-center justify-center"
               />
             </CardTitle>
-            <CardAction className="flex items-center justify-center">
-              <ButtonLink
-                href="/"
-                text={"←"}
-                size="icon-lg"
-                variant={"ghost"}
-                buttonClassName="font-semibold text-lg hover:no-underline flex items-center justify-center scale-125"
-              />
-            </CardAction>
+            {/*<CardAction className="flex items-center justify-center">
+              <GetBackButton />
+            </CardAction>*/}
           </CardHeader>
           <CardContent>
             <Suspense fallback={<div>loading...</div>}>

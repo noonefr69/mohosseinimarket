@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { AuthenticationForm } from "@/components/auth/form";
+import GetBackButton from "@/components/auth/get-back-button";
 import ButtonLink from "@/components/button-link";
 import {
   Card,
@@ -30,13 +31,7 @@ export default async function SignIn() {
               />
             </CardTitle>
             <CardAction className="flex items-center justify-center">
-              <ButtonLink
-                href="/"
-                text={"←"}
-                size="icon-lg"
-                variant={"ghost"}
-                buttonClassName="font-semibold text-lg hover:no-underline flex items-center justify-center scale-125"
-              />
+             <GetBackButton />
             </CardAction>
           </CardHeader>
           <CardContent>
