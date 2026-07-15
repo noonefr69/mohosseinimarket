@@ -1,5 +1,6 @@
 import ButtonLink from "../button-link";
 import { categories } from "@/consts/categories";
+import { toSlug } from "@/utils/to-slug";
 import Image from "next/image";
 
 export default function CategoriesSection() {
@@ -13,8 +14,8 @@ export default function CategoriesSection() {
               text={
                 <div className="flex flex-col items-center gap-2">
                   <Image
-                    src={`/`}
-                    alt=""
+                    src={link.icon}
+                    alt={link.name_fa}
                     width={20}
                     height={20}
                     className="bg-accent"
@@ -22,7 +23,7 @@ export default function CategoriesSection() {
                   <span>{link.name_fa}</span>
                 </div>
               }
-              href={`/market/${link.slug}`}
+              href={`/market/filter/${link._id.$oid}/${toSlug(link.name_fa)}`}
               variant={"ghost"}
               buttonClassName="ring-2 bg-card w-44 py-10 ring-primary/60 hover:ring-primary"
             />
