@@ -16,7 +16,7 @@ export default function ShoppingCartContent() {
   if (items.length === 0)
     return (
       <div className="p-4 h-full flex flex-col gap-6 opacity-70 items-center justify-center">
-        <h1 className="font-bold text-lg">سبد خریدr شما خالی است</h1>
+        <h1 className="font-bold text-lg">سبد خرید شما خالی است</h1>
         <PackageOpenIcon className="size-24" />
       </div>
     );
