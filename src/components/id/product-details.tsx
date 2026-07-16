@@ -40,7 +40,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           fill
           // width={1980}
           // height={1080}
-          className="rounded object-cover"
+          className="rounded md:object-contain object-cover"
         />
       </div>
       <div>
