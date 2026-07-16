@@ -5,6 +5,7 @@ import FilterPanel from "@/components/market/panel/filter-panel";
 import ProductsGrid from "@/components/market/products-grid";
 import SortingFiltering from "@/components/market/sorting-filtering";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 export default async function CategoryFiltered({
   params,
@@ -37,7 +38,14 @@ export default async function CategoryFiltered({
 
   return (
     <div>
-      <div className="w-full h-80 bg-accent rounded-2xl"></div>
+      <div className="w-full h-80 bg-accent rounded-2xl relative">
+        <Image
+          src={`/banner.png`}
+          alt="banner"
+          fill
+          className="object-cover rounded object-[center_60%] dark:opacity-80"
+        />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-7">
         <div className="col-span-1 lg:col-span-3 relative lg:block hidden">
