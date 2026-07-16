@@ -18,7 +18,7 @@ export default function CategoriesSection() {
                     alt={link.name_fa}
                     width={20}
                     height={20}
-                    className="bg-accent"
+                    className="size-7"
                   />
                   <span>{link.name_fa}</span>
                 </div>

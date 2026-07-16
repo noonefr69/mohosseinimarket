@@ -20,7 +20,7 @@ export async function getCategories(): Promise<GetCategoryResult> {
     console.error(error);
     return {
       success: false,
-      error: "مشکلی پیش آمده است. لطفا بعد از چند دقیقه دوباره امتحان کنید.",
+      error: `گرفتن دسته بندی ها از پایگاه داده امکان پزیر نیست.`
     };
   }
 }

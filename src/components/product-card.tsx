@@ -26,7 +26,7 @@ export default function ProductCart({
           className={`hover:ring-2 hover:ring-primary duration-75 ${cardClassName}`}
         >
           <CardHeader className="bg-accent/70 mx-4 p-0">
-            <Image src={"/"} alt={item.name} width={200} height={200} />
+            <Image src={!item.image || item.image.trim() === "" ? "/placeholder.svg" : item.image} alt={item.name} width={200} height={200} className="w-full"/>
           </CardHeader>
           <CardContent className="text-center">
             <h1 className="text-lg sm:text-2xl mb-2 font-semibold tracking-tight truncate">

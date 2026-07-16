@@ -8,8 +8,8 @@ export default async function Container() {
   const result = await getProducts();
   const categories = await getCategories();
 
-  if (!result.success) return <div>{result.error}</div>;
-  if (!categories.success) return <div>{categories.error}</div>;
+  if (!result.success) return null;
+  if (!categories.success) return null;
 
   return (
     <>

@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import SortingFiltering from "@/components/market/sorting-filtering";
 import CardHeaderMarket from "@/components/market/card/card-header";
 import Image from "next/image";
+import MarketError from "@/components/market/market-error";
 
 export default async function Market({
   searchParams,
@@ -31,10 +32,11 @@ export default async function Market({
   const categories = await getCategories();
 
   if (!products.success) {
-    return <div>{products.error}</div>;
+    return <MarketError error={products.error} />;
   }
+
   if (!categories.success) {
-    return <div>{categories.error}</div>;
+    return <MarketError error={categories.error} />;
   }
 
   return (
@@ -48,7 +50,7 @@ export default async function Market({
         />
       </div>
 
-      <CategoriesBar categories={categories.data} />
+      <CategoriesBar categories={categories} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-7">
         <div className="col-span-1 lg:col-span-3 relative lg:block hidden">

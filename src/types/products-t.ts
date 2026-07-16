@@ -6,6 +6,7 @@ export interface ProductProps {
   discount_percent?: number;
   stock: number;
   is_active: boolean;
+  image?: string;
   category: CategoryProps;
   brand?: string;
   unit?: string;

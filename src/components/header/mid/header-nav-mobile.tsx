@@ -20,11 +20,12 @@ import { CategoryProps } from "@/types/products-t";
 import PagesLinks from "./sheet/pages-links";
 import Categories from "./sheet/categories";
 import ShoppingCartDropdown from "./shopping-cart-dropdown";
+import { GetCategoryResult } from "@/types/category-t";
 
 export default function HeaderNavMobile({
   categories,
 }: {
-  categories: CategoryProps[];
+  categories: GetCategoryResult;
 }) {
   return (
     <div className="md:hidden flex items-center">
@@ -52,8 +53,19 @@ export default function HeaderNavMobile({
           </SheetHeader>
           <div className="p-4">
             <PagesLinks />
-            <Separator className="my-7" />
-            <Categories categories={categories} />
+
+            {categories.success ? (
+              <>
+                <Separator className="my-7" />
+                <Categories categories={categories.data} />
+              </>
+            ) : (
+              <div className="text-muted-foreground">
+                <Separator className="my-7" />
+
+                {categories.error}
+              </div>
+            )}
 
             <Separator className="my-7" />
           </div>

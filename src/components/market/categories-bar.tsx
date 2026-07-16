@@ -1,5 +1,5 @@
 import { getProductsForCategory } from "@/actions/products/get-products-for-category";
-import { CategoryProps } from "@/types/category-t";
+import { GetCategoryResult } from "@/types/category-t";
 import { toPersianDigits } from "@/utils/to-persian-digits";
 import { toSlug } from "@/utils/to-slug";
 import Image from "next/image";
@@ -8,14 +8,15 @@ import Link from "next/link";
 export default async function CategoriesBar({
   categories,
 }: {
-  categories: CategoryProps[];
+  categories: GetCategoryResult;
 }) {
   const products = await getProductsForCategory();
   if (!products.success) return null;
+  if (!categories.success) return null;
 
   return (
     <div className="md:flex md:items-center md:justify-evenly md:flex-wrap mt-7 gap-6 hidden">
-      {categories.map((category) => {
+      {categories.data.map((category) => {
         const filtered = products.data.filter((p) => {
           const categoryId =
             typeof p.category === "string" ? p.category : p.category._id;

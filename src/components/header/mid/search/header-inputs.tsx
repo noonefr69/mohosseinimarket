@@ -8,7 +8,7 @@ export default async function HeaderInputs({
   groupClassName?: string;
 }) {
   const products = await getProducts();
-  if (!products.success) return <div>{products.error}</div>;
+  if (!products.success) return null;
 
   return (
     <div className="relative md:block hidden">

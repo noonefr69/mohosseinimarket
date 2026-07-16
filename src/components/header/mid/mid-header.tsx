@@ -3,13 +3,11 @@ import { nastaliq_font } from "@/fonts/font";
 import HeaderInputs from "./search/header-inputs";
 import HeaderNavDesktop from "./header-nav-desktop";
 import HeaderNavMobile from "./header-nav-mobile";
-import { CategoryProps } from "@/types/category-t";
+import { getCategories } from "@/actions/category/categories";
 
-export default function MidHeader({
-  categories,
-}: {
-  categories: CategoryProps[];
-}) {
+export default async function MidHeader() {
+  const categories = await getCategories();
+
   return (
     <div className="border-b-2 border-dashed bg-background shadow-lg">
       <div className="max-w-7xl mx-auto gap-1 pl-2 pr-4 py-3 flex items-center justify-between">

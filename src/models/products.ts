@@ -29,6 +29,10 @@ const productSchema = new Schema(
       min: 0,
       max: 1000,
     },
+    image: {
+      type: String,
+      default: "",
+    },
     is_active: {
       type: Boolean,
       required: true,

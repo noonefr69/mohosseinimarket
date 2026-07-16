@@ -1,9 +1,12 @@
 import { getProduct } from "@/actions/products/get-product";
+import ButtonLink from "@/components/button-link";
 import BreadcrumbComponent from "@/components/id/breadcrumb";
 import CopyUrl from "@/components/id/copy-url";
 import MoreInfo from "@/components/id/more-info";
 import ProductDetails from "@/components/id/product-details";
 import SimilarProduct from "@/components/id/similar-products";
+import MarketError from "@/components/market/market-error";
+import { Button } from "@/components/ui/button";
 
 export default async function Product({
   params,
@@ -13,7 +16,9 @@ export default async function Product({
   const { id } = await params;
 
   const product = await getProduct(id);
-  if (!product.success) return <div>{product.error}</div>;
+  if (!product.success) {
+    return <MarketError error={product.error} />;
+  }
 
   return (
     <div className="mt-3">

@@ -6,6 +6,7 @@ import ButtonLink from "../button-link";
 import { toSlug } from "@/utils/to-slug";
 import { commaThree } from "@/utils/comma-three";
 import { Fullscreen, HeartIcon } from "lucide-react";
+import { projectWriteAllEntrypointsToDisk } from "next/dist/build/swc/generated-native";
 
 interface ProductDetailsProps {
   product: ProductProps;
@@ -14,27 +15,32 @@ interface ProductDetailsProps {
 export default function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="grid lg:grid-cols-2 mt-4 gap-6">
-      <div className="relative">
+      <div className="relative col-span-1 bg-accent min-h-72 lg:min-h-auto rounded">
         <Button
-          className="absolute top-2 right-2"
+          className="absolute top-2 right-2 z-10"
           variant={"outline"}
           size="icon"
         >
           <HeartIcon />
         </Button>
         <Button
-          className="absolute top-12 right-2"
+          className="absolute top-12 right-2 z-10"
           size="icon"
           variant={"outline"}
         >
           <Fullscreen />
         </Button>
         <Image
-          src={`/`}
-          alt=""
-          width={1980}
-          height={1080}
-          className="bg-accent rounded-2xl"
+          src={
+            !product.image || product.image.trim() === ""
+              ? "/placeholder.svg"
+              : product.image
+          }
+          alt={product.description}
+          fill
+          // width={1980}
+          // height={1080}
+          className="rounded object-cover"
         />
       </div>
       <div>
