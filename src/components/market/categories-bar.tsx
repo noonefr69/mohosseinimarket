@@ -11,7 +11,7 @@ export default async function CategoriesBar({
   categories: CategoryProps[];
 }) {
   const products = await getProductsForCategory();
-  if (!products.success) return <div>{products.error}</div>;
+  if (!products.success) return null;
 
   return (
     <div className="md:flex md:items-center md:justify-evenly md:flex-wrap mt-7 gap-6 hidden">
@@ -27,13 +27,22 @@ export default async function CategoriesBar({
             key={category._id}
             className="flex items-center gap-2 hover:shadow-sm shadow-xs p-2 duration-150 ring-primary/10 rounded-2xl ring hover:ring-primary overflow-hidden"
           >
-            <Image
-              src={`/`}
-              alt={`category.name_fa`}
-              width={26}
-              height={26}
-              className="bg-accent rounded-full h-8 w-8 md:w-16 md:h-16"
-            />
+            <div className="relative h-16 w-16 rounded-full bg-accent">
+              <Image
+                src={
+                  !category.icon || category.icon.trim() === ""
+                    ? "/placeholder.svg"
+                    : category.icon
+                }
+                alt={category.name}
+                fill
+                className={` ${
+                  !category.icon || category.icon.trim() === ""
+                    ? "scale-75"
+                    : ""
+                } `}
+              />
+            </div>
             <div>
               <h1 className="font-semibold truncate md:text-base text-xs w-32 md:w-auto">
                 {category.name}
