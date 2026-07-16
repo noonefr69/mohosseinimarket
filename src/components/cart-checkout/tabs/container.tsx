@@ -6,12 +6,20 @@ import { ListIcon, PackageOpenIcon } from "lucide-react";
 import CartItemList from "./cart-item-list";
 import EmptyTabContent from "./empty-tab-content";
 import ClearCartButton from "./clear-cart-button";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function TabContainer() {
   const items = useCartStore((state) => state.items);
+  const [value, setIsValue] = useState("shopping-cart");
 
   return (
-    <Tabs defaultValue="shopping-cart" className="col-span-9 lg:col-span-6">
+    <Tabs
+      defaultValue="shopping-cart"
+      value={value}
+      onValueChange={setIsValue}
+      className="col-span-9 lg:col-span-6"
+    >
       <TabsList variant={"line"} className="w-full flex justify-between">
         <div className="flex items-center gap-2">
           <TabsTrigger
@@ -24,7 +32,7 @@ export default function TabContainer() {
             سفارشات
           </TabsTrigger>
         </div>
-        {items.length === 0 ? null : <ClearCartButton />}
+        {value === "shopping-cart" && items.length > 0 && <ClearCartButton />}
       </TabsList>
       <TabsContent className="flex flex-col gap-2" value="shopping-cart">
         {items.length === 0 ? (
