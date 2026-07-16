@@ -47,7 +47,7 @@ export default function ProductCart({
             </p>
           </CardContent>
           <CardFooter className="grid grid-cols-[1fr_auto_1fr] p-2">
-            <ProductButton item={item} />
+            <ProductButton button_variant="ghost" item={item} />
 
             <Separator
               orientation="vertical"

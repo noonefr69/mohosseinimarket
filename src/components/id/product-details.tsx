@@ -7,6 +7,7 @@ import { toSlug } from "@/utils/to-slug";
 import { commaThree } from "@/utils/comma-three";
 import { Fullscreen, HeartIcon } from "lucide-react";
 import { projectWriteAllEntrypointsToDisk } from "next/dist/build/swc/generated-native";
+import ProductButton from "../product-card/product-button";
 
 interface ProductDetailsProps {
   product: ProductProps;
@@ -50,9 +51,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </span>
         <p className="mt-4 text-muted-foreground">{product.description}</p>
         <Separator className="my-6" />
-        <Button size={"default"} className="font-semibold ">
-          اضافه به سبد خرید
-        </Button>
+        <ProductButton item={product} button_variant="default" divClassName="w-fit"/>
         <Separator className="my-6" />
         <div className="flex items-center gap-2">
           <h5>تگ ها:</h5>

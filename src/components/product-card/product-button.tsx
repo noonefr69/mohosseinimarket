@@ -6,7 +6,23 @@ import { ProductProps } from "@/types/products-t";
 import { MinusIcon, PlusIcon } from "lucide-react";
 import { commaThree } from "@/utils/comma-three";
 
-export default function ProductButton({ item }: { item: ProductProps }) {
+export default function ProductButton({
+  item,
+  divClassName,
+  button_variant,
+}: {
+  item: ProductProps;
+  divClassName?: string;
+  button_variant:
+    | "link"
+    | "default"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "destructive"
+    | null
+    | undefined;
+}) {
   const { addItem, items, removeItem } = useCartStore();
 
   function handleAddItem(e: any) {
@@ -21,7 +37,7 @@ export default function ProductButton({ item }: { item: ProductProps }) {
       description: item.description,
       unit: item.unit,
       weight_or_volume: item.weight_or_volume,
-      image: item.image
+      image: item.image,
     });
   }
 
@@ -43,7 +59,7 @@ export default function ProductButton({ item }: { item: ProductProps }) {
             e.stopPropagation();
             e.preventDefault();
           }}
-          className="whitespace-normal wrap-break-word cursor-default"
+          className={`whitespace-normal wrap-break-word cursor-default ${divClassName}`}
         >
           <div className="flex items-center py-2 gap-2 ring rounded overflow-hidden justify-between">
             <Button
@@ -68,8 +84,8 @@ export default function ProductButton({ item }: { item: ProductProps }) {
       ) : (
         <Button
           onClick={handleAddItem}
-          className="py-6 whitespace-normal wrap-break-word"
-          variant="ghost"
+          className={`py-6 whitespace-normal wrap-break-word`}
+          variant={button_variant}
         >
           اضافه به سبد
         </Button>
