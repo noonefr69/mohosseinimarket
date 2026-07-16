@@ -1,21 +1,18 @@
-"use client";
-
-import GetBackButton from "@/components/auth/get-back-button";
-import { OtpForm } from "@/components/auth/otp-form";
+import OtpContent from "@/components/auth/otp/otp-content";
 import ButtonLink from "@/components/button-link";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { toPersianDigits } from "@/utils/to-persian-digits";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HomeIcon } from "lucide-react";
-import { redirect, useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { redirect } from "next/navigation";
 
-export default function OtpPage() {
+export default async function OtpPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ phone?: string }>;
+}) {
+  const { phone = "" } = await searchParams;
+
+  if (!phone || phone === "") redirect("/sign-in");
+
   return (
     <div className="pt-10 pb-0 sm:pt-14 sm:pb-0 lg:pt-32 lg:pb-22">
       <div className="max-w-lg mx-auto">
@@ -30,37 +27,12 @@ export default function OtpPage() {
                 buttonClassName="font-semibold scale-125 hover:no-underline flex items-center justify-center"
               />
             </CardTitle>
-            {/*<CardAction className="flex items-center justify-center">
-              <GetBackButton />
-            </CardAction>*/}
           </CardHeader>
           <CardContent>
-            <Suspense fallback={<div>loading...</div>}>
-              <OtpContent />
-            </Suspense>
+            <OtpContent phone={phone} />
           </CardContent>
         </Card>
       </div>
     </div>
-  );
-}
-
-export function OtpContent() {
-  const phone = useSearchParams().get("phone") || "";
-
-  return (
-    <>
-      <h1 className="font-semibold mt-14 text-2xl">
-        کد فرستاده شده را وارد نمایید.
-      </h1>
-      <p className="text-muted-foreground my-4">
-        کد تایید به شماره
-        <span className="font-semibold mx-2 text-base text-primary">
-          {toPersianDigits(Number(phone))}
-        </span>
-        ارسال شد.
-      </p>
-      <OtpForm phone={phone} />
-    </>
   );
 }

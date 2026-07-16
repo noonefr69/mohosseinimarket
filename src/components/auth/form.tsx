@@ -77,21 +77,19 @@ export function AuthenticationForm() {
               <InputGroup
                 {...field}
                 id="sign-in-form"
-                dir="ltr"
                 className="py-6 text-lg font-semibold"
               >
-                <InputGroupInput
-                  aria-invalid={fieldState.invalid}
-                  autoComplete="off"
-                  dir="rtl"
-                  placeholder={toPersianDigits("09xx xxx xxxx")}
-                  className=""
-                />
                 {fieldState.invalid && (
-                  <InputGroupAddon className="pl-2">
+                  <InputGroupAddon className="pr-2">
                     <InfoIcon className="text-destructive" />
                   </InputGroupAddon>
                 )}
+                <InputGroupInput
+                  dir="ltr"
+                  aria-invalid={fieldState.invalid}
+                  autoComplete="off"
+                  placeholder={toPersianDigits("09xx xxx xxxx")}
+                />
               </InputGroup>
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
