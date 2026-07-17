@@ -9,6 +9,7 @@ import { Button } from "../../ui/button";
 import { useState, useTransition } from "react";
 import { Spinner } from "../../ui/spinner";
 import { signIn } from "next-auth/react";
+import { Input } from "@/components/ui/input";
 
 export function OtpForm({ phone }: { phone: string }) {
   const [isPending, startTransition] = useTransition();
@@ -61,10 +62,17 @@ export function OtpForm({ phone }: { phone: string }) {
   return (
     <form
       id="otp-form"
-      className="flex flex-col p-10 items-center justify-center gap-4"
+      className="flex flex-col p-0 items-center justify-center gap-4"
       onSubmit={handleSubmit}
     >
-      <InputOTP value={code} onChange={(val) => setCode(val)} maxLength={6}>
+      <Input
+        dir="ltr"
+        value={code}
+        onChange={(val) => setCode(val.target.value)}
+        maxLength={6}
+        className="py-6 w-full"
+      />
+      {/*<InputOTP value={code} onChange={(val) => setCode(val)} maxLength={6}>
         <InputOTPGroup dir="ltr">
           <InputOTPSlot className="p-6 sm:p-7" index={0} />
           <InputOTPSlot className="p-6 sm:p-7" index={1} />
@@ -73,9 +81,11 @@ export function OtpForm({ phone }: { phone: string }) {
           <InputOTPSlot className="p-6 sm:p-7" index={4} />
           <InputOTPSlot className="p-6 sm:p-7" index={5} />
         </InputOTPGroup>
-      </InputOTP>
+      </InputOTP>*/}
       {error && (
-        <div className="text-red-500 font-semibold text-sm">{error}</div>
+        <div className="text-red-500 font-semibold text-sm text-start flex self-baseline">
+          {error}
+        </div>
       )}
       <Button
         disabled={isPending}
