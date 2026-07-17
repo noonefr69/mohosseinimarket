@@ -40,13 +40,17 @@ export default function SearchResult({
                 href={`/market/product/${sp._id}/${toSlug(sp.name)}`}
                 buttonClassName="w-auto h-auto p-2"
                 text={
-                  <div className="w-full flex items-center gap-2">
+                  <div className="flex items-center gap-2">
                     <Image
-                      src={"/"}
+                      src={
+                        !sp.image || sp.image.trim() === ""
+                          ? "/placeholder.svg"
+                          : sp.image
+                      }
                       alt={sp.name}
                       className="bg-accent rounded"
-                      width={40}
-                      height={40}
+                      width={30}
+                      height={30}
                     />
                     <div className="">
                       <h1 className="truncate w-32 font-semibold">{sp.name}</h1>
