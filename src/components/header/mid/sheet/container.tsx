@@ -96,7 +96,7 @@ export default function SheetContainer({
                               {<link.icon className="size-7" />} {link.label}
                             </div>
                           }
-                          buttonClassName="py-6 px-0no-underline"
+                          buttonClassName="py-6 px-0 no-underline"
                           linkClassName="no-underline"
                           variant={"ghost"}
                         />
@@ -112,7 +112,8 @@ export default function SheetContainer({
               href="/sign-in"
               text={"ثبت نام | ورود"}
               variant={"default"}
-            buttonClassName="w-full py-6 text-lg"/>
+              buttonClassName="w-full py-6 text-lg"
+            />
           )}
         </div>
         <SheetFooter className="flex-row justify-between">
