@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Separator } from "../../ui/separator";
+import Link from "next/link";
 import { pages_links } from "@/consts/links";
 import { auth } from "@/auth";
-import { User2 } from "lucide-react";
 import ShoppingCartSheet from "@/components/header/mid/shopping-cart-sheet";
+import UserDropDown from "./user-dropdown";
 
 export default async function HeaderNavDesktop() {
   const session = await auth();
@@ -20,13 +20,7 @@ export default async function HeaderNavDesktop() {
       ))}
       <Separator orientation="vertical" className="mx-2" />
       {session?.user ? (
-        <li>
-          <Button asChild variant={"ghost"} size={"icon-lg"}>
-            <Link href={`/profile`}>
-              <User2 />
-            </Link>
-          </Button>
-        </li>
+        <UserDropDown phone={session.user.phone} />
       ) : (
         <li>
           <Button asChild variant={"default"} size={"default"}>
