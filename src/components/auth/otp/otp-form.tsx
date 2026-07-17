@@ -61,17 +61,17 @@ export function OtpForm({ phone }: { phone: string }) {
   return (
     <form
       id="otp-form"
-      className="flex flex-col items-center justify-center gap-4"
+      className="flex flex-col p-10 items-center justify-center gap-4"
       onSubmit={handleSubmit}
     >
       <InputOTP value={code} onChange={(val) => setCode(val)} maxLength={6}>
         <InputOTPGroup dir="ltr">
-          <InputOTPSlot className="p-7" index={0} />
-          <InputOTPSlot className="p-7" index={1} />
-          <InputOTPSlot className="p-7" index={2} />
-          <InputOTPSlot className="p-7" index={3} />
-          <InputOTPSlot className="p-7" index={4} />
-          <InputOTPSlot className="p-7" index={5} />
+          <InputOTPSlot className="p-6 sm:p-7" index={0} />
+          <InputOTPSlot className="p-6 sm:p-7" index={1} />
+          <InputOTPSlot className="p-6 sm:p-7" index={2} />
+          <InputOTPSlot className="p-6 sm:p-7" index={3} />
+          <InputOTPSlot className="p-6 sm:p-7" index={4} />
+          <InputOTPSlot className="p-6 sm:p-7" index={5} />
         </InputOTPGroup>
       </InputOTP>
       {error && (

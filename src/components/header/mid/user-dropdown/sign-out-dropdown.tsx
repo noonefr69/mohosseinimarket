@@ -13,11 +13,11 @@ export default function SignOutDropdown() {
   function handleSignOut() {
     startTransition(async () => {
       try {
-        await signOut();
+        await signOut({ callbackUrl: "/sign-in" });
         toast.success("با موفقیت از حساب کاربری خود خارج شدید");
       } catch (err) {
         console.error(err);
-        toast.error("مشکلی پیش آمده استو لطفا دوباره امتحان کنید.");
+        toast.error("مشکلی پیش آمده است. لطفا دوباره امتحان کنید.");
       }
     });
   }
@@ -26,9 +26,8 @@ export default function SignOutDropdown() {
     <Button
       onClick={handleSignOut}
       disabled={isPending}
-      type="submit"
-      variant={"destructive"}
-      className="w-full py-6 text-lg flex flex-row items-center justify-baseline"
+      variant="destructive"
+      className="w-full py-6 text-lg flex items-center justify-baseline"
       style={isPending ? { justifyContent: "center" } : undefined}
     >
       {isPending ? (
