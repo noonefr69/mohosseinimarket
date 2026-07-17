@@ -13,7 +13,7 @@ import { toPersianDigits } from "@/utils/to-persian-digits";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, User2Icon } from "lucide-react";
 import { user_links } from "@/consts/user-links";
-import SignOutDropdown from "./user-dropdown/sign-out-dropdown";
+import SignOutDropdown from "./sign-out-dropdown";
 
 export default function UserDropDown({ phone }: { phone: string }) {
   return (

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { pages_links } from "@/consts/links";
 import { auth } from "@/auth";
 import ShoppingCartSheet from "@/components/header/mid/shopping-cart-sheet";
-import UserDropDown from "./user-dropdown";
+import UserDropDown from "./user-dropdown/user-dropdown";
 
 export default async function HeaderNavDesktop() {
   const session = await auth();
