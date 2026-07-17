@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import OtpContent from "@/components/auth/otp/otp-content";
 import ButtonLink from "@/components/button-link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,8 +10,10 @@ export default async function OtpPage({
 }: {
   searchParams: Promise<{ phone?: string }>;
 }) {
-  const { phone = "" } = await searchParams;
+  const session = await auth();
+  if (session?.user) redirect("/profile");
 
+  const { phone = "" } = await searchParams;
   if (!phone || phone === "") redirect("/sign-in");
 
   return (
