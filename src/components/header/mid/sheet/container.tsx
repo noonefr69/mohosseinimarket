@@ -80,13 +80,13 @@ export default function SheetContainer({
           {user ? (
             <Accordion type="single" collapsible defaultValue="item-1">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="p-0 cursor-pointer text-muted-foreground text-lg font-semibold">
+                <AccordionTrigger className="mb-1 p-0 cursor-pointer text-muted-foreground text-lg font-semibold">
                   <span className="flex items-center gap-2">
                     <User2Icon /> حساب کاربری شما
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="no-underline">
-                  <div className="flex flex-col no-underline">
+                  <div className="flex flex-col no-underline gap-1">
                     {user_links.map((link) => (
                       <React.Fragment key={link.href}>
                         <ButtonLink
