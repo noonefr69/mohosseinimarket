@@ -5,9 +5,9 @@ import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
 import { toSlug } from "@/utils/to-slug";
 import { commaThree } from "@/utils/comma-three";
-import { Fullscreen, HeartIcon } from "lucide-react";
-import { projectWriteAllEntrypointsToDisk } from "next/dist/build/swc/generated-native";
+import { Fullscreen } from "lucide-react";
 import ProductButton from "../product-card/product-button";
+import WishListButton from "./buttons/wishlist-button";
 
 interface ProductDetailsProps {
   product: ProductProps;
@@ -19,18 +19,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       <div className="relative col-span-1 bg-accent min-h-72 lg:min-h-auto rounded">
         <Button
           className="absolute top-2 right-2 z-10"
-          variant={"outline"}
-          size="icon"
-        >
-          <HeartIcon />
-        </Button>
-        <Button
-          className="absolute top-12 right-2 z-10"
           size="icon"
           variant={"outline"}
         >
           <Fullscreen />
         </Button>
+        <WishListButton product_id={product._id} />
         <Image
           src={
             !product.image || product.image.trim() === ""
@@ -51,7 +45,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
         </span>
         <p className="mt-4 text-muted-foreground">{product.description}</p>
         <Separator className="my-6" />
-        <ProductButton item={product} button_variant="default" divClassName="w-fit"/>
+        <ProductButton
+          item={product}
+          button_variant="default"
+          divClassName="w-fit"
+        />
         <Separator className="my-6" />
         <div className="flex items-center gap-2">
           <h5>تگ ها:</h5>
