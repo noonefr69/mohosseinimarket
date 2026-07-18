@@ -12,12 +12,15 @@ const UserSchema = new Schema(
       type: String,
       unique: true,
       sparse: true,
+      default: "",
     },
     first_name: {
       type: String,
+      default: "",
     },
     last_name: {
       type: String,
+      default: "",
     },
     wishlists: {
       type: [String],

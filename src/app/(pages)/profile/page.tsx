@@ -9,7 +9,7 @@ export default async function ProfileUi() {
   const user = result.data;
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       {!user.address ||
       user.address.trim() === "" ||
       typeof user.address !== "string" ? (
