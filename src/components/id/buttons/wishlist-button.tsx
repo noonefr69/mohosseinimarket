@@ -21,7 +21,7 @@ export default function WishListButton({ product_id }: { product_id: string }) {
           return;
         }
 
-        setIsInList(result.data);
+        setIsInList(result.data ?? null);
         toast.success(result.data ? "به لیست اضافه شد" : "از لیست حذف شد");
       } catch (err) {
         console.error(err);

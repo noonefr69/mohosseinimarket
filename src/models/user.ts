@@ -6,12 +6,12 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: /^09\d{9}$/,
+      // match: /^09\d{9}$/,
     },
     email: {
       type: String,
-      unique: true,
-      sparse: true,
+      // unique: true,
+      // sparse: true,
       default: "",
     },
     first_name: {
