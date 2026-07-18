@@ -36,7 +36,7 @@ import { toast } from "sonner";
 const formSchema = z.object({
   address: z
     .string()
-    .min(2, "آدرس حداقل باید با یک حرف شروع بشود.")
+    .min(1, "آدرس حداقل باید با یک حرف شروع بشود.")
     .max(100, "آدرس حداکثر میتواند صد حرف باشد."),
 });
 
