@@ -4,7 +4,17 @@ import { auth } from "@/auth";
 import dbConnect from "@/lib/db";
 import { User } from "@/models/user";
 
-export async function getUser() {
+export interface UserProps {
+  _id: string;
+  first_name: string;
+  last_name: string;
+  address: string;
+}
+
+type GetUserResult =
+  { success: false; error: string } | { success: true; data: UserProps };
+
+export async function getUser(): Promise<GetUserResult> {
   try {
     await dbConnect();
 
