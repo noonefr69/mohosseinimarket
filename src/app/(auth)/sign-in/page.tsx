@@ -31,7 +31,7 @@ export default async function SignIn() {
               />
             </CardTitle>
             <CardAction className="flex items-center justify-center">
-             <GetBackButton />
+              <GetBackButton variant={"ghost"} size={"icon"} />
             </CardAction>
           </CardHeader>
           <CardContent>
