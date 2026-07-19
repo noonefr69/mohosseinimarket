@@ -9,13 +9,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Edit2Icon, XIcon } from "lucide-react";
-import { EditAddressForm } from "../form";
+import { EditAddressForm } from "./form";
 
 export default function EditAddressDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="mx-2" variant={"secondary"} size={"icon-sm"}>
+        <Button className="" variant={"outline"} size={"icon-sm"}>
           <Edit2Icon />
         </Button>
       </DialogTrigger>

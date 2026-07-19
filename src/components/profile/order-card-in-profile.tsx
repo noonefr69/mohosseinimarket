@@ -39,7 +39,7 @@ export default function OrderCardInProfile() {
                   {<tab.icon className="size-10" />}
                   <div>
                     <h5 className="font-semibold flex items-center gap-1">
-                      <span className="text-white sm:relative sm:bg-transparent sm:w-auto sm:h-auto absolute top-0 left-0 bg-primary rounded-full w-5 h-5">
+                      <span className="sm:relative sm:bg-transparent sm:w-auto sm:h-auto absolute top-0 left-0 bg-primary rounded-full w-5 h-5">
                         {commaThree(0)}
                       </span>
                       <span className="sm:block hidden">سفارش</span>

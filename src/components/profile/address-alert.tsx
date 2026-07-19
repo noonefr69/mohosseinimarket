@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { EditAddressForm } from "@/components/profile/form";
+import { EditAddressForm } from "@/components/profile/address/form";
 
 export default function AddressAlert() {
   return (

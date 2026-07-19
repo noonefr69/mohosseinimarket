@@ -27,10 +27,10 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from "@/components/ui/input-group";
-import { DialogFooter } from "../ui/dialog";
+import { DialogFooter } from "../../ui/dialog";
 import { useTransition } from "react";
 import { editAddress } from "@/actions/user/edit-address";
-import { Spinner } from "../ui/spinner";
+import { Spinner } from "../../ui/spinner";
 import { toast } from "sonner";
 
 const formSchema = z.object({

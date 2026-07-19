@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { EditAddressForm } from "@/components/profile/form";
+import { EditAddressForm } from "@/components/profile/address/form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { OctagonXIcon, XIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
