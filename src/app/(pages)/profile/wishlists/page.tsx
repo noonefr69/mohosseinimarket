@@ -1,6 +1,5 @@
 import { getUserWishlists } from "@/actions/user/get-user-wishlists";
 import GetBackButton from "@/components/auth/get-back-button";
-import WishlistCard from "@/components/profile/wishlists/wishlist-card";
 import {
   Card,
   CardContent,
