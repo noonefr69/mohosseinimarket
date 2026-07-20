@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { ContactUsForm } from "./form";
+import { ContactUsForm } from "../../../components/contact-us/form";
 import ContactHeader from "@/components/contact-us/contact-header";
 import ContactLocation from "@/components/contact-us/contact-location";
 
