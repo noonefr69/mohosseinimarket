@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "درباره ما",
   description:
-    "مغازه قدیمی و معتبر مبلغ حسینی حالا آنلاین شده | بهترین برندهای لبنی و خشکبار رو با یه کلیک در خونه‌ت داشته باش | ارسال به تمام نقاط تبریز",
+    "با بیش از 25 سال سابقه در تبریز، سوپر مارکت مبلغ حسینی را بهتر بشناسید | داستان کیفیت و تازگی محصولات از مغازه تا خونه‌تون | همین حالا بخوانید",
 };
 
-export default function RootLayout({
+export default function AboutUsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
