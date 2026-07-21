@@ -12,7 +12,7 @@ interface ClientCartItem {
   quantity: number;
 }
 
-export async function CheckoutAction(items: ClientCartItem[]) {
+export async function checkoutAction(items: ClientCartItem[]) {
   try {
     await dbConnect();
 
@@ -74,15 +74,21 @@ export async function CheckoutAction(items: ClientCartItem[]) {
       return { success: false, error: "سبد خرید شما معتبر نیست." };
     }
 
+    const totalQuantity = orderItems.reduce(
+      (sum, item) => sum + item.quantity,
+      0,
+    );
+
     const order = await Order.create({
       user: user._id,
       items: orderItems,
-      totalPrice: totalPrice,
       status: "pending",
-      shippingAddress: user.address,
-      phone: user.phone,
-      validationImage: "",
-      adminNote: "",
+      address: user.address, // ✅ matches schema
+      total: String(totalPrice), // ✅ matches schema (string)
+      quantity: totalQuantity, // ✅ added, number
+      validation_image: "", // ✅ snake_case
+      admin_note: "", // ✅ snake_case
+      // phone is not in schema, removed
     });
 
     revalidatePath("/profile");

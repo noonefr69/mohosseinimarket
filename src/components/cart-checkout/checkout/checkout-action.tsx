@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartTotal } from "@/hooks/use-cart-total";
 import { commaThree } from "@/utils/comma-three";
+import CheckoutButton from "./checkout-button";
 
 export default function CheckOutAction() {
   const { totalPrice, totalQuantity } = useCartTotal();
@@ -23,13 +23,7 @@ export default function CheckOutAction() {
         </div>
       </CardHeader>
       <CardContent>
-        <Button
-          variant={"default"}
-          className="w-full text-lg font-bold py-6"
-          size={"lg"}
-        >
-          خرید
-        </Button>
+        <CheckoutButton />
       </CardContent>
     </Card>
   );
