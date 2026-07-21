@@ -22,13 +22,14 @@ export default function Info() {
             </Button>
           </div>
         </div>
-        <div className="lg:col-span-5 col-span-1 flex items-center gap-6">
+        <div className="lg:col-span-5 relative col-span-1 flex items-center gap-6 w-full h-130">
           <Image
-            className="rounded-2xl w-full"
-            src={`/home-mask-image.webp`}
+            className="rounded-2xl w-full object-cover"
+            src={`/tukan.jpg`}
             alt="dashaq"
-            width={800}
-            height={600}
+            // width={800}
+            // height={600}
+            fill
           />
         </div>
       </div>
