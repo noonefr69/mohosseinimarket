@@ -1,11 +1,11 @@
-import { Schema, model, models, Types } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const OtpSchema = new Schema(
   {
     phone: {
       type: String,
       required: true,
-      match: /^09\d{9}$/,
+      // match: /^09\d{9}$/,
     },
     code: {
       type: String,
