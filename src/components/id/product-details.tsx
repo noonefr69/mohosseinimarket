@@ -8,6 +8,7 @@ import { commaThree } from "@/utils/comma-three";
 import { Fullscreen } from "lucide-react";
 import ProductButton from "../product-card/product-button";
 import WishListButton from "./buttons/wishlist-button";
+import FullScreenButton from "./buttons/fullscreen-button";
 
 interface ProductDetailsProps {
   product: ProductProps;
@@ -17,13 +18,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="grid lg:grid-cols-2 mt-4 gap-6">
       <div className="relative col-span-1 bg-accent min-h-72 lg:min-h-auto rounded">
-        <Button
-          className="absolute top-2 right-2 z-10"
-          size="icon"
-          variant={"outline"}
-        >
-          <Fullscreen />
-        </Button>
+        <FullScreenButton image={product.image} />
         <WishListButton product_id={product._id} />
         <Image
           src={
