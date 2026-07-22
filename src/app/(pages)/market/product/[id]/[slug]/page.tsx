@@ -1,12 +1,10 @@
 import { getProduct } from "@/actions/products/get-product";
-import ButtonLink from "@/components/button-link";
 import BreadcrumbComponent from "@/components/id/breadcrumb";
 import CopyUrl from "@/components/id/copy-url";
 import MoreInfo from "@/components/id/more-info";
 import ProductDetails from "@/components/id/product-details";
 import SimilarProduct from "@/components/id/similar-products";
 import MarketError from "@/components/market/market-error";
-import { Button } from "@/components/ui/button";
 
 export default async function Product({
   params,

@@ -2,10 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { ProductProps } from "@/types/products-t";
@@ -32,8 +30,8 @@ export default function MoreInfo({ product }: { product: ProductProps }) {
                 نام کالا
               </TableHead>
               <TableCell>
-                {product.name} {product.weight_or_volume} {product.unit}{" "}
-                {product.brand}
+                {product.name} {commaThree(product.weight_or_volume)}{" "}
+                {product.unit} {product.brand}
               </TableCell>
             </TableRow>
             <TableRow className="bg-accent">
