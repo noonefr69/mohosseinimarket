@@ -4,8 +4,10 @@ import { auth } from "@/auth";
 import dbConnect from "@/lib/db";
 import { Order } from "@/models/order";
 import { User } from "@/models/user";
+import { serializeDoc } from "../products/serializeDoc";
+import { OrdersProps } from "@/types/order-t";
 
-export async function getOrders() {
+export async function getOrders(): Promise<OrdersProps> {
   try {
     await dbConnect();
 
@@ -21,9 +23,9 @@ export async function getOrders() {
 
     const orders = await Order.find({
       user: session.user.id,
-    });
+    }).lean();
 
-    return { success: true, data: orders };
+    return { success: true, data: orders.map(serializeDoc) };
   } catch (err) {
     console.error(err);
     return {

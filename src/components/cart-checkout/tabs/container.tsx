@@ -7,8 +7,9 @@ import CartItemList from "./cart-item-list";
 import EmptyTabContent from "./empty-tab-content";
 import ClearCartButton from "./clear-cart-button";
 import { useState } from "react";
+import { OrderType } from "@/types/order-t";
 
-export default function TabContainer() {
+export default function TabContainer({ orders }: { orders: OrderType[] }) {
   const items = useCartStore((state) => state.items);
   const [value, setIsValue] = useState("shopping-cart");
 
@@ -47,13 +48,17 @@ export default function TabContainer() {
         )}
       </TabsContent>
       <TabsContent value="orders">
-        <EmptyTabContent
-          title="سفارشی ندارید"
-          description="می‌توانید برای سفارش محصولات جدید به صفحه زیر بروید:"
-          icon={ListIcon}
-          linkHref="/market"
-          linkText="فروشگاه"
-        />
+        {orders.length === 0 || !orders ? (
+          <EmptyTabContent
+            title="سفارشی ندارید"
+            description="می‌توانید برای سفارش محصولات جدید به صفحه زیر بروید:"
+            icon={ListIcon}
+            linkHref="/market"
+            linkText="فروشگاه"
+          />
+        ) : (
+          "kir"
+        )}
       </TabsContent>
     </Tabs>
   );
