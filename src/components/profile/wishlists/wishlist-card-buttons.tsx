@@ -59,6 +59,7 @@ export default function WhishlistCardButtons({
         toast.success(`با موفقیت از لیست پاک شد`);
         router.refresh();
       } catch (err) {
+        console.error(err);
         toast.error(`err`);
       }
     });

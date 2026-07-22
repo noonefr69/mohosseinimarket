@@ -6,7 +6,6 @@ import { ListIcon, PackageOpenIcon } from "lucide-react";
 import CartItemList from "./cart-item-list";
 import EmptyTabContent from "./empty-tab-content";
 import ClearCartButton from "./clear-cart-button";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function TabContainer() {

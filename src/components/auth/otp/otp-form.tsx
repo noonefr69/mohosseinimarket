@@ -1,10 +1,10 @@
 "use client";
 
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSlot,
-} from "@/components/ui/input-otp";
+// import {
+//   InputOTP,
+//   InputOTPGroup,
+//   InputOTPSlot,
+// } from "@/components/ui/input-otp";
 import { Button } from "../../ui/button";
 import { useState, useTransition } from "react";
 import { Spinner } from "../../ui/spinner";

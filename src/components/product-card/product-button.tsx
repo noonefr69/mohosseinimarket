@@ -25,7 +25,7 @@ export default function ProductButton({
 }) {
   const { addItem, items, removeItem } = useCartStore();
 
-  function handleAddItem(e: any) {
+  function handleAddItem(e: React.MouseEvent<HTMLButtonElement>) {
     e.stopPropagation();
     e.preventDefault();
 
@@ -41,7 +41,7 @@ export default function ProductButton({
     });
   }
 
-  function handleRemove(e: any) {
+  function handleRemove(e: React.MouseEvent<HTMLButtonElement>) {
     e.stopPropagation();
     e.preventDefault();
 

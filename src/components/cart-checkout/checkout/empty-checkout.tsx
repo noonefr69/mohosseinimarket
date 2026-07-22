@@ -7,7 +7,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ChevronLeftIcon, LogInIcon, ShoppingBagIcon } from "lucide-react";
-import { useCartStore } from "@/store/cart-store";
 
 export default function EmptyCheckout({
   user,

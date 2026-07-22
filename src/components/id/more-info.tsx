@@ -7,7 +7,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ProductProps } from "@/types/products-t";
-import { toPersianDigits } from "@/utils/to-persian-digits";
 import { commaThree } from "@/utils/comma-three";
 
 export default function MoreInfo({ product }: { product: ProductProps }) {

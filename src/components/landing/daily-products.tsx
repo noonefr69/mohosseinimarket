@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ProductCart from "../product-card";
 import { ProductProps } from "@/types/products-t";
-import { CategoryProps } from "@/types/category-t";
+// import { CategoryProps } from "@/types/category-t";
 
 export default function DailyProducts({
   items,
-  categories,
+  // categories,
 }: {
-  categories: CategoryProps[];
+  // categories: CategoryProps[];
   items: ProductProps[];
 }) {
   return (

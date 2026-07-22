@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/field";
 import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
-import { signIn } from "next-auth/react";
 import { useTransition } from "react";
 import { Spinner } from "../ui/spinner";
 import { toPersianDigits } from "@/utils/to-persian-digits";
@@ -56,11 +55,11 @@ export function AuthenticationForm() {
         if (res.ok && result.success) {
           router.push(`/sign-in/otp?phone=${data.phone_number}`);
         } else {
-          alert(result.error || "kir");
+          alert(result.error || "مشکلی پیش آمده است.");
         }
       } catch (error) {
         console.log(error);
-        alert("kir sam te server");
+        alert("مشکل در سمت سرور یا قطعی اینترنت");
       }
     });
   }
