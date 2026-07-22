@@ -1,11 +1,9 @@
 import { ProductProps } from "@/types/products-t";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
-import { Button } from "../ui/button";
 import ButtonLink from "../button-link";
 import { toSlug } from "@/utils/to-slug";
 import { commaThree } from "@/utils/comma-three";
-import { Fullscreen } from "lucide-react";
 import ProductButton from "../product-card/product-button";
 import WishListButton from "./buttons/wishlist-button";
 import FullScreenButton from "./buttons/fullscreen-button";
@@ -18,7 +16,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="grid lg:grid-cols-2 mt-4 gap-6">
       <div className="relative col-span-1 bg-accent min-h-72 lg:min-h-auto rounded">
-        <FullScreenButton image={product.image} />
+        <FullScreenButton image={product.image ?? ""} />
         <WishListButton product_id={product._id} />
         <Image
           src={
