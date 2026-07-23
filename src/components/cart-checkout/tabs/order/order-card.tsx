@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { status_config } from "@/consts/status";
 import Image from "next/image";
+import { CancelOrderButton } from "./cancel-order";
 
 export default function OrderCard({ order }: { order: OrderType }) {
   const status = status_config[order.status] || status_config.pending;
@@ -97,9 +98,7 @@ export default function OrderCard({ order }: { order: OrderType }) {
       </CardContent>
       {!isFinalStatus && (
         <CardFooter className="flex justify-end">
-          <Button variant={"destructive"} size="sm">
-            لغو سفارش
-          </Button>
+          <CancelOrderButton orderId={order._id} />
         </CardFooter>
       )}
     </Card>

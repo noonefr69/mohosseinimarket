@@ -101,7 +101,7 @@ export default function CheckoutButton() {
         </label>
 
         {previewUrl && (
-          <div className="relative w-full h-100 pt-10">
+          <div className="relative w-full h-100 mt-4">
             <Image
               fill
               src={previewUrl}
