@@ -8,6 +8,7 @@ import EmptyTabContent from "./empty-tab-content";
 import ClearCartButton from "./clear-cart-button";
 import { useState } from "react";
 import { OrderType } from "@/types/order-t";
+import OrderCard from "./order/order-card";
 
 export default function TabContainer({ orders }: { orders: OrderType[] }) {
   const items = useCartStore((state) => state.items);
@@ -57,7 +58,11 @@ export default function TabContainer({ orders }: { orders: OrderType[] }) {
             linkText="فروشگاه"
           />
         ) : (
-          "kir"
+          <div className="flex flex-col gap-4 mt-2">
+            {orders.map((order) => (
+              <OrderCard order={order} key={order._id} />
+            ))}
+          </div>
         )}
       </TabsContent>
     </Tabs>
