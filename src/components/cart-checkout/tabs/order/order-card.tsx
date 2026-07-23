@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/collapsible";
 import { commaThree } from "@/utils/comma-three";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, EditIcon } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { status_config } from "@/consts/status";
 import Image from "next/image";
 
@@ -52,7 +52,7 @@ export default function OrderCard({ order }: { order: OrderType }) {
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent className="">
-            <div className="grid grid-cols-3 gap-2 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-2">
               {order.items.map((item, i) => (
                 <Card key={i}>
                   <CardHeader>
