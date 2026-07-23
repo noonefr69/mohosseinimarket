@@ -12,8 +12,14 @@ interface ClientCartItem {
   quantity: number;
 }
 
-export async function checkoutAction(items: ClientCartItem[]) {
+// ✅ Change the argument to accept FormData
+export async function checkoutAction(formData: FormData) {
   try {
+    // 1. Extract data from FormData
+    const itemsJson = formData.get("items") as string;
+    const items: ClientCartItem[] = JSON.parse(itemsJson);
+    const file = formData.get("validation_image") as File;
+
     await dbConnect();
 
     const session = await auth();
@@ -79,16 +85,25 @@ export async function checkoutAction(items: ClientCartItem[]) {
       0,
     );
 
+    // ✅ 2. Process the file: Convert it to a Base64 string to save in MongoDB
+    let validationImageString = "";
+    if (file && file.size > 0) {
+      const bytes = await file.arrayBuffer(); // Get raw file data
+      const buffer = Buffer.from(bytes); // Convert to Node.js Buffer
+      // Create a proper Data URL (e.g., "data:image/jpeg;base64,/9j/4AAQSk...")
+      validationImageString = `data:${file.type};base64,${buffer.toString("base64")}`;
+    }
+
+    // ✅ 3. Save the Base64 string to the database
     const order = await Order.create({
       user: user._id,
       items: orderItems,
       status: "pending",
-      address: user.address, // ✅ matches schema
-      total: String(totalPrice), // ✅ matches schema (string)
-      quantity: totalQuantity, // ✅ added, number
-      validation_image: "", // ✅ snake_case
-      admin_note: "", // ✅ snake_case
-      // phone is not in schema, removed
+      address: user.address,
+      total: String(totalPrice),
+      quantity: totalQuantity,
+      validation_image: validationImageString, // ✅ NOW IT IS SAVED!
+      admin_note: "",
     });
 
     revalidatePath("/profile");

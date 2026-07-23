@@ -75,13 +75,13 @@ export default function OrderCard({ order }: { order: OrderType }) {
 
         <div className="mt-4 relative">
           <h1 className="lg:text-xl font-semibold">عکس فاکتور:</h1>
-          <Button
+          {/*<Button
             className="absolute left-0 top-0"
             size={"icon"}
             variant={"ghost"}
           >
             <EditIcon />
-          </Button>
+          </Button>*/}
           <Image
             src={
               !order.validation_image || order.validation_image.trim() === ""
@@ -91,7 +91,7 @@ export default function OrderCard({ order }: { order: OrderType }) {
             alt="عکس فاکتور"
             width={1980}
             height={1080}
-            className="h-100"
+            className="h-200 mt-7 object-cover"
           />
         </div>
       </CardContent>
