@@ -10,21 +10,24 @@ export default function MoreCategories() {
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl font-bold text-white">محصولات بیشتر ما</h1>
           <div className="relative w-full h-100 bg-accent rounded-xl">
-            <Image src={"/"} alt="bg" fill />
+            <Image
+              src={"/dairy.png"}
+              className="object-contain"
+              alt="bg"
+              fill
+            />
             <Button
               asChild
               variant={"default"}
               size={"lg"}
-              className="absolute text-xl bottom-3 right-3 py-2 h-fit"
+              className="absolute text-wrap min-w-fit overflow-hidden text-sm lg:text-xl bottom-3 right-3 py-2 h-fit"
             >
-              <Link className="flex flex-col items-start" href={`/`}>
+              <Link
+                className="flex flex-col items-start"
+                href={`/market/filter/6a42a418f84a60b801e5c78c/لبنیات`}
+              >
                 <span className="font-semibold block">لبنیات</span>
-                {toPersianDigits(
-                  String(
-                    categories.filter((item) => item.slug === "bakery").length,
-                  ),
-                )}{" "}
-                محصول
+                {toPersianDigits(2)} محصول
               </Link>
             </Button>
           </div>
@@ -32,61 +35,70 @@ export default function MoreCategories() {
 
         <div className="grid col-span-1 md:grid-cols-2 gap-6">
           <div className="md:col-span-2 relative md:h-auto h-100 bg-accent rounded-xl">
-            <Image src={`/`} alt="img" fill />
+            <Image
+              className="object-contain"
+              src={`/breakfast.png`}
+              alt="img"
+              fill
+            />
             <Button
               asChild
               variant={"default"}
               size={"lg"}
-              className="absolute text-xl bottom-3 right-3 py-2 h-fit"
+              className="absolute text-wrap min-w-fit overflow-hidden text-sm lg:text-xl bottom-3 right-3 py-2 h-fit"
             >
-              <Link className="flex flex-col items-start" href={`/`}>
-                <span className="font-semibold block">لبنیات</span>
-                {toPersianDigits(
-                  String(
-                    categories.filter((item) => item.slug === "bakery").length,
-                  ),
-                )}{" "}
-                محصول
+              <Link
+                className="flex flex-col items-start"
+                href={`/market/filter/6a42a418f84a60b801e5c787/صبحانه`}
+              >
+                <span className="font-semibold block">صبحانه</span>
+                {toPersianDigits(3)} محصول
               </Link>
             </Button>
           </div>
 
           <div className="relative bg-accent  md:h-auto h-100 rounded-xl">
-            <Image src={`/`} alt="img" fill />
+            <Image
+              className="object-contain"
+              src={`/snacks.png`}
+              alt="img"
+              fill
+            />
             <Button
               asChild
               variant={"default"}
               size={"lg"}
-              className="absolute text-xl bottom-3 right-3 py-2 h-fit"
+              className="absolute text-wrap min-w-fit overflow-hidden text-sm lg:text-xl bottom-3 right-3 py-2 h-fit"
             >
-              <Link className="flex flex-col items-start" href={`/`}>
-                <span className="font-semibold block">لبنیات</span>
-                {toPersianDigits(
-                  String(
-                    categories.filter((item) => item.slug === "bakery").length,
-                  ),
-                )}{" "}
-                محصول
+              <Link
+                className="flex flex-col items-start"
+                href={`/market/filter/6a42a418f84a60b801e5c792/تنقلات`}
+              >
+                <span className="font-semibold block">تنقلات</span>
+                {toPersianDigits(2)} محصول
               </Link>
             </Button>
           </div>
 
           <div className="relative md:h-auto h-100 bg-accent rounded-xl">
-            <Image src={`/`} alt="img" fill />
+            <Image
+              className="object-contain"
+              src={`/health.png`}
+              alt="img"
+              fill
+            />
             <Button
               asChild
               variant={"default"}
               size={"lg"}
-              className="absolute text-xl bottom-3 right-3 py-2 h-fit"
+              className="absolute text-wrap min-w-fit overflow-hidden text-sm lg:text-xl bottom-3 right-3 py-2 h-fit"
             >
-              <Link className="flex flex-col items-start" href={`/`}>
-                <span className="font-semibold block">لبنیات</span>
-                {toPersianDigits(
-                  String(
-                    categories.filter((item) => item.slug === "bakery").length,
-                  ),
-                )}{" "}
-                محصول
+              <Link
+                className="flex flex-col items-start"
+                href={`/market/filter/6a42a418f84a60b801e5c78d/بهداشتی-و-آرایشی`}
+              >
+                <span className="font-semibold block">بهداشتی و آرایشی</span>
+                {toPersianDigits(1)} محصول
               </Link>
             </Button>
           </div>
