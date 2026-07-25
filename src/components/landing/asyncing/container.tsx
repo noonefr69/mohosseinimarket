@@ -13,9 +13,9 @@ export default async function Container() {
 
   return (
     <>
-      <DailyProducts items={result.data} categories={categories.data} />
+      <DailyProducts items={result.data}  />
       <MoreCategories />
-      <FamousProducts items={result.data} categories={categories.data} />
+      <FamousProducts items={result.data}  />
     </>
   );
 }
