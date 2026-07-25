@@ -1,5 +1,5 @@
 import ProductsGrid from "@/components/market/products-grid";
-import CategoriesBar from "@/components/market/categories-bar";
+// import CategoriesBar from "@/components/market/categories-bar";
 import { getProducts } from "@/actions/products/get-products";
 import { getCategories } from "@/actions/category/categories";
 import FilterPanel from "@/components/market/panel/filter-panel";
@@ -50,7 +50,7 @@ export default async function Market({
         />
       </div>
 
-      <CategoriesBar categories={categories} />
+      {/*<CategoriesBar categories={categories} />*/}
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 mt-7">
         <div className="col-span-1 lg:col-span-3 relative lg:block hidden">
