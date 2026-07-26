@@ -5,6 +5,7 @@ import dbConnect from "@/lib/db";
 import { edit_form_schema } from "@/lib/edit_form_schema";
 import { User } from "@/models/user";
 import { revalidatePath } from "next/cache";
+import z from "zod";
 
 export async function editUserInfo(formData: z.infer<typeof edit_form_schema>) {
   try {
