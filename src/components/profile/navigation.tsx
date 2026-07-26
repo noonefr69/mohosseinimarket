@@ -7,7 +7,7 @@ import ProfileLinks from "./profile-links";
 export default async function ProfNavigation() {
   const session = await auth();
   return (
-    <Card className="col-span-12 order-2 lg:order-1 lg:col-span-3">
+    <Card className="col-span-12 order-2 lg:order-1 lg:col-span-3 h-fit">
       <CardHeader>
         <CardTitle className="text-xl font-semibold">
           {toPersianDigits(session?.user.phone ?? "")}
