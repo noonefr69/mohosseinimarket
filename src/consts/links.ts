@@ -69,9 +69,9 @@ export const footerLinks = {
     title: "حساب کاربری",
     links: [
       { label: "ورود / ثبت نام", href: "/sign-in" },
-      { label: "سفارش‌های من", href: "/orders" },
+      { label: "سفارش‌های من", href: "/profile/orders" },
       { label: "سبد خرید", href: "/shopping-cart" },
-      { label: "علاقه‌مندی‌ها", href: "/wishlist" },
+      { label: "علاقه‌مندی‌ها", href: "/profile/wishlists" },
     ],
   },
 };

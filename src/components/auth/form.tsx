@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/input-group";
 import { InfoIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   phone_number: z
@@ -55,11 +56,11 @@ export function AuthenticationForm() {
         if (res.ok && result.success) {
           router.push(`/sign-in/otp?phone=${data.phone_number}`);
         } else {
-          alert(result.error || "مشکلی پیش آمده است.");
+          toast.error(result.error || "مشکلی پیش آمده است.");
         }
       } catch (error) {
-        console.log(error);
-        alert("مشکل در سمت سرور یا قطعی اینترنت");
+        console.error(error);
+        toast.error("مشکل در سمت سرور یا قطعی اینترنت");
       }
     });
   }
