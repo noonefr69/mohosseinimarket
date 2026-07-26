@@ -17,70 +17,62 @@ import {
 } from "@/components/ui/card";
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroupTextarea,
-} from "@/components/ui/input-group";
 import { UserProps } from "@/actions/user/get-user";
-
-const formSchema = z.object({
-  first_name: z
-    .string()
-    .min(2, "نام باید حداقل ۲ کاراکتر باشد.")
-    .max(50, "نام نمی‌تواند بیشتر از ۵۰ کاراکتر باشد."),
-  last_name: z
-    .string()
-    .min(2, "نام خانوادگی باید حداقل ۲ کاراکتر باشد.")
-    .max(50, "نام خانوادگی نمی‌تواند بیشتر از ۵۰ کاراکتر باشد."),
-  phone: z
-    .string()
-    .startsWith("09")
-    .min(11, "شماره موبایل باید ۱۱ رقم باشد.")
-    .max(11, "شماره موبایل باید ۱۱ رقم باشد."),
-  email: z
-    .email({ message: "ایمیل معتبر نیست." })
-    .max(100, "ایمیل نمی‌تواند بیشتر از ۱۰۰ کاراکتر باشد."),
-  address: z
-    .string()
-    .min(10, "آدرس باید حداقل ۱۰ کاراکتر باشد.")
-    .max(500, "آدرس نمی‌تواند بیشتر از ۵۰۰ کاراکتر باشد."),
-});
+import { editUserInfo } from "@/actions/user/edit-user-info";
+import { Spinner } from "@/components/ui/spinner";
+import { Textarea } from "@/components/ui/textarea";
+import { edit_form_schema } from "@/lib/edit_form_schema";
 
 export function EditUserInfo({ user_data }: { user_data: UserProps }) {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const [isPending, startTransition] = React.useTransition();
+
+  const form = useForm<z.infer<typeof edit_form_schema>>({
+    resolver: zodResolver(edit_form_schema),
     defaultValues: {
-      first_name: user_data.first_name,
-      last_name: user_data.last_name,
-      phone: user_data.phone,
-      email: user_data.email,
-      address: user_data.address,
+      first_name: user_data.first_name || "",
+      last_name: user_data.last_name || "",
+      phone: user_data.phone || "",
+      email: user_data.email || "",
+      address: user_data.address || "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof formSchema>) {
-    console.log(data);
+  function onSubmit(data: z.infer<typeof edit_form_schema>) {
+    startTransition(async () => {
+      try {
+        const result = await editUserInfo(data);
+
+        if (!result.success) {
+          toast.error(result?.error || "خطای ناشناخته در سرور");
+          return;
+        }
+
+        toast.success("اطلاعات شما با موفقیت ویرایش شد.");
+      } catch (err) {
+        console.error(err);
+        toast.error(
+          "مشکلی پیش آمده است. لطفاً از متصل بودن اینترنت خود مطمئن شوید.",
+        );
+      }
+    });
   }
 
   return (
-    <Card className="">
+    <Card>
       <CardHeader>
         <CardTitle className="lg:text-xl font-semibold">مشخصات شما</CardTitle>
         <CardDescription>
-          شما میتوانید هر مشخصاتی که دارید را ویرایش کنید.
+          شما می‌توانید مشخصات خود را در این بخش ویرایش کنید.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form id="edit_user_info" onSubmit={form.handleSubmit(onSubmit)}>
-          <FieldGroup className="grid grid-cols-2 gap-2">
+          <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Controller
               name="first_name"
               control={form.control}
@@ -91,9 +83,9 @@ export function EditUserInfo({ user_data }: { user_data: UserProps }) {
                     {...field}
                     id="first_name"
                     aria-invalid={fieldState.invalid}
-                    placeholder="ممد"
+                    placeholder="مثال: ممد"
                     className="py-6"
-                    autoComplete="off"
+                    autoComplete="given-name"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -105,15 +97,15 @@ export function EditUserInfo({ user_data }: { user_data: UserProps }) {
               name="last_name"
               control={form.control}
               render={({ field, fieldState }) => (
-                <Field className="" data-invalid={fieldState.invalid}>
+                <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="last_name">نام خانوادگی</FieldLabel>
                   <Input
                     {...field}
                     id="last_name"
                     aria-invalid={fieldState.invalid}
-                    placeholder="ممدی"
-                    autoComplete="off"
+                    placeholder="مثال: ممدی"
                     className="py-6"
+                    autoComplete="family-name"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -125,15 +117,16 @@ export function EditUserInfo({ user_data }: { user_data: UserProps }) {
               name="phone"
               control={form.control}
               render={({ field, fieldState }) => (
-                <Field className="" data-invalid={fieldState.invalid}>
+                <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="phone">شماره تلفن</FieldLabel>
                   <Input
                     {...field}
                     id="phone"
                     aria-invalid={fieldState.invalid}
-                    placeholder="09xx xxx xxxx"
-                    autoComplete="off"
+                    placeholder="09123456789"
                     className="py-6"
+                    autoComplete="tel"
+                    inputMode="numeric"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -145,16 +138,16 @@ export function EditUserInfo({ user_data }: { user_data: UserProps }) {
               name="email"
               control={form.control}
               render={({ field, fieldState }) => (
-                <Field className="" data-invalid={fieldState.invalid}>
+                <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="email">ایمیل</FieldLabel>
                   <Input
                     {...field}
                     id="email"
                     aria-invalid={fieldState.invalid}
                     placeholder="example@gmail.com"
-                    autoComplete="off"
                     className="py-6"
                     type="email"
+                    autoComplete="email"
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -166,15 +159,18 @@ export function EditUserInfo({ user_data }: { user_data: UserProps }) {
               name="address"
               control={form.control}
               render={({ field, fieldState }) => (
-                <Field className="col-span-2" data-invalid={fieldState.invalid}>
+                <Field
+                  className="col-span-1 md:col-span-2"
+                  data-invalid={fieldState.invalid}
+                >
                   <FieldLabel htmlFor="address">آدرس</FieldLabel>
-                  <Input
+                  <Textarea
                     {...field}
                     id="address"
                     aria-invalid={fieldState.invalid}
-                    placeholder="مثال: چهاراه آبرسان, رو به روی مدرسه پناهی, پلاک ششم, واحد دوم "
-                    autoComplete="off"
-                    className="py-6"
+                    placeholder="مثال: چهاراه آبرسان، رو به روی مدرسه پناهی، پلاک ششم، واحد دوم"
+                    className="min-h-[100px] resize-y"
+                    autoComplete="street-address" // ✅ Proper autocomplete
                   />
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -185,18 +181,19 @@ export function EditUserInfo({ user_data }: { user_data: UserProps }) {
           </FieldGroup>
         </form>
       </CardContent>
-      <CardFooter className="">
-        <Field
-          orientation="horizontal"
-          className="flex flex-row items-center justify-end"
+      <CardFooter className="flex flex-row items-center justify-end gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => form.reset()}
+          disabled={isPending}
         >
-          <Button type="button" variant="outline" onClick={() => form.reset()}>
-            رفرش
-          </Button>
-          <Button type="submit" form="edit_user_info">
-            تایید
-          </Button>
-        </Field>
+          بازنشانی
+        </Button>
+        <Button disabled={isPending} type="submit" form="edit_user_info">
+          {isPending ? <Spinner className="mr-2" /> : null}
+          {isPending ? "در حال ذخیره..." : "تایید"}
+        </Button>
       </CardFooter>
     </Card>
   );

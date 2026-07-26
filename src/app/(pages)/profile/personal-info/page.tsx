@@ -7,7 +7,5 @@ export default async function PersonalInfo() {
 
   if (!result.success) return <ErrorAll error_message={result.error} />;
 
-  console.log(result.data);
-
   return <EditUserInfo user_data={result.data} />;
 }
