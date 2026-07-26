@@ -25,7 +25,13 @@ export default function AboutHeader() {
         </p>
       </div>
       <div className="relative bg-accent rounded-2xl h-80 md:h-auto">
-        <Image src={`/`} alt="img" fill />
+        <Image
+          src={`/tukan_2.jpg`}
+          alt="img"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover rounded"
+        />
       </div>
     </div>
   );
