@@ -35,7 +35,7 @@ export default function ProductCart({
               alt={item.name}
               width={200}
               height={200}
-              className="w-full"
+              className="w-full h-72 object-cover rounded"
             />
           </CardHeader>
           <CardContent className="text-center">

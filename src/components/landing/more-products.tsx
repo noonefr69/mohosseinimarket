@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { toPersianDigits } from "@/utils/to-persian-digits";
-import { categories } from "@/consts/categories";
+
 export default function MoreCategories() {
   return (
     <div className="mt-7">
@@ -15,6 +15,7 @@ export default function MoreCategories() {
               className="object-contain"
               alt="bg"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <Button
               asChild
@@ -40,6 +41,7 @@ export default function MoreCategories() {
               src={`/breakfast.png`}
               alt="img"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <Button
               asChild
@@ -63,6 +65,7 @@ export default function MoreCategories() {
               src={`/snacks.png`}
               alt="img"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <Button
               asChild
@@ -86,6 +89,7 @@ export default function MoreCategories() {
               src={`/health.png`}
               alt="img"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <Button
               asChild
